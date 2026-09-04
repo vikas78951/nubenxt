@@ -16,7 +16,7 @@ export default function Header() {
           <Wrapper className="flex justify-between items-center">
             <Logo />
             <DesktopNav />
-            <Button variant={'outline'} className={'hidden lg:block'} >
+            <Button variant={'outline'} className={'hidden lg:block border-primary! bg-transparent!  text-primary hover:text-primary-foreground! hover:bg-primary! '} >
               Start a Project
             </Button>
             <MobileNav />

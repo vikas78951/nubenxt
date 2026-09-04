@@ -1,7 +1,6 @@
 
 import { NavItem } from "@/lib/types/nav.type"
 
-import * as React from "react"
 import Link from "next/link"
 
 
@@ -10,8 +9,8 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import ListItem from "./list-item"
 
 
 function NavMenuItem({
@@ -21,21 +20,22 @@ function NavMenuItem({
 
 
     return (
-        <NavigationMenuItem className="font-sans">
+        <NavigationMenuItem className="font-sans" >
             {
                 isHyperlink ? (<NavigationMenuLink render={<Link href={href || '/'}>{name}</Link>} />
                 ) : (<>
                     <NavigationMenuTrigger>{name}</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
+                        <ul className="grid w-100  gap-4 p-2 md:grid-cols-2 lg:w-170">
                             {components?.map((component) => (
                                 <ListItem
                                     key={component.title}
                                     title={component.title}
                                     href={component.href}
-                                >
-                                    {component.description}
-                                </ListItem>
+                                    icon={component.icon}
+                                    description={component.description}
+
+                                />
                             ))}
                         </ul>
                     </NavigationMenuContent>
@@ -48,24 +48,7 @@ function NavMenuItem({
     )
 }
 
-function ListItem({
-    title,
-    children,
-    href,
-    ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-    return (
-        <li {...props}>
-            <NavigationMenuLink render={
-                <Link href={href} className="hover:bg-background rounded-lg">
-                    <div className="flex flex-col gap-1 text-sm">
-                        <h5 className="leading-none font-medium">{title}</h5>
-                        <p className="line-clamp-2 text-muted-foreground text-sm">{children}</p>
-                    </div>
-                </Link>
-            } />
-        </li>
-    )
-}
+
+
 export default NavMenuItem
 
