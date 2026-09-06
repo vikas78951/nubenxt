@@ -2,59 +2,75 @@
 import { NavComponent, NavItem } from "../types/nav.type"
 
 import {
-  Globe,
   Smartphone,
   Code2,
   Search,
   Monitor,
-  Cctv,
-  Link
+  Link,
+  Mail,
+  Zap,
+  Terminal,
+  ShoppingCart,
+  ImageIcon
 } from "lucide-react"
+
 
 export const service: NavComponent[] = [
   {
-    title: "Web Development",
-    href: "/services/web-development",
-    description:
-      "Premium, responsive web designed to build trust, showcase your brand, and generate enquiries.",
-    icon: Globe,
+    title: "HTML Emailers",
+    href: "/services/html-emailers",
+    description: "Professional responsive emails designed for engaging email campaigns.",
+    icon: Mail,
   },
   {
-    title: "Mobile Apps",
-    href: "/services/mobile-apps",
-    description:
-      "User-friendly mobile applications built for iOS and Android with modern, scalable technology.",
-    icon: Smartphone,
-  },
-  {
-    title: "Software Development",
-    href: "/services/software-development",
-    description:
-      "Custom software and business applications built around your unique workflows and requirements.",
-    icon: Code2,
+    title: "Landing Pages",
+    href: "/services/landing-pages",
+    description: "High-converting landing pages designed to turn visitors into customers.",
+    icon: Monitor,
   },
   {
     title: "SEO & Marketing",
     href: "/services/seo-marketing",
-    description:
-      "Search and digital marketing strategies designed to improve visibility, traffic, and qualified enquiries.",
+    description: "Boost visibility and traffic with effective SEO and digital marketing strategies.",
     icon: Search,
   },
   {
-    title: "Computer Solutions",
-    href: "/services/computers",
-    description:
-      "Reliable computer hardware, setup, maintenance, networking, and IT support for your business.",
-    icon: Monitor,
+    title: "Co-Brand Images",
+    href: "/services/co-brand-images",
+    description: "Custom campaign images designed to showcase your brand and partnerships.",
+    icon: ImageIcon,
   },
   {
-    title: "Camera Security",
-    href: "/services/cameras",
-    description:
-      "Professional CCTV and surveillance solutions designed to keep your business, property, and people secure.",
-    icon: Cctv,
+    title: "AI Agents",
+    href: "/services/ai-agents",
+    description: "Intelligent AI automation solutions built to streamline tasks and workflows.",
+    icon: Zap,
   },
-]
+  {
+    title: "Mobile Apps",
+    href: "/services/mobile-apps",
+    description: "Mobile applications built to deliver seamless experiences on iOS and Android.",
+    icon: Smartphone,
+  },
+  {
+    title: "Website Development",
+    href: "/services/web-development",
+    description: "Modern custom websites designed to build trust and showcase your brand.",
+    icon: Code2,
+  },
+  {
+    title: "Software Development",
+    href: "/services/software-development",
+    description: "Enterprise SaaS platforms and custom software built around your business needs.",
+    icon: Terminal,
+  },
+  {
+    title: "Ecommerce Website",
+    href: "/services/ecommerce-website",
+    description: "Full-featured ecommerce stores designed to help your business sell online.",
+    icon: ShoppingCart,
+  },
+];
 
 
 export const NAV_DATA: NavItem[] = [

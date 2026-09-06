@@ -4,7 +4,7 @@ const Logo = () => {
     return (
         <Link
             href={'/'}
-            className='font-heading font-extrabold text-lg leading-normal tracking-wide '
+            className='font-heading font-extrabold text-2xl leading-normal tracking-wide '
         >NubeN<span className='text-primary'>x</span>t</Link>
     )
 }

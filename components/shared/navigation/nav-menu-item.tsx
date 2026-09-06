@@ -24,9 +24,9 @@ function NavMenuItem({
             {
                 isHyperlink ? (<NavigationMenuLink render={<Link href={href || '/'}>{name}</Link>} />
                 ) : (<>
-                    <NavigationMenuTrigger>{name}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-100  gap-4 p-2 md:grid-cols-2 lg:w-170">
+                    <NavigationMenuTrigger >{name}</NavigationMenuTrigger>
+                    <NavigationMenuContent className="w-full p-4 xl:p-6">
+                        <ul className="grid grid-cols-3 gap-4 xl:gap-6 items-stretch">
                             {components?.map((component) => (
                                 <ListItem
                                     key={component.title}

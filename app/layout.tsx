@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono, Outfit } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/layout/theme-provider"
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
 

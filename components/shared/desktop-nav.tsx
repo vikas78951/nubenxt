@@ -10,7 +10,7 @@ import NavMenuItem from "@/components/shared/navigation/nav-menu-item"
 
 function DesktopNav() {
     return (
-        <NavigationMenu className={'hidden lg:flex'}>
+        <NavigationMenu className={'hidden lg:flex'} >
             <NavigationMenuList>
                 {
                     NAV_DATA.map((item: NavItem, index) => {
@@ -22,6 +22,7 @@ function DesktopNav() {
                             icon={item?.icon}
                             isHyperlink={item?.isHyperlink}
                             components={item?.components}
+                            
                         />
                     })
                 }

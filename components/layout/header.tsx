@@ -10,15 +10,17 @@ import { Button } from "@/components/ui/button"
 export default function Header() {
   return (
     <div className="flex ">
-      <header className="w-full py-6 border-b h-20" >
+      <header className="w-full py-4 lg:py-6" >
 
         <Section>
+
           <Wrapper className="flex justify-between items-center">
             <Logo />
             <DesktopNav />
             <Button variant={'outline'} className={'hidden lg:block border-primary! bg-transparent!  text-primary hover:text-primary-foreground! hover:bg-primary! '} >
               Start a Project
             </Button>
+            {/* mobile nav  */}
             <MobileNav />
           </Wrapper>
 
