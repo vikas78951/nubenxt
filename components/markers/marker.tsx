@@ -14,7 +14,7 @@ const markerVariants = cva("flex items-center gap-2 ", {
   },
 })
 
-const markerTitleVariants = cva("shrink-0 font-xs", {
+const markerTitleVariants = cva("shrink-0 font-xs font-semibold", {
   variants: {
     variant: {
       default: "text-muted",

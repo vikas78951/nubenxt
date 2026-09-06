@@ -10,6 +10,7 @@ import {
     NavigationMenuLink,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import ActiveNavLink from "@/components/ui/active-nav-link"
 import ListItem from "./list-item"
 
 
@@ -22,7 +23,9 @@ function NavMenuItem({
     return (
         <NavigationMenuItem className="font-sans" >
             {
-                isHyperlink ? (<NavigationMenuLink render={<Link href={href || '/'}>{name}</Link>} />
+                isHyperlink ? (<ActiveNavLink href={href || "/"}>
+                    {name}
+                </ActiveNavLink>
                 ) : (<>
                     <NavigationMenuTrigger >{name}</NavigationMenuTrigger>
                     <NavigationMenuContent className="w-full p-4 xl:p-6">
@@ -34,7 +37,6 @@ function NavMenuItem({
                                     href={component.href}
                                     icon={component.icon}
                                     description={component.description}
-
                                 />
                             ))}
                         </ul>

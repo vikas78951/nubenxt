@@ -123,14 +123,14 @@ function NavigationMenuPositioner({
 function NavigationMenuLink({
   className,
   ...props
-}: NavigationMenuPrimitive.Link.Props) {
+}: NavigationMenuPrimitive.Link.Props ) {
   return (
     <NavigationMenuPrimitive.Link
 
       data-slot="navigation-menu-link"
       className={cn(
-        "flex items-center gap-1.5  px-4 py-2 text-sm transition-all outline-none  text-muted font-medium capitalize hover:text-foreground [&_svg:not([class*='size-'])]:size-4",
-        className
+        "flex items-center gap-1.5  px-4 py-2 text-sm transition-all outline-none  text-muted font-medium capitalize hover:text-foreground [&_svg:not([class*='size-'])]:size-4 data-active:text-primary  ",
+        className,
       )}
       {...props}
     />

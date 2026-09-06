@@ -6,6 +6,8 @@ export interface NavComponent {
   logo?: string
   href: string
   icon?: LucideIcon
+  active?: boolean
+
 }
 
 export interface NavItem {
@@ -14,4 +16,5 @@ export interface NavItem {
   icon?: LucideIcon
   isHyperlink: boolean
   components?: NavComponent[]
+  active?: boolean
 }

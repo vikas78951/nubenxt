@@ -22,7 +22,6 @@ function DesktopNav() {
                             icon={item?.icon}
                             isHyperlink={item?.isHyperlink}
                             components={item?.components}
-                            
                         />
                     })
                 }

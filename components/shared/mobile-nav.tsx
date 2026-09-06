@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-
+import { usePathname } from "next/navigation"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Button } from "@/components/ui/button"
 import {
@@ -25,7 +25,7 @@ import { Marker } from "../markers/marker"
 
 export function MobileNav() {
     const isMobile = useIsMobile()
-
+    const pathname = usePathname()
 
     function handleConfirm() {
         setOpen(false)
@@ -46,7 +46,7 @@ export function MobileNav() {
                     <Marker className="py-4" title="NAVITATION MENU" />
                 </DrawerHeader>
                 <div className="flex-1 scroll-fade overflow-y-auto ">
-                    <NavigationMenu className={''}>
+                    <NavigationMenu>
                         <NavigationMenuList className={'flex-col gap-4 justify-start items-start'}>
                             {
                                 NAV_MOBILE_DATA.map((item: NavItem, index) => {
@@ -58,6 +58,7 @@ export function MobileNav() {
                                         icon={item?.icon}
                                         isHyperlink={item?.isHyperlink}
                                         components={item?.components}
+                                        active={pathname === item.href}
                                     />
                                 })
                             }
@@ -66,8 +67,8 @@ export function MobileNav() {
                 </div>
 
                 <DrawerFooter>
-                    <hr />
-                    <div className="pt-3 pb-10">
+                    <hr className="my-3" />
+                    <div className="pb-6">
                         <div className="mb-6 ">
                             <p className="body-3 mb-2">Have a vision for your infrastructure?</p>
                             <h6 className="heading-8">Let's construct something robust.</h6>
