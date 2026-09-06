@@ -11,6 +11,7 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import ActiveNavLink from "@/components/ui/active-nav-link"
+import ActiveNavTrigger from "@/components/ui/active-nav-trigger"
 import ListItem from "./list-item"
 
 
@@ -27,7 +28,9 @@ function NavMenuItem({
                     {name}
                 </ActiveNavLink>
                 ) : (<>
-                    <NavigationMenuTrigger >{name}</NavigationMenuTrigger>
+                   <ActiveNavTrigger href={href || '/services'}>
+                        {name}
+                    </ActiveNavTrigger>
                     <NavigationMenuContent className="w-full p-4 xl:p-6">
                         <ul className="grid grid-cols-3 gap-4 xl:gap-6 items-stretch">
                             {components?.map((component) => (

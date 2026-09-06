@@ -35,7 +35,7 @@ function ActiveNavLink({
                     {children}
 
                     {isActive && (
-                        <span className="absolute left-4 right-4  w-4 bottom-0 h-0.5 bg-primary rounded-2xl" />
+                        <span className="absolute left-4 right-4  w-4 bottom-0 h-1 bg-primary rounded-2xl" />
                     )}
                 </Link>
             }

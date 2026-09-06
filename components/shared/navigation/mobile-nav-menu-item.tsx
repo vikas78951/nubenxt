@@ -8,6 +8,7 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu"
+import { cn } from "cn"
 
 
 function MobileNavMenuItem({
@@ -19,9 +20,21 @@ function MobileNavMenuItem({
     return (
         <NavigationMenuItem>
             <NavigationMenuLink
-                active={active}
-                className={'font-heading text-2xl font-semibold '}
-                render={<Link href={href || '/'}>{name}</Link>} />
+                render={(
+                    <div>
+                        <Link className={cn(
+                            "relative font-heading text-2xl font-semibold  capitalize text-muted",
+                            active && "text-primary font-medium"
+                        )} href={href || '/'}>{name}</Link>
+                        {active && (
+                            <span className="absolute left-4 right-4  w-4 -bottom-1 h-1 bg-primary rounded-2xl" />
+                        )}
+                    </div>
+                )}
+            />
+
+
+
         </NavigationMenuItem>
 
 
