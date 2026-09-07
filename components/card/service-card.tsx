@@ -41,7 +41,7 @@ export const ServiceCard = ({ service }: { service: ServiceDataProps }) => {
 
         <footer className="mt-4 lg:mt-6 xl:mt-7">
           <a
-            className="flex items-center gap-2 text-sm font-semibold uppercase text-primary"
+            className="flex items-center gap-2 text-xs md:text-sm font-semibold uppercase text-primary"
             href={ctaLink}
           >
             {ctaText}
@@ -52,7 +52,7 @@ export const ServiceCard = ({ service }: { service: ServiceDataProps }) => {
 
       {/* Image */}
       <div className="flex w-full shrink-0 justify-center lg:w-[38%] lg:justify-end">
-        <div className="w-full max-w-[400px] rounded-lg bg-background p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10">
+        <div className="w-full max-w-100 rounded-lg bg-background p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10">
           <Image
             alt={title}
             src={img}
