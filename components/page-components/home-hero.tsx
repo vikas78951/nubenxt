@@ -14,7 +14,7 @@ const Atf = () => {
                         <Marker title='TECHNOLOGY SERVICES' variant={'primary'} className='mb-6' />
                         <h1>Technology that makes your business look the part</h1>
                         <p className='mt-6 text-lg'>
-                            NubeNex provides professional web development, computer solutions, and camera security services. We build, supply, install and maintain the technology your business relies on.
+                            NubeNxt provides professional web development, computer solutions, and camera security services. We build, supply, install and maintain the technology your business relies on.
                         </p>
                         <div className='mt-10 flex flex-col sm:flex-row gap-4 '>
                             <Button variant={'default'} size='lg' className={'font-bold uppercase'}>

@@ -43,7 +43,7 @@
   --background: oklch(0.14 0 0);
   --foreground: oklch(0.97 0 0);
   --card: oklch(0.18 0 0);
-  --card-foreground: oklch(96.7% 0.001 286.4);
+  --card-foreground: oklch(0.97 0 0);
   --popover: oklch(18.3% 0.004 286);
   --popover-foreground: oklch(96.7% 0.001 286.4);
   --primary: oklch(0.81 0.24 145.3);
@@ -157,7 +157,7 @@
   }
 
   h4 {
-    @apply font-heading text-[20px] leading-tight font-bold tracking-[-0.015em] md:text-[24px] lg:text-[28px] xl:text-[32px];
+    @apply font-heading text-[20px] leading-tight font-bold tracking-[-0.015em] md:text-[24px] lg:text-[28px] xl:text-[36px];
   }
 
   h5 {
