@@ -70,8 +70,8 @@ export function MobileNav() {
                     <hr className="my-3" />
                     <div className="pb-6">
                         <div className="mb-6 ">
-                            <p className="body-3 mb-2">Have a vision for your infrastructure?</p>
-                            <h6 className="heading-8">Let's construct something robust.</h6>
+                            <p className="mb-2">Have a vision for your infrastructure?</p>
+                            <h5>Let's construct something robust.</h5>
                         </div>
                         <Button onClick={handleConfirm} className={'uppercase py-4 h-auto w-full font-semibold    '}>
                             Start a Project <ArrowRight className="ml-3  size-4 " />

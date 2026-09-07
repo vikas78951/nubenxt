@@ -1,38 +1,47 @@
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
-const markerVariants = cva("flex items-center gap-2 ", {
+const markerVariants = cva("flex items-center gap-2", {
   variants: {
     variant: {
       default: "",
       primary: "",
       mix: "",
     },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-})
-
-const markerTitleVariants = cva("shrink-0 font-xs font-semibold", {
-  variants: {
-    variant: {
-      default: "text-muted",
-      primary: "text-primary",
-      mix: "text-primary",
+    size: {
+      default: "text-[11px] sm:text-[12px] lg:text-[14px]",
+      sm: "text-[11px] sm:text-[11px] lg:text-[12px]",
+      lg: "text-[12px] sm:text-[14px] lg:text-[16px]",
     },
   },
   defaultVariants: {
     variant: "default",
+    size: "sm",
   },
 })
 
-const markerLineVariants = cva("flex-1 max-w-40 ", {
+const markerTitleVariants = cva(
+  "shrink-0 font-semibold",
+  {
+    variants: {
+      variant: {
+        default: "text-muted",
+        primary: "text-primary",
+        mix: "text-primary",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+const markerLineVariants = cva("flex-1 max-w-10", {
   variants: {
     variant: {
       default: "border",
       primary: "border-primary",
-      mix: "border-muted",
+      mix: "border-primary",
     },
   },
   defaultVariants: {
@@ -40,27 +49,58 @@ const markerLineVariants = cva("flex-1 max-w-40 ", {
   },
 })
 
+const markerDescriptionVariants = cva(
+  "font-sans uppercase font-semibold",
+  {
+    variants: {
+      variant: {
+        default: "text-muted",
+        primary: "text-muted",
+        mix: "text-muted",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+const markerSizeVariants = cva("", {
+  variants: {
+    size: {
+      default: "text-[11px] sm:text-[12px] lg:text-[14px]",
+      sm: "text-[11px] sm:text-[11px] lg:text-[12px]",
+      lg: "text-[12px] sm:text-[14px] lg:text-[16px]",
+    },
+  },
+  defaultVariants: {
+    size: "sm",
+  },
+})
+
+
 function Marker({
   className,
   variant = "default",
+  size = "sm",
   title,
-  discription = "",
+  description = "",
 }: {
   className?: string
   title: string
-  discription?: string
+  description?: string
 } & VariantProps<typeof markerVariants>) {
   return (
-    <div className={cn(markerVariants({ variant }), className)}>
-      <span className={cn(markerTitleVariants({ variant }))}>
+    <div className={cn(markerVariants({ variant, size }), className)}>
+      <span className={cn(markerTitleVariants({ variant }), markerSizeVariants({ size }))}>
         {title}
       </span>
 
       <hr className={cn(markerLineVariants({ variant }))} />
 
-      {discription && (
-        <p className="body-1">
-          {discription}
+      {description && (
+        <p className={cn(markerDescriptionVariants({ variant }), markerSizeVariants({ size }))}>
+          {description}
         </p>
       )}
     </div>

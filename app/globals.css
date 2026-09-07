@@ -4,7 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
- 
 :root {
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.14 0 0);
@@ -12,8 +11,8 @@
   --card-foreground: oklch(0.97 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary:oklch(0.7 0.15 162.47);
-  --primary-foreground:  oklch(0.14 0 0);
+  --primary: oklch(0.7 0.15 162.47);
+  --primary-foreground: oklch(0.14 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.97 0 0);
   --muted: oklch(0.44 0.01 285.87);
@@ -29,7 +28,7 @@
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0.8rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -41,7 +40,7 @@
 }
 
 .dark {
-  --background:oklch(0.14 0 0);
+  --background: oklch(0.14 0 0);
   --foreground: oklch(0.97 0 0);
   --card: oklch(0.18 0 0);
   --card-foreground: oklch(96.7% 0.001 286.4);
@@ -51,9 +50,9 @@
   --primary-foreground: oklch(0% 0 0);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.24 0 0);
-  --muted: oklch(0.71 0.01 286.28) ;
+  --muted: oklch(0.71 0.01 286.28);
   --muted-foreground: oklch(0.97 0 0);
-  --accent:oklch(0.5 0.16 142.63);
+  --accent: oklch(0.5 0.16 142.63);
   --accent-foreground: oklch(64.212% 0.18112 145.682);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(0.26 0 0);
@@ -120,11 +119,11 @@
 
 @layer base {
   * {
-    @apply border-border ;
+    @apply border-border;
   }
 
   body {
-    @apply relative bg-background text-foreground text-[16px];
+    @apply relative bg-background text-[16px] text-foreground;
   }
 
   button:not(:disabled),
@@ -138,73 +137,52 @@
 
   /* customer componet  */
   .section {
-    @apply w-full px-2 md:px-4;
+    @apply w-full px-4 lg:px-6 py-10 md:py-16 lg:py-20  xl:py-24 ;
   }
 
   .wrapper {
     @apply mx-auto w-full max-w-7xl;
   }
 
-
-  /* typography  */
-
-  .heading-1 {
-    @apply font-heading text-[68px] font-extrabold
+  h1 {
+    @apply font-heading text-[40px] leading-tight font-extrabold tracking-[-0.03em] md:text-[48px] lg:text-[56px] xl:text-[68px];
   }
 
-  .heading-2 {
-    @apply font-heading text-[56px] font-extrabold
+  h2 {
+    @apply font-heading text-[32px] leading-tight font-extrabold tracking-[-0.025em] md:text-[40px] lg:text-[48px] xl:text-[56px];
   }
 
-  .heading-3 {
-    @apply font-heading text-[48px] font-extrabold
+  h3 {
+    @apply font-heading text-[24px] leading-tight font-bold tracking-[-0.02em] md:text-[28px] lg:text-[32px] xl:text-[48px];
   }
 
-  .heading-4 {
-    @apply font-heading text-[40px] font-extrabold
+  h4 {
+    @apply font-heading text-[20px] leading-tight font-bold tracking-[-0.015em] md:text-[24px] lg:text-[28px] xl:text-[32px];
   }
 
-  .heading-5 {
-    @apply font-heading text-[36px] font-bold
+  h5 {
+    @apply font-heading text-[18px] leading-tight font-bold tracking-tight md:text-[20px] lg:text-[22px] xl:text-[24px];
   }
 
-  .heading-6 {
-    @apply font-heading text-[24px] font-bold
+  h6 {
+    @apply font-heading text-[16px] leading-tight font-bold tracking-tight md:text-[18px] lg:text-[20px] xl:text-[20px];
   }
 
-  .heading-7 {
-    @apply font-heading text-[20px] font-extrabold
+  p {
+    @apply font-sans text-[14px] leading-relaxed text-muted md:text-[15px] lg:text-[16px];
   }
-
-  .heading-8{
-    @apply font-heading text-[16px] font-bold
-  }
-
-  .heading-9 {
-    @apply font-heading text-[14px] font-bold
-  }
-
-  .heading-10{
-    @apply font-heading text-[12px] font-bold
-  }
-
-
-  .body-1{
-    @apply font-sans text-muted text-[16px]
-  }
-
-  .body-2{
-    @apply  font-sans text-muted text-[14px]
-  }
-
-  .body-3{
-    @apply  font-sans text-muted text-[12px]
-  }
-
 
   /* grids  */
 
-  .grid-60by40{}
-  .grid-40by60{}
-  
+  .grid-50by50 {
+    @apply grid grid-cols-1 lg:grid-cols-2;
+  }
+
+  .grid-60by40 {
+    @apply grid grid-cols-1 lg:grid-cols-[60%_40%];
+  }
+
+  .grid-40by60 {
+    @apply grid grid-cols-1 lg:grid-cols-[40%_60%];
+  }
 }

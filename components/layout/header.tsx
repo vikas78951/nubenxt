@@ -12,7 +12,7 @@ export default function Header() {
     <div className="flex ">
       <header className="w-full py-4 lg:py-6" >
 
-        <Section>
+        <Section className="py-0">
 
           <Wrapper className="flex justify-between items-center">
             <Logo />
