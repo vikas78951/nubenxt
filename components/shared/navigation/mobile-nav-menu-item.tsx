@@ -23,7 +23,7 @@ function MobileNavMenuItem({
                 render={(
                     <div>
                         <Link className={cn(
-                            "relative font-heading text-2xl font-semibold  capitalize text-muted",
+                            "relative font-heading text-2xl font-semibold  capitalize text-muted-foreground",
                             active && "text-primary font-medium"
                         )} href={href || '/'}>{name}</Link>
                         {active && (

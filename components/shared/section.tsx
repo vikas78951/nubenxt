@@ -23,8 +23,8 @@ const Section = ({
 }: SectionProps) => {
     return (
         <section className={cn(
+            'section',
             className,
-            'section'
         )}>{children}</section>
     )
 }

@@ -25,7 +25,7 @@ const markerTitleVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-muted",
+        default: "text-muted-foreground",
         primary: "text-primary",
         mix: "text-primary",
       },
@@ -54,9 +54,9 @@ const markerDescriptionVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-muted",
-        primary: "text-muted",
-        mix: "text-muted",
+        default: "text-muted-foreground",
+        primary: "text-muted-foreground",
+        mix: "text-muted-foreground",
       },
     },
     defaultVariants: {

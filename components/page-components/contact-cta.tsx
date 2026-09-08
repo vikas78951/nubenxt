@@ -8,7 +8,7 @@ import { contactData } from '@/lib/data/contact.data'
 
 const Contact = () => {
     return (
-        <Section className='bg-black'>
+        <Section className='bg-black xl'>
             <Wrapper>
                 <div className=''>
                     <div className='max-w-[800] text-center mx-auto'>

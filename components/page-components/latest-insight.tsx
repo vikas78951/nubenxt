@@ -5,7 +5,7 @@ import { InsightsDataProps, insightsData } from '@/lib/data/page.data'
 import InsightList from '../list/insight-list'
 const LatestInsight = () => {
     return (
-        <Section>
+        <Section className='lg'>
             <Wrapper>
                 <div>
                     <Marker title='05' description='Insight' variant={'mix'} />

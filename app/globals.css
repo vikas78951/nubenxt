@@ -15,8 +15,8 @@
   --primary-foreground: oklch(0.14 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.97 0 0);
-  --muted: oklch(0.44 0.01 285.87);
-  --muted-foreground: oklch(0.44 0.01 285.87);
+  --muted: oklch(0.43 0.01 0);
+  --muted-foreground: oklch(0.71 0.01 286.28);
   --accent: oklch(0.5 0.16 142.63);
   --accent-foreground: oklch(64.212% 0.18112 145.682);
   --destructive: oklch(0.577 0.245 27.325);
@@ -50,8 +50,8 @@
   --primary-foreground: oklch(0% 0 0);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.24 0 0);
-  --muted: oklch(0.71 0.01 286.28);
-  --muted-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.43 0.01 0);
+  --muted-foreground: oklch(0.71 0.01 286.28);
   --accent: oklch(0.5 0.16 142.63);
   --accent-foreground: oklch(64.212% 0.18112 145.682);
   --destructive: oklch(0.704 0.191 22.216);
@@ -137,7 +137,14 @@
 
   /* customer componet  */
   .section {
-    @apply w-full px-4 lg:px-6 py-10 md:py-16 lg:py-20  xl:py-24 ;
+    @apply w-full px-4 py-10 md:py-16 lg:px-6 lg:py-20 xl:py-24;
+  }
+  .section.lg {
+    @apply w-full px-4 py-16 md:py-20 lg:px-6 lg:py-24 xl:py-30;
+  }
+
+  .section.xl {
+    @apply w-full px-4 py-24 md:py-28 lg:px-6 lg:py-36 xl:py-40;
   }
 
   .wrapper {
@@ -169,7 +176,7 @@
   }
 
   p {
-    @apply font-sans text-[14px] leading-relaxed text-muted md:text-[15px] lg:text-[16px];
+    @apply font-sans text-[14px] leading-relaxed text-muted-foreground md:text-[15px] lg:text-[16px];
   }
 
   /* grids  */

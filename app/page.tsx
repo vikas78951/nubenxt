@@ -5,17 +5,18 @@ import WhyUs from "@/components/page-components/why-us"
 import Techonology from "@/components/page-components/techonology"
 import LatestInsight from "@/components/page-components/latest-insight"
 import Contact from "@/components/page-components/contact-cta"
+import Footer from "@/components/layout/footer"
 
 export default function Page() {
   return (
     <div className="">
-      <Atf/>
-      <WhatWeDo/>
-      <OurServices/>
-      <WhyUs/>
+      <Atf />
+      <WhatWeDo />
+      <OurServices />
+      <WhyUs />
       <Techonology />
-      <LatestInsight/>
-      <Contact/>
+      <LatestInsight />
+      <Footer />
     </div>
   )
 }
