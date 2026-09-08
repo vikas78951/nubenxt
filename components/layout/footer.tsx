@@ -43,7 +43,7 @@ const Footer = () => {
                             © 2025 NubeNxt. All engineered rights reserved.
                         </p>
                         <div>
-                            <a className='font-bold flex gap-4 items-center hover:text-primary text-xs text-background! dark:text-foreground'  href={`mailto:${contactData.mail} `} target='_blank'>
+                            <a className='font-bold flex gap-4 items-center text-xs text-background! dark:text-foreground! hover:text-primary!dark:hover:text-primary! '  href={`mailto:${contactData.mail} `} target='_blank'>
                                 {contactData.mail}
                                 <ArrowRight size={16} className='text-primary' />
 
