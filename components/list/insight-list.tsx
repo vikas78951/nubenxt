@@ -14,7 +14,7 @@ const InsightList = ({ insight }: { insight: InsightsDataProps }) => {
 
             {/* Content */}
             <div className="min-w-0 flex-1">
-                <Badge variant={'ghost'} className="text-xs p-0 mb-2 text-primary font-bold">{category}</Badge>
+                <Badge variant={'ghost'}   className="text-xs p-0 mb-2 text-primary font-bold">{category}</Badge>
                 <h5>{title}</h5>
             </div>
 

@@ -2,15 +2,12 @@ import { FeaturedDataProps } from "@/lib/data/page.data"
 import {
   Card,
 } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export const FeatureCard = ({ feature }: { feature: FeaturedDataProps }) => {
   const { id, title, description } = feature;
 
   return (
-    <Card className="flex flex-col gap-6 p-4 sm:p-5 md:p-4 lg:flex-row lg:items-center lg:gap-8 lg:p-6 xl:p-8 rounded-sm">
+    <Card key={id} className="flex flex-col gap-6 p-4 sm:p-5 md:p-4 lg:flex-row lg:items-center lg:gap-8 lg:p-6 xl:p-8 rounded-sm">
 
       {/* Content */}
       <div className="min-w-0 flex-1">

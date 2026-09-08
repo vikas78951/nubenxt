@@ -12,7 +12,9 @@ const Techonology = () => {
             <Wrapper>
                 <div>
                     <Marker title='04' description='Technology' variant={'mix'} />
-                    <h4 className='pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4'>Technology should work for you.</h4>
+                    <h4 className='pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4'>Built with the right technology.</h4>
+                    <p>
+                        We use modern, proven technologies to build fast, reliable and maintainable websites and software. Our systems are engineered in structured layers for scale.                    </p>
                 </div>
                 <div className='flex flex-wrap gap-4 xl:gap-6 mt-6 md:mt-10 lg:mt-14 xl:mt-16'>
                     {

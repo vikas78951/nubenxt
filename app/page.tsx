@@ -4,7 +4,7 @@ import WhatWeDo from "@/components/page-components/what-we-do"
 import WhyUs from "@/components/page-components/why-us"
 import Techonology from "@/components/page-components/techonology"
 import LatestInsight from "@/components/page-components/latest-insight"
-
+import Contact from "@/components/page-components/contact-cta"
 
 export default function Page() {
   return (
@@ -15,6 +15,7 @@ export default function Page() {
       <WhyUs/>
       <Techonology />
       <LatestInsight/>
+      <Contact/>
     </div>
   )
 }
