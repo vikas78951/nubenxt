@@ -50,7 +50,7 @@ const markerLineVariants = cva("flex-1 max-w-10", {
 })
 
 const markerDescriptionVariants = cva(
-  "font-sans uppercase font-semibold",
+  "font-sans uppercase font-semibold leading-tight ",
   {
     variants: {
       variant: {

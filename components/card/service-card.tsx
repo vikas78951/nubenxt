@@ -60,6 +60,7 @@ export const ServiceCard = ({ service }: { service: ServiceDataProps }) => {
             height={240}
             className="h-auto w-full"
             sizes="(max-width: 1024px) 100vw, 38vw"
+            loading="lazy"
           />
         </div>
       </div>

@@ -129,3 +129,29 @@ export const technologiesData = [
 ];
 
 export type TechonologyDataProps = (typeof technologiesData)[number]
+
+export const insightsData = [
+  {
+    id: "1",
+    category: "WEBSITE",
+    title: "Website Checklist for a Premium Business",
+    description: "A practical checklist to make sure your business website looks professional, builds trust, and turns visitors into enquiries.",
+    readMoreLink: "#"
+  },
+  {
+    id: "2",
+    category: "BUYING GUIDE",
+    title: "How to Choose CCTV for Your Business",
+    description: "A practical guide to choosing the right security system for your business.",
+    readMoreLink: "#"
+  },
+  {
+    id: "3",
+    category: "PROJECT INSIGHT",
+    title: "How We Approach Building Business Websites",
+    description: "A look at our process, from understanding your business to delivering the final product.",
+    readMoreLink: "#"
+  }
+];
+
+export type InsightsDataProps = (typeof insightsData)[number]

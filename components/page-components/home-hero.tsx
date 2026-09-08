@@ -32,7 +32,7 @@ const Atf = () => {
                             height={'520'}
                             width={'560'}
                             className='rounded-lg'
-
+                            loading='eager'
                         />
                     </div>
                 </div>
