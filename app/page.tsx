@@ -1,4 +1,4 @@
-import Atf from "@/components/page-components/home-hero"
+import Atf from "@/components/page-components/hero/home-hero"
 import OurServices from "@/components/page-components/our-services"
 import WhatWeDo from "@/components/page-components/what-we-do"
 import WhyUs from "@/components/page-components/why-us"

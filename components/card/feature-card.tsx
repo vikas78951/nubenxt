@@ -4,10 +4,10 @@ import {
 } from "@/components/ui/card";
 
 export const FeatureCard = ({ feature }: { feature: FeaturedDataProps }) => {
-  const { id, title, description } = feature;
+  const { title, description } = feature;
 
   return (
-    <Card key={id} className="flex flex-col gap-6 p-4 sm:p-5 md:p-4 lg:flex-row lg:items-center lg:gap-8 lg:p-6 xl:p-8 rounded-sm">
+    <Card className="flex flex-col gap-6 p-4 sm:p-5 md:p-4 lg:flex-row lg:items-center lg:gap-8 lg:p-6 xl:p-8 rounded-sm">
 
       {/* Content */}
       <div className="min-w-0 flex-1">

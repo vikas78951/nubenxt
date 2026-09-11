@@ -51,7 +51,7 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE CAMERA SERVICES",
     ctaLink: "#",
-    img: '/images/browser-graphic.png'
+    img: '/images/camera-graphic.png'
 
   }
 ];
@@ -62,22 +62,22 @@ export type ServiceDataProps = (typeof servicesData)[number]
 
 export const featuresData = [
   {
-    id: "1",
+    id: '01',
     title: "Built for Your Needs",
     description: "We take the time to understand what you need before recommending or building anything."
   },
   {
-    id: "2",
+    id: '02',
     title: "Quality First",
     description: "We use reliable technology and proven methods to deliver work that lasts."
   },
   {
-    id: "3",
+    id: '03',
     title: "From Setup to Support",
     description: "We handle the full process from initial setup through to ongoing maintenance and support."
   },
   {
-    id: "4",
+    id: '04',
     title: "One Technology Partner",
     description: "Web, computers and cameras — one point of contact for all your technology needs."
   }

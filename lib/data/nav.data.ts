@@ -1,6 +1,6 @@
 
 import { NavComponent, NavItem } from "../types/nav.type"
-
+import { Service } from "../types/shared.type";
 import {
   Smartphone,
   Code2,
@@ -14,63 +14,72 @@ import {
   ImageIcon
 } from "lucide-react"
 
-
+ 
 export const service: NavComponent[] = [
   {
     title: "HTML Emailers",
-    href: "/services/html-emailers",
-    description: "Professional responsive emails designed for engaging email campaigns.",
+    href: `/services/${Service.HTML_EMAILER}`,
+    description:
+      "Professional responsive emails designed for engaging email campaigns.",
     icon: Mail,
   },
   {
     title: "Landing Pages",
-    href: "/services/landing-pages",
-    description: "High-converting landing pages designed to turn visitors into customers.",
+    href: `/services/${Service.LANDING_PAGE}`,
+    description:
+      "High-converting landing pages designed to turn visitors into customers.",
     icon: Monitor,
   },
   {
     title: "SEO & Marketing",
-    href: "/services/seo-marketing",
-    description: "Boost visibility and traffic with effective SEO and digital marketing strategies.",
+    href: `/services/${Service.SEO_MARKETING}`,
+    description:
+      "Boost visibility and traffic with effective SEO and digital marketing strategies.",
     icon: Search,
   },
   {
     title: "Co-Brand Images",
-    href: "/services/co-brand-images",
-    description: "Custom campaign images designed to showcase your brand and partnerships.",
+    href: `/services/${Service.CO_BRAND_IMAGES}`,
+    description:
+      "Custom campaign images designed to showcase your brand and partnerships.",
     icon: ImageIcon,
   },
   {
     title: "AI Agents",
-    href: "/services/ai-agents",
-    description: "Intelligent AI automation solutions built to streamline tasks and workflows.",
+    href: `/services/${Service.AI_AGENTS}`,
+    description:
+      "Intelligent AI automation solutions built to streamline tasks and workflows.",
     icon: Zap,
   },
   {
     title: "Mobile Apps",
-    href: "/services/mobile-apps",
-    description: "Mobile applications built to deliver seamless experiences on iOS and Android.",
+    href: `/services/${Service.MOBILE_APPS}`,
+    description:
+      "Mobile applications built to deliver seamless experiences on iOS and Android.",
     icon: Smartphone,
   },
   {
     title: "Website Development",
-    href: "/services/web-development",
-    description: "Modern custom websites designed to build trust and showcase your brand.",
+    href: `/services/${Service.WEB_DEVELOPMENT}`,
+    description:
+      "Modern custom websites designed to build trust and showcase your brand.",
     icon: Code2,
   },
   {
     title: "Software Development",
-    href: "/services/software-development",
-    description: "Enterprise SaaS platforms and custom software built around your business needs.",
+    href: `/services/${Service.SOFTWARE_DEVELOPMENT}`,
+    description:
+      "Enterprise SaaS platforms and custom software built around your business needs.",
     icon: Terminal,
   },
   {
     title: "Ecommerce Website",
-    href: "/services/ecommerce-website",
-    description: "Full-featured ecommerce stores designed to help your business sell online.",
+    href: `/services/${Service.ECOMMERCE_WEBSITE}`,
+    description:
+      "Full-featured ecommerce stores designed to help your business sell online.",
     icon: ShoppingCart,
   },
-];
+]
 
 
 export const NAV_DATA: NavItem[] = [
@@ -110,7 +119,7 @@ export const NAV_MOBILE_DATA: NavItem[] = [
   },
   {
     name: "services",
-    href: "/service",
+    href: `/services/${Service.LANDING_PAGE}`,
     isHyperlink: true,
     icon: Link,
   },

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { ArrowRight, ArrowRightIcon, Brackets, Carrot, ChevronRight, Pointer } from 'lucide-react'
-import Wrapper from '../shared/wrapper'
-import Section from '../shared/section'
-import { Marker } from '../markers/marker'
-import { Button } from '../ui/button'
+import Wrapper from '../../shared/wrapper'
+import Section from '../../shared/section'
+import { Marker } from '../../markers/marker'
+import { Button } from '../../ui/button'
 
 const Atf = () => {
     return (

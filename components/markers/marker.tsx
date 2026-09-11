@@ -21,7 +21,7 @@ const markerVariants = cva("flex items-center gap-2", {
 })
 
 const markerTitleVariants = cva(
-  "shrink-0 font-semibold",
+  "shrink-0 font-semibold uppercase",
   {
     variants: {
       variant: {
