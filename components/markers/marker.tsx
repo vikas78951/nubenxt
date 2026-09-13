@@ -20,23 +20,20 @@ const markerVariants = cva("flex items-center gap-2", {
   },
 })
 
-const markerTitleVariants = cva(
-  "shrink-0 font-semibold uppercase",
-  {
-    variants: {
-      variant: {
-        default: "text-muted-foreground",
-        primary: "text-primary",
-        mix: "text-primary",
-      },
+const markerTitleVariants = cva("shrink-0 font-semibold uppercase", {
+  variants: {
+    variant: {
+      default: "text-muted-foreground",
+      primary: "text-primary",
+      mix: "text-primary",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+})
 
-const markerLineVariants = cva("flex-1 max-w-10", {
+const markerLineVariants = cva("max-w-10 flex-1", {
   variants: {
     variant: {
       default: "border",
@@ -50,7 +47,7 @@ const markerLineVariants = cva("flex-1 max-w-10", {
 })
 
 const markerDescriptionVariants = cva(
-  "font-sans uppercase font-semibold leading-tight ",
+  "font-sans leading-tight line-height-[12px] font-semibold uppercase",
   {
     variants: {
       variant: {
@@ -78,7 +75,6 @@ const markerSizeVariants = cva("", {
   },
 })
 
-
 function Marker({
   className,
   variant = "default",
@@ -92,14 +88,24 @@ function Marker({
 } & VariantProps<typeof markerVariants>) {
   return (
     <div className={cn(markerVariants({ variant, size }), className)}>
-      <span className={cn(markerTitleVariants({ variant }), markerSizeVariants({ size }))}>
+      <span
+        className={cn(
+          markerTitleVariants({ variant }),
+          markerSizeVariants({ size })
+        )}
+      >
         {title}
       </span>
 
       <hr className={cn(markerLineVariants({ variant }))} />
 
       {description && (
-        <p className={cn(markerDescriptionVariants({ variant }), markerSizeVariants({ size }))}>
+        <p
+          className={cn(
+            markerDescriptionVariants({ variant }),
+            markerSizeVariants({ size })
+          )}
+        >
           {description}
         </p>
       )}

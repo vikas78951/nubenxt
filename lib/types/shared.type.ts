@@ -1,9 +1,6 @@
-
-
-
 export interface BaseProps {
-    className?:string,
-    children? : React.ReactNode
+  className?: string
+  children?: React.ReactNode
 }
 
 export enum Service {
@@ -16,4 +13,20 @@ export enum Service {
   WEB_DEVELOPMENT = "web-development",
   SOFTWARE_DEVELOPMENT = "software-development",
   ECOMMERCE_WEBSITE = "ecommerce-website",
+}
+
+export interface CardContentProps {
+  cardNumber?: number
+  type?: "horizontal" | "vertical"
+  title: string
+  description: string
+  image?: {
+    src: string
+    alt: string
+    height: number
+    width: number
+  }
+  tags?: string[]
+  category?: string
+  href?: string
 }
