@@ -10,7 +10,7 @@ export const NumberFeatureCard = ({
   return (
     <Card
       key={id}
-      className="flex flex-col gap-6 rounded-sm border-0 border-b bg-background p-4 ring-0 sm:p-5 md:p-4 lg:flex-row lg:items-center lg:gap-8 lg:p-6 xl:p-8"
+      className="flex flex-col gap-6 rounded-none border-0 border-b bg-background p-0 py-4 ring-0 sm:py-5 md:py-4 lg:flex-row lg:items-center lg:gap-8 lg:py-6 xl:py-8"
     >
       {/* Content */}
       <div className="min-w-0 flex-1">

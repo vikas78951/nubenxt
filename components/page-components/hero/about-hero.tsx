@@ -1,12 +1,5 @@
 import Image from "next/image"
-import {
-  ArrowRight,
-  ArrowRightIcon,
-  Brackets,
-  Carrot,
-  ChevronRight,
-  Pointer,
-} from "lucide-react"
+import { ArrowRight, ChevronRight } from "lucide-react"
 import Wrapper from "../../shared/wrapper"
 import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
@@ -18,16 +11,14 @@ const Atf = () => {
       <Wrapper>
         <div className="grid-60by40">
           <div className="max-w-2xl">
-            <Marker
-              title="TECHNOLOGY SERVICES"
-              variant={"primary"}
-              className="mb-6"
-            />
-            <h1>Technology that makes your business look the part</h1>
+            <Marker title="ABOUT US" variant={"primary"} className="mb-6" />
+            <h1>Technology is only useful when it makes something better.</h1>
             <p className="mt-6 text-lg">
-              NubeNxt provides professional web development, computer solutions,
-              and camera security services. We build, supply, install and
-              maintain the technology your business relies on.
+              NubeNxt is a technology studio built around 6+ years of hands-on
+              professional experience in software, digital products and business
+              technology. We build practical digital solutions that help
+              businesses work better, communicate clearly and grow with
+              confidence.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -48,7 +39,7 @@ const Atf = () => {
           </div>
           <div className="hidden lg:block">
             <Image
-              src="/images/abstract-render.png"
+              src="/images/hero-right-media.png"
               alt="atf-abstract-render"
               height={"520"}
               width={"560"}

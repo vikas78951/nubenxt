@@ -4,6 +4,6 @@
 
 - [x] Home
 - [x] Service
-- [ ] Work
+- [x] Work
 - [ ] About
 - [ ] Contact
