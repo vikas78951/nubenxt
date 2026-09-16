@@ -2,8 +2,9 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/layout/theme-provider"
-import { cn } from "@/lib/utils";
-import Header from "@/components/layout/header";
+import { cn } from "@/lib/utils"
+import Header from "@/components/layout/header"
+import { Toaster } from "@/components/ui/sonner"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -38,10 +39,12 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <Header/>
+          <Header />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
   )
 }
+
