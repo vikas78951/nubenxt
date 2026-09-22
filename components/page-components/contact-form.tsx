@@ -145,45 +145,35 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      // Simulate form submission delay
-      await new Promise((resolve) => setTimeout(resolve, 800))
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit inquiry")
+      }
 
       toast.success("Inquiry submitted successfully!", {
-        description: (
-          <div className="mt-2 flex flex-col gap-1 text-xs">
-            <p>
-              <strong className="text-foreground">Name:</strong> {formData.name}
-            </p>
-            <p>
-              <strong className="text-foreground">Business:</strong>{" "}
-              {formData.businessName}
-            </p>
-            <p>
-              <strong className="text-foreground">Email:</strong>{" "}
-              {formData.email}
-            </p>
-            {formData.phone && (
-              <p>
-                <strong className="text-foreground">Phone:</strong>{" "}
-                {formData.phone}
-              </p>
-            )}
-            {formData.service && (
-              <p>
-                <strong className="text-foreground">Service:</strong>{" "}
-                {formData.service}
-              </p>
-            )}
-          </div>
-        ),
+        description:
+          "We've received your inquiry and sent a confirmation to your email. Our team will get back to you within 24 hours.",
         position: "bottom-right",
       })
 
       setFormData(initialValues)
       setErrors({})
       setTouched({})
-    } catch {
-      toast.error("An error occurred while submitting. Please try again.")
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "An error occurred while submitting. Please try again."
+      toast.error(message)
     } finally {
       setIsSubmitting(false)
     }
@@ -388,7 +378,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="flex gap-3 pt-6 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center">
         <Button
           type="submit"
           variant="default"

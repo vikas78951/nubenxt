@@ -30,7 +30,12 @@ function isTypingTarget(target: EventTarget | null) {
     target.isContentEditable ||
     target.tagName === "INPUT" ||
     target.tagName === "TEXTAREA" ||
-    target.tagName === "SELECT"
+    target.tagName === "SELECT" ||
+    Boolean(
+      target.closest(
+        "input, textarea, select, [contenteditable='true'], [role='combobox'], [role='textbox'], [role='listbox']"
+      )
+    )
   )
 }
 
@@ -39,6 +44,14 @@ function ThemeHotkey() {
 
   React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
+      if (!event || typeof event.key !== "string") {
+        return
+      }
+
+      if (isTypingTarget(event.target)) {
+        return
+      }
+
       if (event.defaultPrevented || event.repeat) {
         return
       }
@@ -48,10 +61,6 @@ function ThemeHotkey() {
       }
 
       if (event.key.toLowerCase() !== "d") {
-        return
-      }
-
-      if (isTypingTarget(event.target)) {
         return
       }
 
