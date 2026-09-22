@@ -25,7 +25,7 @@ const Atf = () => {
             />
             <h1>Technology that makes your business look the part</h1>
             <p className="mt-6 text-lg">
-              NubeNxt provides professional web development, computer solutions,
+              Craftorus provides professional web development, computer solutions,
               and camera security services. We build, supply, install and
               maintain the technology your business relies on.
             </p>

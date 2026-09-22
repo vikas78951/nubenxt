@@ -90,8 +90,8 @@ export const NAV_DATA: NavItem[] = [
   },
   {
     name: "services",
-    isHyperlink: false,
-    components: service,
+    href: "/services",
+    isHyperlink: true,
   },
   {
     name: "work",
@@ -119,7 +119,7 @@ export const NAV_MOBILE_DATA: NavItem[] = [
   },
   {
     name: "services",
-    href: `/services/${Service.LANDING_PAGE}`,
+    href: "/services",
     isHyperlink: true,
     icon: Link,
   },

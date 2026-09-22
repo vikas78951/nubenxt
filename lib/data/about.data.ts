@@ -1,9 +1,9 @@
 export const aboutData = {
   founder: {
-    tag: "07 — THE PERSON BEHIND NUBENXT",
+    tag: "07 — THE PERSON BEHIND CRAFTORUS",
     title: "Built by an engineer who understands the work.",
     description:
-      "NubeNxt is built from hands-on experience rather than a traditional agency model. The work is driven by engineering experience, product thinking and a practical understanding of how technology is used inside real businesses.",
+      "Craftorus is built from hands-on experience rather than a traditional agency model. The work is driven by engineering experience, product thinking and a practical understanding of how technology is used inside real businesses.",
     name: "Vikas Singh",
     role: "Founder & Technology Lead",
     experience: "6+ years of professional experience",
@@ -21,7 +21,7 @@ export const experienceData = {
   tag: "EXPERIENCE",
   title: "6+ years of building and solving.",
   description:
-    "NubeNxt is backed by more than six years of professional experience across software development, digital products, web technologies and business systems.",
+    "Craftorus is backed by more than six years of professional experience across software development, digital products, web technologies and business systems.",
   items: [
     {
       id: "01",

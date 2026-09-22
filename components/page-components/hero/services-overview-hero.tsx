@@ -1,0 +1,64 @@
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, ChevronRight } from "lucide-react"
+import Wrapper from "../../shared/wrapper"
+import Section from "../../shared/section"
+import { Marker } from "../../markers/marker"
+import { Button } from "../../ui/button"
+
+const ServicesOverviewHero = () => {
+  return (
+    <Section>
+      <Wrapper>
+        <div className="grid-60by40">
+          <div className="max-w-2xl">
+            <Marker
+              title="OUR SERVICES & EXPERTISE"
+              variant={"primary"}
+              className="mb-6"
+            />
+            <h1>Engineered digital solutions and business technology.</h1>
+            <p className="mt-6 text-lg">
+              Craftorus provides end-to-end technology services across your
+              entire operational footprint. From modern websites, custom software,
+              and AI automation to business computer infrastructure and commercial
+              camera security systems — we engineer solutions that work seamlessly.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link href="/contact">
+                <Button
+                  variant={"default"}
+                  size="lg"
+                  className={"w-full font-bold uppercase sm:w-auto"}
+                >
+                  Start a Project <ArrowRight />
+                </Button>
+              </Link>
+              <Link href="/work">
+                <Button
+                  variant={"outline"}
+                  size="lg"
+                  className={"w-full font-bold uppercase sm:w-auto"}
+                >
+                  View Our Work <ChevronRight />
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <Image
+              src="/images/services/web-development-desktop-2.png"
+              alt="Craftorus Services and Capabilities"
+              height={520}
+              width={560}
+              className="rounded-lg object-cover"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </Wrapper>
+    </Section>
+  )
+}
+
+export default ServicesOverviewHero

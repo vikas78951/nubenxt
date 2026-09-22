@@ -5,17 +5,17 @@ export const footerLink = [
   {
     title: "SERVICES",
     links: [
-      { label: "Website", href: "#" },
-      { label: "Computers", href: "#" },
-      { label: "Cameras", href: "#" }
+      { label: "Website", href: "/services/web-development" },
+      { label: "Computers", href: "/services" },
+      { label: "Cameras", href: "/services" }
     ]
   },
   {
     title: "COMPANY",
     links: [
-      { label: "Work", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" }
+      { label: "Work", href: "/work" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" }
     ]
   },
   {

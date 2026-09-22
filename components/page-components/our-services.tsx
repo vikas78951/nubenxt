@@ -12,7 +12,7 @@ const OurServices = () => {
                     <Marker title='02' description='Services' variant={'mix'} />
                     <h4 className='pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4'>Our Services</h4>
                     <p>
-                        From your website to the technology around your business, NubeNxt provides the services you need to build, operate and maintain it.
+                        From your website to the technology around your business, Craftorus provides the services you need to build, operate and maintain it.
                     </p>
                 </div>
                 <div className='flex flex-col gap-10 md:gap-14 lg:gap-16 xl:gap-20 mt-6 md:mt-10 lg:mt-14 xl:mt-16'>

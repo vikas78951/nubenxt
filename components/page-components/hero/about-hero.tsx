@@ -14,7 +14,7 @@ const Atf = () => {
             <Marker title="ABOUT US" variant={"primary"} className="mb-6" />
             <h1>Technology is only useful when it makes something better.</h1>
             <p className="mt-6 text-lg">
-              NubeNxt is a technology studio built around 6+ years of hands-on
+              Craftorus is a technology studio built around 6+ years of hands-on
               professional experience in software, digital products and business
               technology. We build practical digital solutions that help
               businesses work better, communicate clearly and grow with

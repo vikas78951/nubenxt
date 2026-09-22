@@ -1,11 +1,11 @@
-# NubeNxt Website PRD
+# Craftorus Website PRD
 
 ## 1. Objectives
 
-- Position NubeNxt as a premium technology service provider.
-- Clearly explain what NubeNxt does within a few seconds.
+- Position Craftorus as a premium technology service provider.
+- Clearly explain what Craftorus does within a few seconds.
 - Generate qualified business enquiries.
-- Showcase NubeNxt's website work through prototypes/projects.
+- Showcase Craftorus's website work through prototypes/projects.
 - Demonstrate premium design, readability and execution quality.
 
 ## 2. Target Audience
@@ -92,7 +92,7 @@ Premium positioning + professional business presence + high-value services + poo
 ## 8. About Page
 
 - Hero
-- About NubeNxt
+- About Craftorus
 - Our Approach
 - CTA
 

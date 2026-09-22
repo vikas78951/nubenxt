@@ -21,7 +21,7 @@ export const servicesData = [
   {
     id: "02",
     title: "Computers & IT",
-    description: "We supply, configure, upgrade, repair and maintain computers and related hardware. Whether you need a new system, a replacement, an upgrade or ongoing technical support, NabeNex can help with the setup and maintenance.",
+    description: "We supply, configure, upgrade, repair and maintain computers and related hardware. Whether you need a new system, a replacement, an upgrade or ongoing technical support, Craftorus can help with the setup and maintenance.",
     tags: [
       "Computer Sales",
       "Computer Setup",
@@ -39,7 +39,7 @@ export const servicesData = [
   {
     id: "03",
     title: "Cameras & Security",
-    description: "We supply and install camera and security systems for monitoring your premises. From selecting the right equipment to installation, configuration, maintenance and support, NabeNex provides the complete camera solution.",
+    description: "We supply and install camera and security systems for monitoring your premises. From selecting the right equipment to installation, configuration, maintenance and support, Craftorus provides the complete camera solution.",
     tags: [
       "CCTV Cameras",
       "Camera Sales",

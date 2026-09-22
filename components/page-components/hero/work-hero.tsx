@@ -19,7 +19,7 @@ const Atf = () => {
             <h1>Work built around real business needs.</h1>
             <p className="mt-6 text-lg">
               Explore selected digital experiences, technology projects and
-              business solutions built by NubeNxt. From websites and digital
+              business solutions built by Craftorus. From websites and digital
               products to security and computer infrastructure, our work is
               focused on making businesses work better.
             </p>

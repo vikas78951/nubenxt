@@ -9,7 +9,7 @@ const CopyRight = () => {
             <Wrapper className=' '>
                 <div className='grid-50by50'>
                     <p>
-                        © 2025 NubeNxt. All engineered rights reserved.
+                        © 2025 Craftorus. All engineered rights reserved.
                     </p>
                     <div>
                         <a href="">{contactData.mail}</a>

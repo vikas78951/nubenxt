@@ -12,18 +12,18 @@ const Caliber = () => {
             Built from experience, not from a business plan.
           </h4>
           <p className="max-w-2xl">
-            NubeNxt started with a simple observation businesses often don't
+            Craftorus started with a simple observation businesses often don't
             need more technology. They need the right technology, implemented
             properly.
           </p>
         </div>
 
         <div className="mt-4 md:mt-6 lg:mt-8 xl:mt-10">
-          Before NubeNxt, the work was about building software, solving
+          Before Craftorus, the work was about building software, solving
           engineering problems and working with real products in real business
           environments. Over the years, that experience shaped a practical
           approach to technology — understand the problem first, choose the
-          right solution, and build it properly. NubeNxt brings that experience
+          right solution, and build it properly. Craftorus brings that experience
           into an independent technology studio focused on helping businesses
           improve their digital presence, software and everyday technology. The
           business may be new. The experience behind the work is not.
