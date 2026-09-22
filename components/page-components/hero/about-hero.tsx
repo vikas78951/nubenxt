@@ -49,14 +49,16 @@ const Atf = () => {
             </div>
           </div>
           <div className="hidden lg:block">
-            <Image
-              src="/images/hero-right-media.png"
-              alt="Craftorus Experience and Caliber"
-              height={520}
-              width={560}
-              className="rounded-lg object-cover"
-              loading="eager"
-            />
+            <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
+              <Image
+                src="/images/hero-right-media.png"
+                alt="Craftorus Experience and Caliber"
+                height={520}
+                width={560}
+                className="h-auto w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </Wrapper>

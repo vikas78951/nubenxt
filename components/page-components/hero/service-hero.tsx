@@ -39,13 +39,13 @@ const Atf = ({
                             </Link>
                         </div>
                     </div>
-                    <div className='mt-12 w-full'>
+                    <div className='mt-12 w-full overflow-hidden rounded-2xl border border-border/40 shadow-xl'>
                         <Image
                             src={content.imageMobileUrl}
                             alt={content.title}
                             width={328}
                             height={463}
-                            className='block w-full rounded-lg sm:hidden'
+                            className='block w-full rounded-2xl sm:hidden'
                             priority
                         />
                         <Image
@@ -53,7 +53,7 @@ const Atf = ({
                             alt={content.title}
                             width={1400}
                             height={550}
-                            className='hidden w-full rounded-lg sm:block'
+                            className='hidden w-full rounded-2xl sm:block'
                             priority
                         />
                     </div>

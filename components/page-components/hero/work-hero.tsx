@@ -41,14 +41,16 @@ const Atf = () => {
             </div>
           </div>
           <div className="hidden lg:block">
-            <Image
-              src="/images/services/hero-mobile-graphite.png"
-              alt="atf-abstract-render"
-              height={"520"}
-              width={"560"}
-              className="rounded-lg"
-              loading="eager"
-            />
+            <div className="overflow-hidden rounded-2xl border border-border/40 shadow-xl">
+              <Image
+                src="/images/services/hero-mobile-graphite.png"
+                alt="atf-abstract-render"
+                height={520}
+                width={560}
+                className="h-auto w-full rounded-2xl object-cover"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </Wrapper>

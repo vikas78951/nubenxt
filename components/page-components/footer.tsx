@@ -12,7 +12,7 @@ export function Footer() {
       <Wrapper>
         <div className="grid-60by40">
           <div className="">
-            <Logo className="text-background dark:text-foreground" />
+            <Logo className="text-white" />
             <p className="mt-4 max-w-[410] text-sm md:mt-4 lg:mt-5 xl:mt-6">
               Architectural technology and digital infrastructure constructed
               with absolute precision for elite clinical, spatial, and luxury
