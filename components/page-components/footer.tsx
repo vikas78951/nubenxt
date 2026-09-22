@@ -36,8 +36,7 @@ export function Footer() {
           <div>
             <a
               className="hover:text-primary!dark:hover:text-primary! flex items-center gap-4 text-xs font-bold text-background! dark:text-foreground!"
-              href={`mailto:${contactData.mail} `}
-              target="_blank"
+              href={`mailto:${contactData.mail}`}
             >
               {contactData.mail}
               <ArrowRight size={16} className="text-primary" />

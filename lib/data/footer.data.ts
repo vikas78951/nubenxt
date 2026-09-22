@@ -13,7 +13,6 @@ export const footerLink = [
   {
     title: "COMPANY",
     links: [
-      { label: "Work", href: "/work" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" }
     ]
