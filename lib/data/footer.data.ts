@@ -21,8 +21,8 @@ export const footerLink = [
   {
     title: "LEGAL",
     links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms", href: "#" }
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms" }
     ]
   }
 ]

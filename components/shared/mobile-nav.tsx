@@ -19,8 +19,9 @@ import {
     NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import MobileNavMenuItem from "@/components/shared/navigation/mobile-nav-menu-item"
-import { ArrowRight, Menu, PhoneCall } from "lucide-react"
+import { ArrowRight, Menu } from "lucide-react"
 import { Marker } from "../markers/marker"
+import { getWhatsAppUrl } from "@/lib/data/contact.data"
 
 
 export function MobileNav() {
@@ -29,6 +30,7 @@ export function MobileNav() {
 
     function handleConfirm() {
         setOpen(false)
+        window.open(getWhatsAppUrl(), "_blank")
     }
     const [open, setOpen] = React.useState(false)
     if (!isMobile) return <></>

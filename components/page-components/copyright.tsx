@@ -12,7 +12,7 @@ const CopyRight = () => {
                         © 2025 Craftorus. All engineered rights reserved.
                     </p>
                     <div>
-                        <a href="">{contactData.mail}</a>
+                        <a href={`mailto:${contactData.mail}`} className="hover:text-primary transition-colors">{contactData.mail}</a>
                     </div>
                 </div>
             </Wrapper>

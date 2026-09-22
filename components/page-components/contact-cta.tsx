@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import { ArrowRight, ArrowRightIcon, Brackets, Carrot, ChevronRight, ClockAlert, PhoneCall, Pointer } from 'lucide-react'
+import { ArrowRight, PhoneCall } from 'lucide-react'
 import Wrapper from '../shared/wrapper'
 import Section from '../shared/section'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
-import { contactData } from '@/lib/data/contact.data'
+import { contactData, getWhatsAppUrl } from '@/lib/data/contact.data'
 
 const Contact = () => {
     return (
@@ -16,20 +15,30 @@ const Contact = () => {
 
                         <h1 className='text-background dark:text-foreground'>Need technology for your business?</h1>
                         <p className='mt-6 text-lg max-w-[600] mx-auto'>
-                            Tell us what you need. We'll help you build, choose, set up or maintain the right technology.</p>
-                        <div className='mt-10 flex flex-col justify-center sm:flex-row gap-4  '>
-                            <Button variant={'default'} size='lg' className={'font-bold uppercase'}>
-                                Start a Project <ArrowRight />
-                            </Button>
-                            <Button variant={'outline'} size='lg' className={'font-bold uppercase bg-transparent! border-background! text-background! dark:bg-transparent! hover:text-foreground! dark:border-foreground! dark:text-foreground! dark:hover:bg-foreground! dark:hover:text-background!'}>
-                                <PhoneCall /> {contactData.number}
-                            </Button>
+                            Tell us what you need. We&apos;ll help you build, choose, set up or maintain the right technology.</p>
+                        <div className='mt-10 flex flex-col justify-center sm:flex-row gap-4'>
+                            <a
+                                href={getWhatsAppUrl()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto"
+                            >
+                                <Button variant={'default'} size='lg' className={'w-full font-bold uppercase sm:w-auto'}>
+                                    Start a Project <ArrowRight />
+                                </Button>
+                            </a>
+                            <a
+                                href={`tel:${contactData.telNumber || contactData.number}`}
+                                className="w-full sm:w-auto"
+                            >
+                                <Button variant={'outline'} size='lg' className={'w-full font-bold uppercase bg-transparent! border-background! text-background! dark:bg-transparent! hover:text-foreground! dark:border-foreground! dark:text-foreground! dark:hover:bg-foreground! dark:hover:text-background! sm:w-auto'}>
+                                    <PhoneCall /> {contactData.displayNumber || contactData.number}
+                                </Button>
+                            </a>
                         </div>
                     </div>
-
                 </div>
             </Wrapper>
-
         </Section>
     )
 }

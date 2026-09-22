@@ -1,16 +1,11 @@
 import Image from "next/image"
-import {
-  ArrowRight,
-  ArrowRightIcon,
-  Brackets,
-  Carrot,
-  ChevronRight,
-  Pointer,
-} from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, ChevronRight } from "lucide-react"
 import Wrapper from "../../shared/wrapper"
 import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
+import { getWhatsAppUrl } from "@/lib/data/contact.data"
 
 const Atf = () => {
   return (
@@ -30,29 +25,38 @@ const Atf = () => {
               maintain the technology your business relies on.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button
-                variant={"default"}
-                size="lg"
-                className={"font-bold uppercase"}
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
-                Start a Project <ArrowRight />
-              </Button>
-              <Button
-                variant={"outline"}
-                size="lg"
-                className={"font-bold uppercase"}
-              >
-                View Our Services <ChevronRight />
-              </Button>
+                <Button
+                  variant={"default"}
+                  size="lg"
+                  className={"w-full font-bold uppercase sm:w-auto"}
+                >
+                  Start a Project <ArrowRight />
+                </Button>
+              </a>
+              <Link href="/services" className="w-full sm:w-auto">
+                <Button
+                  variant={"outline"}
+                  size="lg"
+                  className={"w-full font-bold uppercase sm:w-auto"}
+                >
+                  View Our Services <ChevronRight />
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:block">
             <Image
-              src="/images/abstract-render.png"
-              alt="atf-abstract-render"
-              height={"520"}
-              width={"560"}
-              className="rounded-lg"
+              src="/image_v2/home-hero.jpg"
+              alt="Craftorus Business Technology Solutions"
+              height={520}
+              width={560}
+              className="rounded-lg object-cover shadow-2xl"
               loading="eager"
             />
           </div>

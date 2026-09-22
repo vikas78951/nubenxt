@@ -15,7 +15,7 @@ export const servicesData = [
       "Software Development"
     ],
     ctaText: "EXPLORE WEB SERVICES",
-    ctaLink: "#",
+    ctaLink: "/services/web-development",
     img: '/image_v2/web-development.jpg'
   },
   {
@@ -32,7 +32,7 @@ export const servicesData = [
       "Technical Support"
     ],
     ctaText: "EXPLORE COMPUTER SERVICES",
-    ctaLink: "#",
+    ctaLink: "/contact",
     img: '/image_v2/computers-it.jpg'
 
   },
@@ -50,7 +50,7 @@ export const servicesData = [
       "Support"
     ],
     ctaText: "EXPLORE CAMERA SERVICES",
-    ctaLink: "#",
+    ctaLink: "/contact",
     img: '/image_v2/camera-security.jpg'
 
   }

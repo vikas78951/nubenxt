@@ -94,11 +94,6 @@ export const NAV_DATA: NavItem[] = [
     isHyperlink: true,
   },
   {
-    name: "work",
-    href: "/work",
-    isHyperlink: true,
-  },
-  {
     name: "about",
     href: "/about",
     isHyperlink: true,
@@ -120,12 +115,6 @@ export const NAV_MOBILE_DATA: NavItem[] = [
   {
     name: "services",
     href: "/services",
-    isHyperlink: true,
-    icon: Link,
-  },
-  {
-    name: "work",
-    href: "/work",
     isHyperlink: true,
     icon: Link,
   },

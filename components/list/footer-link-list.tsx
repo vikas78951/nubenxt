@@ -1,6 +1,4 @@
-import React from "react";
-
-
+import Link from "next/link";
 import type { FooterLinkProps } from "@/lib/data/footer.data";
 import { Badge } from "../ui/badge";
 
@@ -14,7 +12,7 @@ const FooterLinkList = ({ item }: { item: FooterLinkProps }) => {
                 {
                     links.map((link) => {
                         return (<li key={link.label}>
-                            <a href={link.href} className="text-xs text-muted-foreground hover:text-foreground hover:underline">{link.label}</a>
+                            <Link href={link.href} className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-colors">{link.label}</Link>
                         </li>)
                     })
                 }

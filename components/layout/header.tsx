@@ -5,6 +5,7 @@ import MobileNav from "@/components/shared/mobile-nav"
 import Section from "@/components/shared/section"
 import Wrapper from "@/components/shared/wrapper"
 import { Button } from "@/components/ui/button"
+import { getWhatsAppUrl } from "@/lib/data/contact.data"
 
 
 export default function Header() {
@@ -17,9 +18,11 @@ export default function Header() {
           <Wrapper className="flex justify-between items-center">
             <Logo />
             <DesktopNav />
-            <Button variant={'outline'} className={'hidden lg:block border-primary! bg-transparent!  text-primary hover:text-primary-foreground! hover:bg-primary! '} >
-              Start a Project
-            </Button>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:block">
+              <Button variant={'outline'} className={'border-primary! bg-transparent! text-primary hover:text-primary-foreground! hover:bg-primary!'} >
+                Start a Project
+              </Button>
+            </a>
             {/* mobile nav  */}
             <MobileNav />
           </Wrapper>

@@ -5,6 +5,7 @@ import Wrapper from "../../shared/wrapper"
 import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
+import { getWhatsAppUrl } from "@/lib/data/contact.data"
 
 const ServicesOverviewHero = () => {
   return (
@@ -25,7 +26,12 @@ const ServicesOverviewHero = () => {
               camera security systems — we engineer solutions that work seamlessly.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact">
+              <a
+                href={getWhatsAppUrl("Services")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <Button
                   variant={"default"}
                   size="lg"
@@ -33,14 +39,14 @@ const ServicesOverviewHero = () => {
                 >
                   Start a Project <ArrowRight />
                 </Button>
-              </Link>
-              <Link href="/work">
+              </a>
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   variant={"outline"}
                   size="lg"
                   className={"w-full font-bold uppercase sm:w-auto"}
                 >
-                  View Our Work <ChevronRight />
+                  Contact Us <ChevronRight />
                 </Button>
               </Link>
             </div>
