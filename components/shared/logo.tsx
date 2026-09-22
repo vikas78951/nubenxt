@@ -10,7 +10,7 @@ const Logo = ({
         <Link
             href={'/'}
             className={cn('font-heading font-extrabold text-2xl leading-normal tracking-wide ',className)}
-        >Craft<span className='text-primary'>orus</span></Link>
+        >Craf<span className='text-primary'>torus</span></Link>
     )
 }
 
