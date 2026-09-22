@@ -55,7 +55,7 @@ const ServicesOverviewHero = () => {
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image
                 src="/image_v2/services-hero.jpg"
-                alt="Services and Capabilities"
+                alt="Craftorus Technology Services and Digital Capabilities"
                 height={520}
                 width={560}
                 className="h-auto w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"

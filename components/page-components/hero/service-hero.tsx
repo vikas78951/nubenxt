@@ -42,7 +42,7 @@ const Atf = ({
                     <div className='mt-12 w-full overflow-hidden rounded-2xl border border-border/40 shadow-xl'>
                         <Image
                             src={content.imageMobileUrl}
-                            alt={content.title}
+                            alt={`${content.title} - Craftorus Technology Solutions`}
                             width={328}
                             height={463}
                             className='block w-full rounded-2xl sm:hidden'
@@ -50,7 +50,7 @@ const Atf = ({
                         />
                         <Image
                             src={content.imageDesktopUrl}
-                            alt={content.title}
+                            alt={`${content.title} - Craftorus Technology Solutions`}
                             width={1400}
                             height={550}
                             className='hidden w-full rounded-2xl sm:block'

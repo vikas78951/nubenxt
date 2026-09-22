@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Geist, Geist_Mono, Outfit } from "next/font/google"
 
 import "./globals.css"
@@ -5,6 +6,36 @@ import { ThemeProvider } from "@/components/layout/theme-provider"
 import { cn } from "@/lib/utils"
 import Header from "@/components/layout/header"
 import { Toaster } from "@/components/ui/sonner"
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.craftorus.com"),
+  title: {
+    default: "Craftorus | Web Development, IT Infrastructure & Security Systems",
+    template: "%s | Craftorus",
+  },
+  description:
+    "Craftorus delivers high-performance web development, computer & IT infrastructure, and commercial camera security systems for growing businesses.",
+  keywords: [
+    "web development",
+    "IT infrastructure",
+    "camera security systems",
+    "CCTV installation",
+    "computer maintenance",
+    "software development",
+    "Craftorus",
+  ],
+  authors: [{ name: "Craftorus" }],
+  creator: "Craftorus",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.craftorus.com",
+    siteName: "Craftorus",
+    title: "Craftorus | Web Development, IT Infrastructure & Security Systems",
+    description:
+      "Craftorus delivers high-performance web development, computer & IT infrastructure, and commercial camera security systems for growing businesses.",
+  },
+}
 
 const outfit = Outfit({
   subsets: ["latin"],

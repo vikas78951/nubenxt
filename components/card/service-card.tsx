@@ -51,7 +51,7 @@ export const ServiceCard = ({ service }: { service: ServiceDataProps }) => {
       <div className="flex w-full shrink-0 justify-center lg:w-[38%] lg:justify-end">
         <div className="w-full max-w-100 rounded-lg bg-background p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 overflow-hidden">
           <Image
-            alt={title}
+            alt={`${title} - Craftorus Technology Solutions`}
             src={img}
             width={400}
             height={240}

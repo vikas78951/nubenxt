@@ -14,9 +14,9 @@ export function Footer() {
           <div className="">
             <Logo className="text-white" />
             <p className="mt-4 max-w-[410] text-sm md:mt-4 lg:mt-5 xl:mt-6">
-              Architectural technology and digital infrastructure constructed
-              with absolute precision for elite clinical, spatial, and luxury
-              enterprises.
+              Professional web development, IT infrastructure, and security
+              solutions engineered with precision to help growing businesses
+              build, operate, and scale.
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <p className="text-xs text-muted">
-            © 2025 Craftorus. All engineered rights reserved.
+            © 2026 Craftorus. All engineered rights reserved.
           </p>
           <div>
             <a

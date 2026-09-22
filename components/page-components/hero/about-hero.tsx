@@ -52,7 +52,7 @@ const Atf = () => {
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image
                 src="/images/hero-right-media.png"
-                alt="Craftorus Experience and Caliber"
+                alt="Craftorus Team, Engineering Experience, and IT Infrastructure"
                 height={520}
                 width={560}
                 className="h-auto w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
