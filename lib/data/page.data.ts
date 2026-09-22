@@ -16,7 +16,7 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE WEB SERVICES",
     ctaLink: "#",
-    img: '/images/browser-graphic.png'
+    img: '/image_v2/web-development.jpg'
   },
   {
     id: "02",
@@ -33,7 +33,7 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE COMPUTER SERVICES",
     ctaLink: "#",
-    img: '/images/hardware-graphic.png'
+    img: '/image_v2/computers-it.jpg'
 
   },
   {
@@ -51,7 +51,7 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE CAMERA SERVICES",
     ctaLink: "#",
-    img: '/images/camera-graphic.png'
+    img: '/image_v2/camera-security.jpg'
 
   }
 ];

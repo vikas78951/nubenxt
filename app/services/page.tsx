@@ -4,7 +4,6 @@ import OurServices from "@/components/page-components/our-services"
 import ServiceDirectory from "@/components/page-components/service-directory"
 import WhyUs from "@/components/page-components/why-us"
 import Techonology from "@/components/page-components/techonology"
-import Contact from "@/components/page-components/contact-cta"
 import Footer from "@/components/layout/footer"
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ const ServicesPage = async () => {
       <ServiceDirectory />
       <WhyUs />
       <Techonology />
-      <Contact />
       <Footer />
     </>
   )

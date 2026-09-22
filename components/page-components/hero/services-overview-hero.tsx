@@ -47,11 +47,11 @@ const ServicesOverviewHero = () => {
           </div>
           <div className="hidden lg:block">
             <Image
-              src="/images/services/web-development-desktop-2.png"
-              alt="Craftorus Services and Capabilities"
+              src="/image_v2/services-hero.jpg"
+              alt="Services and Capabilities"
               height={520}
               width={560}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-cover shadow-2xl"
               loading="eager"
             />
           </div>
