@@ -55,7 +55,7 @@ export const ServiceCard = ({ service }: { service: ServiceDataProps }) => {
             src={img}
             width={400}
             height={240}
-            className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
+            className="h-auto w-full rounded-lg transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, 38vw"
             loading="lazy"
           />
