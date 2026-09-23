@@ -9,7 +9,7 @@ const CopyRight = () => {
             <Wrapper className=' '>
                 <div className='grid-50by50'>
                     <p>
-                        © 2026 Craftorus. All engineered rights reserved.
+                        © {new Date().getFullYear()} Craftorus. All engineered rights reserved.
                     </p>
                     <div>
                         <a href={`mailto:${contactData.mail}`} className="hover:text-primary transition-colors">{contactData.mail}</a>

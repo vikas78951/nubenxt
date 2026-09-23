@@ -31,7 +31,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <p className="text-xs text-muted">
-            © 2026 Craftorus. All engineered rights reserved.
+            © {new Date().getFullYear()} Craftorus. All engineered rights reserved.
           </p>
           <div>
             <a
