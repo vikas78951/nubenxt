@@ -6,6 +6,13 @@ export type Hero = {
     description: string
     imageDesktopUrl: string
     imageMobileUrl: string
+    /**
+     * Optional single landscape photo. When set the service hero renders this
+     * image instead of the paired desktop/mobile device mockups. Used by the
+     * on-site service lines (Computers & IT, Cameras & Security) where a real
+     * photograph is more honest than a UI mockup.
+     */
+    photoUrl?: string
 }
 
 export type Solution = {
@@ -22,7 +29,7 @@ export type SolutionSection = {
 }
 
 export type Methodology = {
-    id: string
+    id: string,
     title: string
     description: string
 }
@@ -53,923 +60,219 @@ export type FaqSection = {
     items: Faq[]
 }
 
+/**
+ * Indicative commercial terms.
+ *
+ * Craftorus quotes per requirement — there is no fixed price list. What these
+ * figures are for is stopping a visitor bouncing because they assume the work
+ * is unaffordable, and setting expectations before the first call.
+ *
+ * `from` is deliberately optional: only the services with a real floor price
+ * publish one. Anything without it renders "Quoted by requirement" rather than
+ * a made-up number, because publishing a wrong price is worse than publishing
+ * none.
+ */
+export type Pricing = {
+    tag: string
+    title: string
+    description: string
+    /** Indicative starting price, if there is a genuine floor for the work. */
+    from?: string
+    /** What that starting price covers, e.g. "per workstation". */
+    fromUnit?: string
+    /** Typical elapsed time from kickoff to handover. */
+    timeline: string
+    /** Recurring maintenance option, if offered. No figures here — quoted. */
+    amc?: string
+    included: string[]
+    excluded: string[]
+}
+
 export type ServicePageDataProps = {
     slug: Service
     title: string
     hero: Hero
+    /**
+     * Optional credibility note. Deliberately only used on the web services —
+     * a stack list is relevant when a buyer is choosing a website and actively
+     * unhelpful on a CCTV or computer page.
+     */
+    stack?: string[]
     solutions: SolutionSection
     methodology: MethodologySection
     benefits: BenefitsSection
+    pricing: Pricing
     faqs: FaqSection
 }
+
 export const servicePagesData: Record<Service, ServicePageDataProps> = {
-    [Service.HTML_EMAILER]: {
-        slug: Service.HTML_EMAILER,
-        title: "HTML Emailers",
-        hero: {
-            tag: "Email Experiences",
-            title: "Emails designed to look as good as your brand.",
-            description:
-                "Responsive HTML emails built to communicate promotions, announcements and campaigns with a polished experience across modern email clients.",
-            imageDesktopUrl: "/images/services/html-emailer-desktop.png",
-            imageMobileUrl: "/images/services/html-emailer-mobile.png",
-        },
-        solutions: {
-            tag: "What We Build",
-            title: "Email experiences built for your brand.",
-            description:
-                "From campaign templates to promotional emails, we create responsive email experiences that keep your communication consistent, clear and professional.",
-            items: [
-                {
-                    id: "01",
-                    title: "Responsive Email Design",
-                    description:
-                        "Emails designed to adapt across desktop, tablet and mobile screens without compromising the visual experience.",
-                },
-                {
-                    id: "02",
-                    title: "Campaign Templates",
-                    description:
-                        "Reusable email templates that make it easier to launch future campaigns while maintaining visual consistency.",
-                },
-                {
-                    id: "03",
-                    title: "Brand-Focused Layouts",
-                    description:
-                        "Typography, spacing, imagery and messaging carefully arranged around your existing brand identity.",
-                },
-                {
-                    id: "04",
-                    title: "Email-Ready Development",
-                    description:
-                        "Carefully coded HTML prepared for reliable rendering across modern email clients and devices.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "A clear process from idea to inbox.",
-            description:
-                "We combine visual design with practical email development to create campaigns that look polished and work reliably.",
-            items: [
-                {
-                    id: "01",
-                    title: "Understand",
-                    description:
-                        "We understand the campaign objective, audience, message, content and brand requirements.",
-                },
-                {
-                    id: "02",
-                    title: "Design",
-                    description:
-                        "We create a visual direction that balances your brand with the technical limitations of email.",
-                },
-                {
-                    id: "03",
-                    title: "Build",
-                    description:
-                        "The approved design is translated into responsive, email-ready HTML.",
-                },
-                {
-                    id: "04",
-                    title: "Test & Deliver",
-                    description:
-                        "We review responsiveness, links, content and rendering before delivering the final email.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "Everything you need for better email communication.",
-            description:
-                "A polished and reusable email experience designed around your brand, campaign goals and audience.",
-            items: [
-                "Responsive email layout",
-                "Brand-aligned visual design",
-                "Reusable email components",
-                "Campaign-ready HTML",
-                "Clear call-to-action sections",
-                "Mobile-friendly experience",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about HTML emailers?",
-            description:
-                "A few common questions about our HTML email development service.",
-            items: [
-                {
-                    question: "Can you create emails based on our existing brand?",
-                    answer:
-                        "Yes. We can work from your existing brand guidelines, website, campaign designs or other visual references to create a consistent email experience.",
-                },
-                {
-                    question: "Can you create reusable email templates?",
-                    answer:
-                        "Yes. We can create modular templates that can be reused and adapted for future campaigns.",
-                },
-                {
-                    question: "Can you convert an existing design into HTML?",
-                    answer:
-                        "Yes. If you already have a design in Figma or another design tool, we can translate it into responsive HTML email code.",
-                },
-            ],
-        },
-    },
-
-    [Service.LANDING_PAGE]: {
-        slug: Service.LANDING_PAGE,
-        title: "Landing Pages",
-        hero: {
-            tag: "Focused Experiences",
-            title: "Landing pages built around one clear objective.",
-            description:
-                "Purpose-built landing pages that present your offer clearly, build trust quickly and guide visitors toward taking action.",
-            imageDesktopUrl: "/images/services/landing-page-desktop.png",
-            imageMobileUrl: "/images/services/landing-page-mobile.png",
-        },
-        solutions: {
-            tag: "What We Build",
-            title: "Focused pages designed to move visitors forward.",
-            description:
-                "Every landing page is structured around its audience, offer and conversion goal rather than simply filling a page with content.",
-            items: [
-                {
-                    id: "01",
-                    title: "Campaign Landing Pages",
-                    description:
-                        "Dedicated pages for advertising, promotions, launches and targeted marketing campaigns.",
-                },
-                {
-                    id: "02",
-                    title: "Lead Generation Pages",
-                    description:
-                        "Focused experiences designed to communicate value and make enquiries or sign-ups easier.",
-                },
-                {
-                    id: "03",
-                    title: "Service & Product Pages",
-                    description:
-                        "Clear presentations for individual services, products or business offerings.",
-                },
-                {
-                    id: "04",
-                    title: "Conversion-Focused Design",
-                    description:
-                        "Layouts that reduce distractions, establish trust and make the next action obvious.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "From business objective to focused experience.",
-            description:
-                "We keep the process deliberate so the final page has a clear purpose, strong hierarchy and a consistent visual language.",
-            items: [
-                {
-                    id: "01",
-                    title: "Define the Goal",
-                    description:
-                        "We identify the audience, offer, campaign objective and primary action the page needs to support.",
-                },
-                {
-                    id: "02",
-                    title: "Structure the Experience",
-                    description:
-                        "We organise the content into a logical flow that answers questions and builds confidence.",
-                },
-                {
-                    id: "03",
-                    title: "Design & Develop",
-                    description:
-                        "We create the visual experience and turn it into a responsive, production-ready page.",
-                },
-                {
-                    id: "04",
-                    title: "Refine",
-                    description:
-                        "We review the page across devices and refine spacing, hierarchy, interactions and calls to action.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "A landing page built around your objective.",
-            description:
-                "Everything is designed to give your campaign, offer or service a focused destination.",
-            items: [
-                "Purpose-driven page structure",
-                "Responsive design",
-                "Clear content hierarchy",
-                "Strong call-to-action placement",
-                "Fast, modern frontend implementation",
-                "Analytics-ready structure",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about landing pages?",
-            description:
-                "A few common questions about our landing page development service.",
-            items: [
-                {
-                    question: "Can you build a landing page for an advertising campaign?",
-                    answer:
-                        "Yes. We can create dedicated landing pages for paid campaigns, promotions, product launches and other targeted marketing activities.",
-                },
-                {
-                    question: "Can you work with our existing brand?",
-                    answer:
-                        "Yes. We can use your existing brand guidelines, website and marketing materials as the foundation for the landing page.",
-                },
-                {
-                    question: "Can you connect the page to a form or CRM?",
-                    answer:
-                        "Yes. Depending on your requirements, we can integrate forms, APIs, CRM systems and other business tools.",
-                },
-            ],
-        },
-    },
-
-    [Service.SEO_MARKETING]: {
-        slug: Service.SEO_MARKETING,
-        title: "SEO & Marketing",
-        hero: {
-            tag: "Digital Visibility",
-            title: "Make your digital presence easier to discover.",
-            description:
-                "Practical SEO and digital marketing support designed to improve visibility, strengthen your online presence and connect your business with relevant audiences.",
-            imageDesktopUrl: "/images/services/seo-markeing-desktop.png",
-            imageMobileUrl: "/images/services/seo-marketing-mobile.png",
-        },
-        solutions: {
-            tag: "What We Do",
-            title: "A stronger foundation for digital visibility.",
-            description:
-                "We focus on the technical, content and marketing fundamentals that help your business build a more useful and discoverable online presence.",
-            items: [
-                {
-                    id: "01",
-                    title: "Technical SEO",
-                    description:
-                        "Site structure, crawlability, metadata, performance and other technical foundations that support search visibility.",
-                },
-                {
-                    id: "02",
-                    title: "On-Page SEO",
-                    description:
-                        "Clear page structures and useful content aligned with the services and topics your customers are searching for.",
-                },
-                {
-                    id: "03",
-                    title: "Local Visibility",
-                    description:
-                        "Digital foundations that help location-focused businesses present their services clearly to nearby customers.",
-                },
-                {
-                    id: "04",
-                    title: "Digital Marketing",
-                    description:
-                        "Supporting campaigns and digital activities designed around your business objectives and target audience.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "Build the foundation. Improve it continuously.",
-            description:
-                "Good SEO is not about repeating keywords. We look at the complete digital experience and improve the areas that matter to your business.",
-            items: [
-                {
-                    id: "01",
-                    title: "Audit",
-                    description:
-                        "We review your website, content, technical setup and existing digital presence to identify opportunities.",
-                },
-                {
-                    id: "02",
-                    title: "Plan",
-                    description:
-                        "We prioritise improvements around your services, audience, competition and business objectives.",
-                },
-                {
-                    id: "03",
-                    title: "Optimize",
-                    description:
-                        "We improve technical foundations, page structure, content and other relevant areas.",
-                },
-                {
-                    id: "04",
-                    title: "Measure",
-                    description:
-                        "We monitor meaningful performance indicators and use the findings to guide future improvements.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "A digital presence built for long-term visibility.",
-            description:
-                "A practical combination of technical improvements, useful content and marketing direction.",
-            items: [
-                "Technical SEO improvements",
-                "Search-friendly page structure",
-                "Metadata and content optimisation",
-                "Local SEO foundations",
-                "Performance recommendations",
-                "Ongoing improvement opportunities",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about SEO & marketing?",
-            description:
-                "A few common questions about our SEO and digital marketing service.",
-            items: [
-                {
-                    question: "Can you guarantee first-page rankings?",
-                    answer:
-                        "No. Search rankings depend on many factors outside any agency's control. We focus on improving the technical quality, relevance and overall visibility of your website.",
-                },
-                {
-                    question: "Do you work on existing websites?",
-                    answer:
-                        "Yes. We can audit and improve an existing website rather than requiring a complete rebuild.",
-                },
-                {
-                    question: "Is SEO only about keywords?",
-                    answer:
-                        "No. Effective SEO also involves site structure, technical performance, content quality, search intent, internal linking and how clearly your website communicates what your business offers.",
-                },
-            ],
-        },
-    },
-
-    [Service.CO_BRAND_IMAGES]: {
-        slug: Service.CO_BRAND_IMAGES,
-        title: "Co-Brand Images",
-        hero: {
-            tag: "Brand Collaboration",
-            title: "Creative assets that bring brands together.",
-            description:
-                "Professionally designed co-branding creatives for partnerships, campaigns and collaborations that need both brands to feel represented.",
-            imageDesktopUrl: "/images/services/co-brand-image-desktop.png",
-            imageMobileUrl: "/images/services/co-brand-mobile.png",
-        },
-        solutions: {
-            tag: "What We Create",
-            title: "Campaign visuals made for collaboration.",
-            description:
-                "We create flexible visual assets that balance multiple brand identities without losing clarity or consistency.",
-            items: [
-                {
-                    id: "01",
-                    title: "Partner Campaigns",
-                    description:
-                        "Promotional creatives that bring two or more brands together in a clear visual hierarchy.",
-                },
-                {
-                    id: "02",
-                    title: "Promotional Creatives",
-                    description:
-                        "Social and digital campaign assets designed around a specific offer, announcement or collaboration.",
-                },
-                {
-                    id: "03",
-                    title: "Brand Integration",
-                    description:
-                        "Logos, colours, typography and visual elements combined carefully to respect each brand.",
-                },
-                {
-                    id: "04",
-                    title: "Multi-Platform Assets",
-                    description:
-                        "Adaptable creative formats prepared for the channels where your campaign needs to appear.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "Balance both brands without losing the message.",
-            description:
-                "We establish a clear visual hierarchy first, then build the creative around the campaign and partnership.",
-            items: [
-                {
-                    id: "01",
-                    title: "Collect",
-                    description:
-                        "We gather brand guidelines, logos, campaign information, imagery and required formats.",
-                },
-                {
-                    id: "02",
-                    title: "Concept",
-                    description:
-                        "We define the visual direction and decide how the participating brands should work together.",
-                },
-                {
-                    id: "03",
-                    title: "Design",
-                    description:
-                        "We create the final creative while maintaining consistency, hierarchy and readability.",
-                },
-                {
-                    id: "04",
-                    title: "Adapt",
-                    description:
-                        "We prepare the approved design for the required platforms, dimensions and campaign placements.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "Co-branded creatives that feel intentional.",
-            description:
-                "Campaign-ready visual assets designed to make partnerships look cohesive and professional.",
-            items: [
-                "Brand-aligned creative direction",
-                "Balanced logo placement",
-                "Campaign-ready designs",
-                "Social media formats",
-                "Multiple creative variations",
-                "High-resolution final assets",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about co-branding creatives?",
-            description:
-                "A few common questions about our co-brand image service.",
-            items: [
-                {
-                    question: "Can you work with two different brand guidelines?",
-                    answer:
-                        "Yes. We can work with the guidelines of each participating brand and create a visual system that keeps the collaboration balanced.",
-                },
-                {
-                    question: "Can you create different sizes for social media?",
-                    answer:
-                        "Yes. We can adapt the approved creative into the dimensions required for different platforms and campaign placements.",
-                },
-                {
-                    question: "Can you work with an existing campaign design?",
-                    answer:
-                        "Yes. Existing campaign assets can be used as the starting point for new co-branded variations.",
-                },
-            ],
-        },
-    },
-
-    [Service.AI_AGENTS]: {
-        slug: Service.AI_AGENTS,
-        title: "AI Agents",
-        hero: {
-            tag: "Intelligent Automation",
-            title: "AI agents built around the way your business works.",
-            description:
-                "Practical AI agents and automation systems that help businesses handle repetitive tasks, assist customers and streamline everyday workflows.",
-            imageDesktopUrl: "/images/services/ai-agent-desktop.png",
-            imageMobileUrl: "/images/services/ai-agent-mobile.png",
-        },
-        solutions: {
-            tag: "What We Build",
-            title: "AI that fits into your existing workflow.",
-            description:
-                "We focus on useful AI applications rather than adding AI for the sake of it, connecting intelligent systems to real business processes.",
-            items: [
-                {
-                    id: "01",
-                    title: "Customer Support Agents",
-                    description:
-                        "AI-powered assistants that can answer common questions and guide customers through defined workflows.",
-                },
-                {
-                    id: "02",
-                    title: "Lead Qualification",
-                    description:
-                        "Agents that collect information, understand enquiries and help teams prioritise potential opportunities.",
-                },
-                {
-                    id: "03",
-                    title: "Business Automation",
-                    description:
-                        "AI-assisted workflows that reduce repetitive manual work across common business processes.",
-                },
-                {
-                    id: "04",
-                    title: "AI Integrations",
-                    description:
-                        "AI capabilities connected to your existing applications, APIs, databases and internal systems.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "Start with the workflow, not the AI.",
-            description:
-                "We first understand the business problem, then determine where AI can provide a practical and measurable improvement.",
-            items: [
-                {
-                    id: "01",
-                    title: "Identify",
-                    description:
-                        "We identify repetitive tasks, bottlenecks and workflows where intelligent automation could add value.",
-                },
-                {
-                    id: "02",
-                    title: "Design",
-                    description:
-                        "We define the agent's responsibilities, inputs, outputs, tools and boundaries.",
-                },
-                {
-                    id: "03",
-                    title: "Build",
-                    description:
-                        "We connect the AI model with the required interfaces, APIs, data sources and business logic.",
-                },
-                {
-                    id: "04",
-                    title: "Test & Improve",
-                    description:
-                        "We evaluate responses, edge cases and workflow behaviour before refining the system for real-world use.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "AI systems designed for useful work.",
-            description:
-                "A practical AI implementation focused on improving workflows rather than adding unnecessary complexity.",
-            items: [
-                "Business-specific AI workflows",
-                "AI-powered assistants",
-                "API and system integrations",
-                "Automated repetitive tasks",
-                "Defined agent behaviour",
-                "Scalable architecture",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about AI agents?",
-            description:
-                "A few common questions about our AI agent development service.",
-            items: [
-                {
-                    question: "Can you integrate an AI agent with our existing software?",
-                    answer:
-                        "Yes. Where APIs or other suitable integration points are available, we can connect AI workflows with existing business systems.",
-                },
-                {
-                    question: "Can an AI agent perform actions, not just answer questions?",
-                    answer:
-                        "Yes. Depending on the workflow and integrations, an agent can be designed to retrieve information, trigger approved actions and move tasks through defined processes.",
-                },
-                {
-                    question: "Can you build an AI agent around our internal knowledge?",
-                    answer:
-                        "Yes. We can design systems that work with approved business information and knowledge sources, depending on the requirements and data architecture.",
-                },
-            ],
-        },
-    },
-
-    [Service.MOBILE_APPS]: {
-        slug: Service.MOBILE_APPS,
-        title: "Mobile Apps",
-        hero: {
-            tag: "Mobile Experiences",
-            title: "Mobile apps designed around your customers and business.",
-            description:
-                "Modern mobile applications that combine thoughtful user experiences with reliable technology, integrations and business functionality.",
-            imageDesktopUrl: "/images/services/mobile-apps-desktop.png",
-            imageMobileUrl: "/images/services/mobile-apps-mobile.png",
-        },
-        solutions: {
-            tag: "What We Build",
-            title: "Mobile products built for real-world use.",
-            description:
-                "From customer-facing applications to internal business tools, we create mobile experiences around the people who will actually use them.",
-            items: [
-                {
-                    id: "01",
-                    title: "Customer Apps",
-                    description:
-                        "Mobile experiences that help customers browse, interact, book, purchase or manage their relationship with your business.",
-                },
-                {
-                    id: "02",
-                    title: "Business Apps",
-                    description:
-                        "Purpose-built applications that help teams manage operations, information and everyday workflows.",
-                },
-                {
-                    id: "03",
-                    title: "Cross-Platform Apps",
-                    description:
-                        "Efficient mobile development approaches for delivering consistent experiences across supported platforms.",
-                },
-                {
-                    id: "04",
-                    title: "API Integrations",
-                    description:
-                        "Mobile applications connected to your existing backend systems, APIs and business services.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "From product idea to a usable mobile experience.",
-            description:
-                "We combine product thinking, interface design and engineering to create an app that is useful beyond the initial launch.",
-            items: [
-                {
-                    id: "01",
-                    title: "Discover",
-                    description:
-                        "We understand the users, business requirements, workflows and technical constraints.",
-                },
-                {
-                    id: "02",
-                    title: "Design",
-                    description:
-                        "We create the user flows and interface system that shape the mobile experience.",
-                },
-                {
-                    id: "03",
-                    title: "Develop",
-                    description:
-                        "We build the application and integrate the required APIs, services and business logic.",
-                },
-                {
-                    id: "04",
-                    title: "Test & Launch",
-                    description:
-                        "We test the application across relevant devices and prepare it for release and continued improvement.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "A mobile product built for your users.",
-            description:
-                "A complete mobile experience supported by thoughtful product design and reliable engineering.",
-            items: [
-                "User-focused mobile interface",
-                "Responsive application architecture",
-                "API and backend integration",
-                "Authentication and user flows",
-                "Cross-platform development options",
-                "Launch-ready application",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about mobile app development?",
-            description:
-                "A few common questions about our mobile application service.",
-            items: [
-                {
-                    question: "Can you build both iOS and Android apps?",
-                    answer:
-                        "Yes. Depending on the project requirements, we can use a cross-platform approach or choose a platform-specific implementation.",
-                },
-                {
-                    question: "Can you connect the app to our existing backend?",
-                    answer:
-                        "Yes. We can integrate mobile applications with existing APIs, authentication systems and backend services.",
-                },
-                {
-                    question: "Can you help after the app is launched?",
-                    answer:
-                        "Yes. Ongoing improvements, maintenance, feature development and technical support can be planned as part of the engagement.",
-                },
-            ],
-        },
-    },
-
     [Service.WEB_DEVELOPMENT]: {
         slug: Service.WEB_DEVELOPMENT,
         title: "Website Development",
         hero: {
-            tag: "Digital Presence",
-            title: "Websites that make your business look as good as it operates.",
+            tag: "Websites & Online Presence",
+            title: "A website that works as hard as you do.",
             description:
-                "Modern business websites designed to communicate your value clearly, build trust and create a strong digital presence across every screen.",
+                "Business websites, landing pages, search visibility and email campaigns — designed, built and looked after by one team, not passed between three vendors.",
             imageDesktopUrl: "/images/services/web-development-desktop-2.png",
-            imageMobileUrl: "/images/services/web-development-mobile-2.png",
+            imageMobileUrl: "/images/services/web-development-mobile-5.png",
         },
+        stack: [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "Vercel",
+        ],
         solutions: {
             tag: "What We Build",
-            title: "Web experiences designed around your business.",
+            title: "One team for everything your website needs.",
             description:
-                "We build websites that combine premium visual design, clear messaging and solid frontend engineering.",
+                "Most businesses end up hiring separately for the site, for search and for email. We do all three, so nothing falls between vendors.",
             items: [
                 {
                     id: "01",
                     title: "Business Websites",
                     description:
-                        "Professional websites that clearly communicate your services, expertise and business proposition.",
+                        "A website that explains what you do clearly enough that a visitor understands it in the first few seconds.",
                 },
                 {
                     id: "02",
-                    title: "Premium Brand Websites",
+                    title: "Landing & Campaign Pages",
                     description:
-                        "High-quality digital experiences designed for businesses where presentation and trust matter.",
+                        "Single-purpose pages built around one offer or campaign, wired to your enquiry form or CRM.",
                 },
                 {
                     id: "03",
-                    title: "Service Websites",
+                    title: "SEO & Local Visibility",
                     description:
-                        "Structured websites that give individual services the space and clarity they need.",
+                        "Technical foundations, page structure and local listings so customers searching your service can actually find you.",
                 },
                 {
                     id: "04",
-                    title: "Custom Web Experiences",
+                    title: "HTML Emailers",
                     description:
-                        "Tailored interfaces and functionality for businesses with requirements beyond a standard website.",
+                        "Campaign and promotional emails that render properly in Outlook, Gmail and on phones — not just in a design tool.",
+                },
+                {
+                    id: "05",
+                    title: "Redesigns & Replatforms",
+                    description:
+                        "Modernise an existing site without the cost and disruption of starting again from nothing.",
+                },
+                {
+                    id: "06",
+                    title: "Hosting, Domains & Care",
+                    description:
+                        "We manage hosting, domains, SSL and backups, and keep the site patched and online after launch.",
                 },
             ],
         },
         methodology: {
-            tag: "Our Process",
-            title: "A website built with purpose from the first screen.",
+            tag: "How We Work",
+            title: "A fixed process, agreed before we start.",
             description:
-                "We bring strategy, design and engineering together so your website feels considered rather than assembled from a template.",
+                "You know what happens at each stage and what it costs before any work begins.",
             items: [
                 {
                     id: "01",
                     title: "Understand",
                     description:
-                        "We understand your business, audience, positioning, services and the role your website needs to play.",
+                        "We learn your business, your customers and what you want the website to actually do for you.",
                 },
                 {
                     id: "02",
-                    title: "Structure",
+                    title: "Plan & Quote",
                     description:
-                        "We define the information architecture, content hierarchy and user journeys before development begins.",
+                        "We agree the scope, the page structure and a fixed price. No work starts until you approve it.",
                 },
                 {
                     id: "03",
                     title: "Design & Build",
                     description:
-                        "We create the visual system and develop the responsive website with modern frontend technology.",
+                        "We design the site, build it responsive, and set up the forms, tracking and pages you need.",
                 },
                 {
                     id: "04",
-                    title: "Launch",
+                    title: "Launch & Maintain",
                     description:
-                        "We test the experience across devices, refine the final details and prepare the website for production.",
+                        "We go live, hand over training, and stay reachable for updates and improvements.",
                 },
             ],
         },
         benefits: {
             tag: "What You Get",
-            title: "A website built to represent your business properly.",
+            title: "A website you can hand to any customer.",
             description:
-                "A complete digital presence designed around your brand, audience and business goals.",
+                "Clear, fast and maintained — the site reflects the business rather than the agency that built it.",
             items: [
-                "Premium responsive design",
-                "Clear information architecture",
-                "Mobile-first experience",
-                "SEO-friendly page structure",
-                "Modern frontend development",
-                "Production-ready deployment",
+                "Fixed price agreed upfront",
+                "Mobile, tablet and desktop tested",
+                "Contact forms wired to your inbox",
+                "Search-friendly page structure",
+                "Training so you can update it yourself",
+                "Optional ongoing maintenance",
+            ],
+        },
+        pricing: {
+            tag: "Cost & Timing",
+            title: "What a website costs.",
+            description:
+                "Websites start at ₹15,000, but every project is quoted against your own requirements. Tell us what the site needs to do and we will give you a fixed price for exactly that — agreed before work starts, and it does not move unless you change the scope.",
+            from: "₹15,000",
+            fromUnit: "starting price for a business website",
+            timeline: "2–4 weeks from content handover",
+            amc: "Website care and hosting plans available — quoted by page count and requirements",
+            included: [
+                "Custom design, no template",
+                "Mobile and desktop layouts",
+                "Contact and enquiry forms",
+                "Basic on-page SEO setup",
+                "Domain, hosting and SSL setup",
+                "Launch and training",
+            ],
+            excluded: [
+                "Paid advertising spend",
+                "Product photography or copywriting",
+                "Ongoing content entry",
             ],
         },
         faqs: {
             tag: "FAQ",
-            title: "Questions about website development?",
+            title: "Common questions about websites.",
             description:
-                "A few common questions about our website development service.",
+                "If your question is not here, message us and we will answer it directly.",
             items: [
                 {
-                    question: "Can you build a completely custom website?",
+                    question: "How much does a business website cost?",
                     answer:
-                        "Yes. We can design and develop a website from the ground up around your brand, content, functionality and business requirements.",
+                        "Websites start at ₹15,000. Online stores, custom functionality and larger sites are priced on what you actually need — tell us what the site has to do and we will quote that. You get a fixed price before work starts, and it does not change mid-project unless you change the scope.",
                 },
                 {
-                    question: "Can you redesign our existing website?",
+                    question: "How long will it take?",
                     answer:
-                        "Yes. We can review the existing website, identify opportunities and create a new experience without unnecessarily rebuilding everything behind it.",
+                        "Most business websites take 2–4 weeks from the point you hand over your content and images. The long pole is usually getting text and photos from you, not our build — we send a content checklist up front so you know exactly what we need.",
                 },
                 {
-                    question: "Do you build websites with Next.js?",
+                    question: "Do we own the website?",
                     answer:
-                        "Yes. Next.js is one of the technologies we use for modern, performant websites where its capabilities are a good fit for the project.",
-                },
-            ],
-        },
-    },
-
-    [Service.SOFTWARE_DEVELOPMENT]: {
-        slug: Service.SOFTWARE_DEVELOPMENT,
-        title: "Software Development",
-        hero: {
-            tag: "Business Software",
-            title: "Software built around the way your business actually works.",
-            description:
-                "Custom software and SaaS platforms designed to solve specific business problems, connect workflows and provide a foundation for future growth.",
-            imageDesktopUrl: "/images/services/software-development-desktop.png",
-            imageMobileUrl: "/images/services/software-development-mobile.png",
-        },
-        solutions: {
-            tag: "What We Build",
-            title: "Software for complex business requirements.",
-            description:
-                "We design and develop custom digital products for businesses that have outgrown disconnected tools or need functionality that off-the-shelf software cannot provide.",
-            items: [
-                {
-                    id: "01",
-                    title: "Business Platforms",
-                    description:
-                        "Centralised applications that bring important business workflows, information and operations together.",
+                        "Yes. The domain, hosting and the code are yours. We build and hand over in your accounts, not ours, so you are never locked in.",
                 },
                 {
-                    id: "02",
-                    title: "SaaS Products",
-                    description:
-                        "Scalable software products designed around a clear product model, user experience and technical foundation.",
-                },
-                {
-                    id: "03",
-                    title: "Internal Tools",
-                    description:
-                        "Custom tools that simplify operational processes and help teams work more efficiently.",
-                },
-                {
-                    id: "04",
-                    title: "System Integrations",
-                    description:
-                        "APIs and integrations that connect your software with existing platforms, services and data sources.",
-                },
-            ],
-        },
-        methodology: {
-            tag: "Our Process",
-            title: "Good software starts with understanding the problem.",
-            description:
-                "We approach custom software as a product and engineering problem—not simply a collection of screens and features.",
-            items: [
-                {
-                    id: "01",
-                    title: "Discover",
-                    description:
-                        "We understand your workflows, users, business rules, technical constraints and desired outcomes.",
-                },
-                {
-                    id: "02",
-                    title: "Architect",
-                    description:
-                        "We define the application structure, data model, integrations and technical approach.",
-                },
-                {
-                    id: "03",
-                    title: "Develop",
-                    description:
-                        "We build the product iteratively, validating important workflows as the system takes shape.",
-                },
-                {
-                    id: "04",
-                    title: "Deploy & Scale",
-                    description:
-                        "We prepare the software for production and establish a foundation that can evolve with your business.",
-                },
-            ],
-        },
-        benefits: {
-            tag: "What You Get",
-            title: "Software designed around your business.",
-            description:
-                "A custom technical foundation that gives your team the functionality and flexibility standard software may not provide.",
-            items: [
-                "Custom business workflows",
-                "Scalable application architecture",
-                "API and third-party integrations",
-                "Role-based user experiences",
-                "Modern responsive interfaces",
-                "Production-ready deployment",
-            ],
-        },
-        faqs: {
-            tag: "FAQ",
-            title: "Questions about software development?",
-            description:
-                "A few common questions about our custom software development service.",
-            items: [
-                {
-                    question: "When should a business consider custom software?",
+                    question: "Can you work with our existing website?",
                     answer:
-                        "Custom software can make sense when existing tools cannot support important workflows, require too many workarounds or prevent the business from operating the way it needs to.",
+                        "Yes. If the site is worth keeping we can improve it in place. If it is costing you business we will tell you so before quoting a rebuild.",
                 },
                 {
-                    question: "Can you build an internal business application?",
+                    question: "Can you write the content and take photos?",
                     answer:
-                        "Yes. We can build internal platforms and tools for workflows such as operations, administration, reporting, customer management and other business processes.",
+                        "We can. Professional photography and copywriting are quoted separately because the cost depends entirely on how much you need.",
                 },
                 {
-                    question: "Can you integrate existing systems?",
+                    question: "What happens after launch?",
                     answer:
-                        "Yes. We can design integrations with suitable APIs and services so your new application can work alongside systems you already use.",
+                        "You get training and a handover document. After that, care plans are available if you want us to handle updates, backups and security — or you can run it yourself with our support if you prefer.",
                 },
             ],
         },
@@ -977,113 +280,644 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
 
     [Service.ECOMMERCE_WEBSITE]: {
         slug: Service.ECOMMERCE_WEBSITE,
-        title: "Ecommerce Website",
+        title: "Ecommerce",
         hero: {
-            tag: "Digital Commerce",
-            title: "Online stores designed to make buying feel effortless.",
+            tag: "Online Stores",
+            title: "An online store your customers can actually order from.",
             description:
-                "Thoughtful ecommerce experiences that combine strong product presentation, intuitive navigation and reliable technology to help your business sell online.",
+                "Storefronts, product pages, payments and checkout — built so the whole path from browsing to order works without friction.",
             imageDesktopUrl: "/images/services/e-commerce-desktop.png",
             imageMobileUrl: "/images/services/e-commerce-mobile.png",
         },
         solutions: {
             tag: "What We Build",
-            title: "Commerce experiences built around your products.",
+            title: "The parts that decide whether a sale happens.",
             description:
-                "From product discovery to checkout, we create ecommerce experiences that make it easier for customers to understand, trust and purchase your products.",
+                "An online store fails in small ways — a slow product page, a confusing checkout, a payment option customers do not have. We fix those before launch.",
             items: [
                 {
                     id: "01",
-                    title: "Storefront Design",
+                    title: "Storefront & Catalogue",
                     description:
-                        "A polished storefront that communicates your brand while keeping products easy to discover.",
+                        "Category structure, product pages and navigation built so people can find what they came for.",
                 },
                 {
                     id: "02",
-                    title: "Product Experience",
+                    title: "Payments & Checkout",
                     description:
-                        "Clear product pages with useful information, imagery, options and calls to action.",
+                        "Payment gateways appropriate to your market, with a checkout that works on a phone.",
                 },
                 {
                     id: "03",
-                    title: "Checkout & Payments",
+                    title: "Inventory & Order Handling",
                     description:
-                        "Streamlined purchasing experiences connected to the payment and commerce systems your business requires.",
+                        "Stock tracking, order notifications and a process for fulfilment that does not depend on someone checking email.",
                 },
                 {
                     id: "04",
-                    title: "Commerce Integrations",
+                    title: "Shipping & Tax Setup",
                     description:
-                        "Connections with relevant APIs, inventory systems, payment providers and other business services.",
+                        "Delivery rules, charges and tax handling configured for where you actually ship.",
+                },
+                {
+                    id: "05",
+                    title: "Integrations",
+                    description:
+                        "Connections to your accounting, inventory, CRM and marketing tools.",
+                },
+                {
+                    id: "06",
+                    title: "Post-Launch Support",
+                    description:
+                        "Monitoring, fixes and improvements after the store goes live.",
                 },
             ],
         },
         methodology: {
-            tag: "Our Process",
-            title: "Design the store around how customers buy.",
+            tag: "How We Work",
+            title: "Catalogue first, design second.",
             description:
-                "We focus on the complete customer journey—from discovering a product to completing an order.",
+                "We start from what you sell and how it is stocked, because that is what determines whether the store can actually run.",
             items: [
                 {
                     id: "01",
-                    title: "Plan",
+                    title: "Scope the Catalogue",
                     description:
-                        "We understand your catalogue, customers, business model, products and commerce requirements.",
+                        "How many products, how many variants, how stock is tracked and who ships orders.",
                 },
                 {
                     id: "02",
-                    title: "Design",
+                    title: "Design the Purchase Path",
                     description:
-                        "We create the storefront and product experience with a focus on clarity, trust and ease of navigation.",
+                        "We map how a customer finds a product and gets to checkout, and remove anything that gets in the way.",
                 },
                 {
                     id: "03",
-                    title: "Build",
+                    title: "Build & Integrate",
                     description:
-                        "We develop the ecommerce experience and connect the required commerce, payment and business systems.",
+                        "We build the store and connect payments, shipping and your business systems.",
                 },
                 {
                     id: "04",
-                    title: "Test & Launch",
+                    title: "Test Every Step",
                     description:
-                        "We test the purchasing journey, responsive behaviour and key integrations before launch.",
+                        "We place real test orders across devices before launch, including refunds.",
                 },
             ],
         },
         benefits: {
             tag: "What You Get",
-            title: "Everything needed for a modern online store.",
+            title: "A store you can take real orders on.",
             description:
-                "A commerce experience that brings your brand, products and purchasing journey together.",
+                "Not a demo. A working store connected to your payments, stock and fulfilment.",
             items: [
-                "Premium storefront design",
-                "Responsive product experience",
-                "Product and category structure",
-                "Payment integration",
-                "Commerce system integrations",
-                "Launch-ready ecommerce experience",
+                "Fixed price agreed upfront",
+                "Payments configured for your market",
+                "Mobile checkout tested",
+                "Order and stock management",
+                "Shipping and tax rules set up",
+                "Training and handover",
+            ],
+        },
+        pricing: {
+            tag: "Cost & Timing",
+            title: "What an online store costs.",
+            description:
+                "Online stores are quoted entirely on your requirements — the number of products, the payment providers you need, and which systems the store has to talk to. Tell us what you sell and how you ship, and we will price it for exactly that.",
+            timeline: "3–6 weeks",
+            amc: "Store support plans available — quoted by catalogue size",
+            included: [
+                "Custom storefront design",
+                "Product and category pages",
+                "Payment gateway setup",
+                "Shipping and tax configuration",
+                "Order management and emails",
+                "Launch and training",
+            ],
+            excluded: [
+                "Payment gateway transaction fees",
+                "Product photography",
+                "Product entry beyond the agreed count",
+                "Paid advertising spend",
             ],
         },
         faqs: {
             tag: "FAQ",
-            title: "Questions about ecommerce websites?",
+            title: "Common questions about online stores.",
             description:
-                "A few common questions about our ecommerce development service.",
+                "Message us with your question and we will answer it directly.",
             items: [
                 {
-                    question: "Can you build a custom ecommerce website?",
+                    question: "How much does an online store cost?",
                     answer:
-                        "Yes. We can create a custom ecommerce experience around your products, brand, customer journey and required integrations.",
+                        "Stores are quoted on your requirements — the number of products, the payment gateways you need, and the systems the store has to connect to. Tell us what you sell and how you ship, and we will give you a fixed price for that.",
                 },
                 {
-                    question: "Can you integrate payment gateways?",
+                    question: "Which payment options can you set up?",
                     answer:
-                        "Yes. We can integrate suitable payment providers based on your market, platform and business requirements.",
+                        "We integrate the gateways appropriate to your market and customer base — UPI and cards for India, with international options where you sell outside the country. We advise on which to enable before building.",
                 },
                 {
-                    question: "Can you connect an ecommerce store to other systems?",
+                    question: "Who looks after orders and shipping?",
                     answer:
-                        "Yes. Depending on the available integrations, we can connect ecommerce experiences with inventory, CRM, fulfilment, analytics and other business systems.",
+                        "That is your call. We can set up the store so orders, stock and customer emails are handled automatically, and we can advise on the simplest fulfilment setup that fits how you actually ship.",
+                },
+                {
+                    question: "Can we add products ourselves later?",
+                    answer:
+                        "Yes. You get training on adding products, changing prices and managing stock, plus documentation to refer back to.",
+                },
+                {
+                    question: "Do you maintain the store after launch?",
+                    answer:
+                        "Yes. Care plans cover monitoring, backups, security updates and improvements. You can also take it in-house at any point — the store is yours.",
+                },
+            ],
+        },
+    },
+
+    [Service.SOFTWARE_DEVELOPMENT]: {
+        slug: Service.SOFTWARE_DEVELOPMENT,
+        title: "Software & Mobile",
+        hero: {
+            tag: "Custom Software",
+            title: "Software built around how your business actually works.",
+            description:
+                "Custom platforms, internal tools, mobile apps and practical AI automation — for businesses that have outgrown spreadsheets and disconnected software.",
+            imageDesktopUrl: "/images/services/software-development-desktop.png",
+            imageMobileUrl: "/images/services/software-development-mobile.png",
+        },
+        solutions: {
+            tag: "What We Build",
+            title: "For problems off-the-shelf software cannot solve.",
+            description:
+                "We build when the requirement is genuinely specific. If a standard tool does the job for less, we will tell you that instead.",
+            items: [
+                {
+                    id: "01",
+                    title: "Business Platforms",
+                    description:
+                        "Applications that bring your workflows, information and operations into one place.",
+                },
+                {
+                    id: "02",
+                    title: "Internal Tools",
+                    description:
+                        "Purpose-built tools for operations, admin, reporting and the repetitive work that eats your team's week.",
+                },
+                {
+                    id: "03",
+                    title: "Mobile Apps",
+                    description:
+                        "Customer-facing and internal apps, built cross-platform where that suits the requirement.",
+                },
+                {
+                    id: "04",
+                    title: "AI Automation",
+                    description:
+                        "Practical AI for real bottlenecks — handling enquiries, qualifying leads, or clearing repetitive back-office work.",
+                },
+                {
+                    id: "05",
+                    title: "System Integrations",
+                    description:
+                        "APIs and connectors so your new system works with the software you already run.",
+                },
+                {
+                    id: "06",
+                    title: "Hosting & Support",
+                    description:
+                        "Deployment, monitoring and ongoing maintenance for software we have built.",
+                },
+            ],
+        },
+        methodology: {
+            tag: "How We Work",
+            title: "We start with the problem, not the feature list.",
+            description:
+                "Most custom software projects fail because nobody agreed what problem was being solved. We fix that before writing code.",
+            items: [
+                {
+                    id: "01",
+                    title: "Understand the Workflow",
+                    description:
+                        "We map how the work is actually done today, including the workarounds nobody mentions.",
+                },
+                {
+                    id: "02",
+                    title: "Agree Scope & Stages",
+                    description:
+                        "We define what is in the first release, what is later, and what each stage costs.",
+                },
+                {
+                    id: "03",
+                    title: "Build in Stages",
+                    description:
+                        "You see working software early and often, rather than waiting months for a first version.",
+                },
+                {
+                    id: "04",
+                    title: "Launch & Support",
+                    description:
+                        "We deploy it, train your team and stay on hand for the problems that appear after go-live.",
+                },
+            ],
+        },
+        benefits: {
+            tag: "What You Get",
+            title: "Software you can change as your business changes.",
+            description:
+                "Built to be extended and maintained by us or by whoever comes next — not held hostage.",
+            items: [
+                "Staged delivery with visible progress",
+                "Code and infrastructure owned by you",
+                "Documented and handed over",
+                "Integrations with your existing systems",
+                "Training for your team",
+                "Ongoing support options",
+            ],
+        },
+        pricing: {
+            tag: "Cost & Timing",
+            title: "What custom software costs.",
+            description:
+                "Custom software is scoped individually and quoted per stage, so you know the cost of each increment before you commit to it. Tell us the workflow that is not working and we will tell you what it takes to fix — including whether you need custom software at all.",
+            timeline: "8–16 weeks for a first release",
+            amc: "Support and enhancement plans quoted per system",
+            included: [
+                "Discovery workshop",
+                "Agreed first-release scope",
+                "Design and architecture",
+                "Iterative development",
+                "Deployment and handover",
+                "Documentation and training",
+            ],
+            excluded: [
+                "Third-party API and licensing fees",
+                "Ongoing hosting and infrastructure costs",
+                "Scopes added after the first release",
+            ],
+        },
+        faqs: {
+            tag: "FAQ",
+            title: "Common questions about custom software.",
+            description:
+                "Message us with your situation and we will tell you honestly whether custom software is the right answer.",
+            items: [
+                {
+                    question: "How do we know if we actually need custom software?",
+                    answer:
+                        "Usually you need it when your team is maintaining workarounds — duplicated data entry, spreadsheets feeding each other, or software that almost fits. If a standard tool solves the problem, we will say so rather than sell you a build.",
+                },
+                {
+                    question: "How much does it cost?",
+                    answer:
+                        "It depends entirely on what the system has to do. We quote fixed per stage after a short discovery conversation, so you know the cost of each increment before you commit to it — and you can stop after any stage.",
+                },
+                {
+                    question: "Will we own the code?",
+                    answer:
+                        "Yes. The code, infrastructure and accounts are yours. We are not building something you cannot take elsewhere if you ever want to.",
+                },
+                {
+                    question: "Is AI actually worth it for a business our size?",
+                    answer:
+                        "Sometimes, and we will tell you when it is not. AI is worth building where there is a high volume of repetitive, rule-bound work — qualifying enquiries, answering common questions, clearing repetitive data entry. It is not worth it to add to a process that already works.",
+                },
+                {
+                    question: "How long before we see something working?",
+                    answer:
+                        "8–16 weeks for a first usable release. We build in stages so you see working software early rather than waiting for the whole thing, and you can stop after any stage.",
+                },
+            ],
+        },
+    },
+
+    [Service.COMPUTERS_IT]: {
+        slug: Service.COMPUTERS_IT,
+        title: "Computers & IT",
+        hero: {
+            tag: "Computers, Networks & Support",
+            title: "Computers set up properly the first time.",
+            description:
+                "We supply, configure, network and maintain the computers and systems your office runs on — and we keep them running afterwards.",
+            photoUrl: "/image_v2/computers-it.jpg",
+            imageDesktopUrl: "/image_v2/computers-it.jpg",
+            imageMobileUrl: "/image_v2/computers-it.jpg",
+        },
+        solutions: {
+            tag: "What We Do",
+            title: "Everything from a new machine to a whole office.",
+            description:
+                "Whether you need one replacement laptop or a floor of new workstations wired together, we handle the whole setup — not just the box.",
+            items: [
+                {
+                    id: "01",
+                    title: "Computer Supply",
+                    description:
+                        "New systems and replacements specified for your actual workload and budget, not for a spec sheet.",
+                },
+                {
+                    id: "02",
+                    title: "Setup & Configuration",
+                    description:
+                        "Operating system, software, drivers, security and updates configured so it is ready to work on day one.",
+                },
+                {
+                    id: "03",
+                    title: "Office Networking",
+                    description:
+                        "Wired and wireless networks, shared storage and printers set up so everyone can work without waiting.",
+                },
+                {
+                    id: "04",
+                    title: "Data & Backups",
+                    description:
+                        "Migration from your old machine, and backups set up so a failure is an inconvenience rather than an incident.",
+                },
+                {
+                    id: "05",
+                    title: "Repairs & Upgrades",
+                    description:
+                        "Diagnosis and repair in-house, or coordinated with the vendor when hardware replacement is the better call.",
+                },
+                {
+                    id: "06",
+                    title: "Ongoing Support (AMC)",
+                    description:
+                        "Scheduled maintenance, priority response and a single point of contact for anything that breaks.",
+                },
+            ],
+        },
+        methodology: {
+            tag: "How We Work",
+            title: "We come to you, look, then quote.",
+            description:
+                "For hardware and networking we do not quote blind. A visit is free and means the price you get is the price that holds.",
+            items: [
+                {
+                    id: "01",
+                    title: "Call or Visit",
+                    description:
+                        "Tell us what is wrong or what you are setting up. For on-site work we arrange a free assessment visit.",
+                },
+                {
+                    id: "02",
+                    title: "Fixed Quote",
+                    description:
+                        "We recommend the right option for your budget and confirm a fixed price before anything is ordered.",
+                },
+                {
+                    id: "03",
+                    title: "Supply & Setup",
+                    description:
+                        "We deliver, configure, connect and test everything on site, and remove the old equipment if needed.",
+                },
+                {
+                    id: "04",
+                    title: "Handover & Support",
+                    description:
+                        "We hand over with instructions, and set up ongoing maintenance if you want it.",
+                },
+            ],
+        },
+        benefits: {
+            tag: "What You Get",
+            title: "Set up once, properly.",
+            description:
+                "No callbacks about the same problem next week. That is the whole point.",
+            items: [
+                "On-site assessment before quoting",
+                "Fixed price, agreed in advance",
+                "Configured and tested before handover",
+                "Data migrated from your old system",
+                "Backups set up as standard",
+                "Optional annual maintenance contract",
+            ],
+        },
+        pricing: {
+            tag: "Cost & Timing",
+            title: "What IT work costs.",
+            description:
+                "Setting up or updating a workstation starts at ₹10,000, excluding hardware. Hardware costs vary widely with brand and specification, and larger jobs — networks, whole-office rollouts — are quoted on requirement. You always get a fixed total before you commit.",
+            from: "₹10,000",
+            fromUnit: "starting price to set up or update a workstation, excluding hardware",
+            timeline: "1–3 days on site",
+            amc: "Annual maintenance contracts available — quoted by system count and coverage",
+            included: [
+                "On-site assessment and recommendation",
+                "Operating system and software setup",
+                "Security, updates and user accounts",
+                "Network and printer configuration",
+                "Data transfer from your old machine",
+                "Backup configuration",
+            ],
+            excluded: [
+                "Hardware and software licences",
+                "Third-party repair or replacement parts",
+                "Consumables and peripherals",
+            ],
+        },
+        faqs: {
+            tag: "FAQ",
+            title: "Common questions about computer and IT support.",
+            description:
+                "Message us with your situation and we will tell you what we would do.",
+            items: [
+                {
+                    question: "Do you supply the hardware, or work with what we have?",
+                    answer:
+                        "Both. We can supply systems matched to your workload and budget, or configure machines you have already bought. We are not tied to one brand, so we will tell you if a different machine suits you better.",
+                },
+                {
+                    question: "Do you come to our office?",
+                    answer:
+                        "Yes. On-site setup, networking and maintenance are handled at your premises across Mumbai. The initial assessment visit is free and there is no obligation.",
+                },
+                {
+                    question: "Can you take over a system another company set up?",
+                    answer:
+                        "Yes, and it is common. We will audit what is there first, tell you what is salvageable, and fix or replace only what needs it.",
+                },
+                {
+                    question: "What is an AMC and do we need one?",
+                    answer:
+                        "An Annual Maintenance Contract is a fixed monthly fee covering scheduled checkups, priority response and a defined service level. It is worth it once you have more than two or three systems, or when downtime costs you money. For a single home-office machine it usually is not worth it.",
+                },
+                {
+                    question: "How fast do you respond?",
+                    answer:
+                        "For AMC clients we commit to same-day response for anything stopping work, and next-day on-site attendance within Mumbai. Response times are written into the contract, not left vague.",
+                },
+                {
+                    question: "Can you help with data recovery?",
+                    answer:
+                        "Often, yes — it depends on the failure. Bring or let us access the device as soon as possible, because continued use can reduce the chance of recovery.",
+                },
+            ],
+        },
+    },
+
+    [Service.CAMERA_SECURITY]: {
+        slug: Service.CAMERA_SECURITY,
+        title: "Cameras & Security",
+        hero: {
+            tag: "CCTV & Access Security",
+            title: "Cameras installed where they actually help.",
+            description:
+                "CCTV supply, installation, configuration and maintenance for shops, offices and warehouses — set up to cover the right areas, not just to tick a box.",
+            photoUrl: "/image_v2/camera-security.jpg",
+            imageDesktopUrl: "/image_v2/camera-security.jpg",
+            imageMobileUrl: "/image_v2/camera-security.jpg",
+        },
+        solutions: {
+            tag: "What We Do",
+            title: "Coverage planned around your premises.",
+            description:
+                "Camera count is the least important decision. Where they point, what they can see in low light, and whether anyone can actually retrieve the footage matters far more.",
+            items: [
+                {
+                    id: "01",
+                    title: "Site Survey & Design",
+                    description:
+                        "We walk the premises and plan camera positions for real coverage — entrances, cash points, stock areas, blind spots.",
+                },
+                {
+                    id: "02",
+                    title: "Camera Supply",
+                    description:
+                        "IP and analogue cameras, DVR/NVR units and storage sized for how long you need to keep footage.",
+                },
+                {
+                    id: "03",
+                    title: "Professional Installation",
+                    description:
+                        "Neat cabling, mounting and terminations done properly, with cameras where they were planned rather than wherever was easiest.",
+                },
+                {
+                    id: "04",
+                    title: "Remote Viewing",
+                    description:
+                        "Watch your cameras from your phone, and control access from the same place, if you want to.",
+                },
+                {
+                    id: "05",
+                    title: "Access Control",
+                    description:
+                        "Biometric, RFID and keypad entry integrated with the same system, so access and video are in one record.",
+                },
+                {
+                    id: "06",
+                    title: "Maintenance (AMC)",
+                    description:
+                        "Camera cleaning, lens checks, storage health monitoring and priority fault response.",
+                },
+            ],
+        },
+        methodology: {
+            tag: "How We Work",
+            title: "Survey, install, verify — usually within two days.",
+            description:
+                "We do not install from a list of camera counts over the phone. The survey is what makes the result work.",
+            items: [
+                {
+                    id: "01",
+                    title: "Free Site Survey",
+                    description:
+                        "We visit, look at the layout and lighting, and mark where cameras should go and why.",
+                },
+                {
+                    id: "02",
+                    title: "System Design & Quote",
+                    description:
+                        "You get a plan showing camera positions, the equipment, and a fixed price.",
+                },
+                {
+                    id: "03",
+                    title: "Install & Configure",
+                    description:
+                        "We install, terminate, connect and configure recording, retention and remote access.",
+                },
+                {
+                    id: "04",
+                    title: "Test & Handover",
+                    description:
+                        "We verify every camera with you, hand over the credentials, and explain how to retrieve footage.",
+                },
+            ],
+        },
+        benefits: {
+            tag: "What You Get",
+            title: "Footage you can actually use.",
+            description:
+                "If a camera cannot identify a face in a dim corridor, it is not doing its job. We test for that, not just for power.",
+            items: [
+                "Free site survey before you commit",
+                "Fixed price, agreed in advance",
+                "Neat, concealed cabling",
+                "Retention sized to your requirement",
+                "Phone access, set up and shown to you",
+                "Optional annual maintenance contract",
+            ],
+        },
+        pricing: {
+            tag: "Cost & Timing",
+            title: "What a camera system costs.",
+            description:
+                "Installation starts at ₹10,000. The final figure depends on camera count, resolution, and how long you need to keep footage — which is why the site survey is free and comes before any quote. We will not price a system we have not looked at.",
+            from: "₹10,000",
+            fromUnit: "starting price for camera supply and installation",
+            timeline: "1–2 days on site",
+            amc: "Annual maintenance contracts available — quoted by camera count",
+            included: [
+                "Free site survey and camera plan",
+                "4 cameras, DVR/NVR and storage",
+                "Professional installation and cabling",
+                "Configuration and retention setup",
+                "Mobile viewing set up on your phone",
+                "Testing and handover with you",
+            ],
+            excluded: [
+                "Additional cameras beyond the quoted count",
+                "Structural cabling or civil work",
+                "Electrical work for new points",
+            ],
+        },
+        faqs: {
+            tag: "FAQ",
+            title: "Common questions about cameras and security.",
+            description:
+                "Message us with your premises details and we will advise on the right coverage.",
+            items: [
+                {
+                    question: "How long does an installation take?",
+                    answer:
+                        "A typical 4 to 8 camera system takes one to two days on site, including configuration and testing. Larger sites with access control and cabling take longer. You get a firm date before we start.",
+                },
+                {
+                    question: "Do you cover areas outside Mumbai?",
+                    answer:
+                        "Yes, we travel across the Mumbai Metropolitan Region for installation and maintenance. For larger sites or projects further afield, tell us the location when you enquire and we will confirm travel and timing before quoting.",
+                },
+                {
+                    question: "What happens if a camera fails?",
+                    answer:
+                        "AMC clients get same-day remote diagnosis and priority on-site attendance. Without an AMC, we respond on a best-effort basis — we will always tell you honestly which tier your situation falls into before you sign anything.",
+                },
+                {
+                    question: "Can I watch the cameras on my phone?",
+                    answer:
+                        "Yes. We set up remote viewing on your phone and show you how it works before we leave. You get your own account credentials, not a shared login.",
+                },
+                {
+                    question: "How long is the footage kept?",
+                    answer:
+                        "That is a storage question and it depends on camera count, resolution and how much you want to review. We size the drive for a retention period you specify — typically 15 to 30 days for a small site — and we will explain the trade-off before recommending a size.",
+                },
+                {
+                    question: "Do you install access control too?",
+                    answer:
+                        "Yes. Biometric, RFID and keypad systems can be integrated with the same cameras so access events and video appear together in one record.",
                 },
             ],
         },

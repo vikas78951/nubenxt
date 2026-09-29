@@ -7,6 +7,7 @@ import Atf from "@/components/page-components/hero/service-hero"
 import Methodology from "@/components/page-components/methodology"
 import Solution from "@/components/page-components/solution"
 import Benefits from "@/components/page-components/benefits"
+import Pricing from "@/components/page-components/pricing"
 import Faq from "@/components/page-components/faq"
 import Footer from "@/components/layout/footer"
 
@@ -56,10 +57,11 @@ const ServicePage = async ({
 
     return <>
 
-        <Atf content={page.hero} />
+        <Atf content={page.hero} stack={page.stack} />
         <Solution content={page.solutions} />
         <Methodology content={page.methodology} />
         <Benefits content={page.benefits} />
+        <Pricing content={page.pricing} />
         <Faq content={page.faqs}/>
         <Footer/>
 

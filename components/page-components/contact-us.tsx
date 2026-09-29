@@ -1,7 +1,7 @@
 import Wrapper from "@/components/shared/wrapper"
 import Section from "@/components/shared/section"
 import { Marker } from "@/components/markers/marker"
-import { contactData } from "@/lib/data/contact.data"
+import { contactData, getWhatsAppUrl } from "@/lib/data/contact.data"
 import ContactForm from "./contact-form"
 
 export function ContactUs() {
@@ -36,6 +36,9 @@ export function ContactUs() {
                   Mumbai, Maharashtra<br />
                   India
                 </p>
+                <p className="text-xs text-muted-foreground">
+                  On-site work across the {contactData.serviceArea}
+                </p>
               </div>
 
               <div className="space-y-1.5">
@@ -52,13 +55,45 @@ export function ContactUs() {
 
               <div className="space-y-1.5">
                 <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                  PHONE &amp; WHATSAPP
+                </p>
+                <a
+                  href={`tel:${contactData.telNumber}`}
+                  className="text-sm font-semibold text-primary hover:underline transition-colors block"
+                >
+                  {contactData.displayNumber}
+                </a>
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Message on WhatsApp
+                </a>
+              </div>
+
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                  SERVICE AREA
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {contactData.serviceArea}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {contactData.siteVisit} · {contactData.responseTime}
+                </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
                   BUSINESS HOURS
                 </p>
                 <p className="text-sm font-medium text-foreground">
-                  Monday – Sunday: 9 AM – 6 PM IST
+                  {contactData.hours}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Archived support monitored 24/7
+                  {contactData.hoursNote}
                 </p>
               </div>
             </div>

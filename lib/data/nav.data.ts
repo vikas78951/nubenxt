@@ -2,82 +2,50 @@
 import { NavComponent, NavItem } from "../types/nav.type"
 import { Service } from "../types/shared.type";
 import {
-  Smartphone,
+  Cctv,
   Code2,
-  Search,
-  Monitor,
   Link,
-  Mail,
-  Zap,
-  Terminal,
   ShoppingCart,
-  ImageIcon
+  Terminal,
+  Wrench
 } from "lucide-react"
 
  
 export const service: NavComponent[] = [
   {
-    title: "HTML Emailers",
-    href: `/services/${Service.HTML_EMAILER}`,
-    description:
-      "Professional responsive emails designed for engaging email campaigns.",
-    icon: Mail,
-  },
-  {
-    title: "Landing Pages",
-    href: `/services/${Service.LANDING_PAGE}`,
-    description:
-      "High-converting landing pages designed to turn visitors into customers.",
-    icon: Monitor,
-  },
-  {
-    title: "SEO & Marketing",
-    href: `/services/${Service.SEO_MARKETING}`,
-    description:
-      "Boost visibility and traffic with effective SEO and digital marketing strategies.",
-    icon: Search,
-  },
-  {
-    title: "Co-Brand Images",
-    href: `/services/${Service.CO_BRAND_IMAGES}`,
-    description:
-      "Custom campaign images designed to showcase your brand and partnerships.",
-    icon: ImageIcon,
-  },
-  {
-    title: "AI Agents",
-    href: `/services/${Service.AI_AGENTS}`,
-    description:
-      "Intelligent AI automation solutions built to streamline tasks and workflows.",
-    icon: Zap,
-  },
-  {
-    title: "Mobile Apps",
-    href: `/services/${Service.MOBILE_APPS}`,
-    description:
-      "Mobile applications built to deliver seamless experiences on iOS and Android.",
-    icon: Smartphone,
-  },
-  {
     title: "Website Development",
     href: `/services/${Service.WEB_DEVELOPMENT}`,
     description:
-      "Modern custom websites designed to build trust and showcase your brand.",
+      "Business websites, landing pages, SEO and email campaigns — designed, built and maintained.",
     icon: Code2,
   },
   {
-    title: "Software Development",
+    title: "Ecommerce",
+    href: `/services/${Service.ECOMMERCE_WEBSITE}`,
+    description:
+      "Online stores with payments, checkout and fulfilment working end to end.",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Software & Mobile",
     href: `/services/${Service.SOFTWARE_DEVELOPMENT}`,
     description:
-      "Enterprise SaaS platforms and custom software built around your business needs.",
+      "Custom platforms, internal tools, mobile apps and practical AI automation.",
     icon: Terminal,
   },
   {
-    title: "Ecommerce Website",
-    href: `/services/${Service.ECOMMERCE_WEBSITE}`,
+    title: "Computers & IT",
+    href: `/services/${Service.COMPUTERS_IT}`,
     description:
-      "Full-featured ecommerce stores designed to help your business sell online.",
-    icon: ShoppingCart,
+      "Computers supplied, configured and networked. On-site setup and ongoing support.",
+    icon: Wrench,
+  },
+  {
+    title: "Cameras & Security",
+    href: `/services/${Service.CAMERA_SECURITY}`,
+    description:
+      "CCTV survey, supply, installation and maintenance for offices and shops.",
+    icon: Cctv,
   },
 ]
 

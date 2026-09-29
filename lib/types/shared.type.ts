@@ -4,15 +4,11 @@ export interface BaseProps {
 }
 
 export enum Service {
-  HTML_EMAILER = "html-emailers",
-  LANDING_PAGE = "landing-pages",
-  SEO_MARKETING = "seo-marketing",
-  CO_BRAND_IMAGES = "co-brand-images",
-  AI_AGENTS = "ai-agents",
-  MOBILE_APPS = "mobile-apps",
   WEB_DEVELOPMENT = "web-development",
-  SOFTWARE_DEVELOPMENT = "software-development",
   ECOMMERCE_WEBSITE = "ecommerce-website",
+  SOFTWARE_DEVELOPMENT = "software-development",
+  COMPUTERS_IT = "computers-it",
+  CAMERA_SECURITY = "camera-security",
 }
 
 export interface CardContentProps {

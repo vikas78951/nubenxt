@@ -5,7 +5,21 @@ export const contactData = {
   telNumber: "+919076464507",
   mail: "craftorus@gmail.com",
   address: "Mumbai, Maharashtra, India",
-  defaultWhatsAppMessage: "Hi Craftorus, I'm interested in starting a project. Could you share more details about your services?",
+  /**
+   * Where we physically work. On-site services (computers, cameras, networks)
+   * depend on this being stated plainly — it is the first question a local
+   * buyer asks and it is currently buried in the footer.
+   */
+  serviceArea: "Mumbai Metropolitan Region",
+  serviceAreaDetail:
+    "On-site survey, installation and maintenance across Mumbai and the surrounding region. For projects further afield, tell us the location when you enquire and we will confirm travel and timing before quoting.",
+  /** Commitment shown near the primary CTA, not just on the contact page. */
+  responseTime: "Enquiries answered within 24 hours",
+  siteVisit: "Free site visit across Mumbai",
+  hours: "Monday – Sunday: 9 AM – 6 PM IST",
+  hoursNote: "Archived support monitored 24/7",
+  defaultWhatsAppMessage:
+    "Hi Craftorus, I'm interested in starting a project. Could you share more details about your services?",
 }
 
 export const getWhatsAppUrl = (serviceName?: string, clientName?: string) => {

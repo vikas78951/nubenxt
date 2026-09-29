@@ -44,7 +44,6 @@ export const projectsData = [
     imageUrl: "/images/services/web-development-mobile-4.png",
     services: ["Web Sites", "Web Apps", "Mobile Apps"],
     technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    link: "#",
   },
   {
     id: "02",
@@ -56,7 +55,6 @@ export const projectsData = [
     imageUrl: "/images/camera-graphic.png",
     services: ["CCTV Installation", "Camera Configuration", "Security Setup"],
     technologies: ["IP Cameras", "NVR", "Network Configuration"],
-    link: "#",
   },
 
   {
@@ -66,14 +64,13 @@ export const projectsData = [
     title: "Business Computer Setup",
     description:
       "Computer and workstation setup for businesses that need reliable systems configured for everyday operations, software, networking and team workflows.",
-    imageUrl: "/images/services/web-development-mobile-4.png",
+    imageUrl: "/images/hardware-graphic.png",
     services: [
       "Computer Setup",
       "System Configuration",
       "Software Installation",
     ],
     technologies: ["Windows", "Business Software", "Network Setup"],
-    link: "#",
   },
 ]
 

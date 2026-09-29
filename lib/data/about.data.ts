@@ -1,45 +1,26 @@
-export const aboutData = {
-  founder: {
-    tag: "07 — THE PERSON BEHIND CRAFTORUS",
-    title: "Built by an engineer who understands the work.",
-    description:
-      "Craftorus is built from hands-on experience rather than a traditional agency model. The work is driven by engineering experience, product thinking and a practical understanding of how technology is used inside real businesses.",
-    name: "Vikas Singh",
-    role: "Founder & Technology Lead",
-    experience: "6+ years of professional experience",
-    imageUrl: "/images/about/founder.png",
-    highlights: [
-      "Software & Web Development",
-      "Digital Product Engineering",
-      "Frontend Architecture",
-      "Business Technology",
-    ],
-  },
-}
-
 export const experienceData = {
   tag: "EXPERIENCE",
-  title: "6+ years of building and solving.",
+  title: "6+ years of building and fixing.",
   description:
-    "Craftorus is backed by more than six years of professional experience across software development, digital products, web technologies and business systems.",
+    "Craftorus is backed by more than six years of professional experience across software development, web technologies, computer systems and security infrastructure.",
   items: [
     {
       id: "01",
-      title: "Software & Digital Products",
+      title: "Software & Web",
       description:
-        "Experience building production software, web applications and digital platforms designed around real business requirements.",
+        "Building production software, web applications and platforms designed around real business requirements rather than a spec sheet.",
     },
     {
       id: "02",
-      title: "Web & Digital Experiences",
+      title: "Computers & Networking",
       description:
-        "From business websites to complex interfaces, we focus on making digital experiences clear, responsive and purposeful.",
+        "Setting up, repairing and maintaining the computer systems and networks that businesses depend on every working day.",
     },
     {
       id: "03",
-      title: "Business Technology",
+      title: "Cameras & Security",
       description:
-        "We also work with the technology businesses depend on every day, including computer systems, networking and security infrastructure.",
+        "Planning, installing and maintaining camera and access systems for offices, shops and warehouses.",
     },
   ],
 }
@@ -48,33 +29,33 @@ export const ExperienceDataProps = typeof experienceData
 
 export const principleData = {
   tag: "OUR STANDARD",
-  title: "Small studio. Serious standards.",
+  title: "The person who quotes is the person who does the work.",
   description:
-    "Being independent means we can stay close to the work, make decisions quickly and take responsibility for the result.",
+    "There is no account manager between you and the job. You talk to whoever is actually going to build it, install it or fix it.",
   items: [
     {
       id: "01",
       title: "Direct Communication",
       description:
-        "You communicate directly with the people responsible for understanding and delivering the work.",
+        "You deal directly with the person responsible for understanding and delivering the work. No ticket queue, no relaying your brief through someone else.",
     },
     {
       id: "02",
-      title: "Clear Decisions",
+      title: "Plain Recommendations",
       description:
-        "We explain our recommendations, trade-offs and priorities instead of hiding important decisions behind technical language.",
+        "We explain our recommendations and trade-offs instead of hiding them behind technical language. Sometimes that means telling you not to buy the more expensive thing.",
     },
     {
       id: "03",
-      title: "Practical Technology",
+      title: "Practical Choices",
       description:
-        "We choose technology because it serves the requirement — not because it happens to be the newest tool available.",
+        "We choose technology because it serves the requirement and your budget — not because it happens to be the newest thing available.",
     },
     {
       id: "04",
       title: "Ownership",
       description:
-        "We take responsibility for the details, from the initial requirement through implementation and final delivery.",
+        "We take responsibility for the result, from the first conversation through installation and everything that comes after it.",
     },
   ],
 }
@@ -82,28 +63,28 @@ export const principleData = {
 export const principleDataProps = typeof principleData
 
 export const philosophyData = {
-  tag: "03 — OUR PHILOSOPHY",
-  title: "The work matters more than the noise around it.",
+  tag: "OUR APPROACH",
+  title: "Technology that keeps working after we leave.",
   description:
-    "We believe good technology should solve a real problem, feel considered and remain useful long after it has been delivered.",
+    "Anything we install has to still be running in six months, with or without us. That changes how we build things.",
   items: [
     {
       id: "01",
-      title: "Quality Over Quantity",
+      title: "Set Up Once, Properly",
       description:
-        "We would rather build fewer things properly than take on work simply to stay busy. Every project deserves attention to the details that affect the final experience.",
+        "We would rather do a job properly the first time than get a call back next week about the same fault. That is the whole point of a maintenance contract.",
     },
     {
       id: "02",
-      title: "Business Before Technology",
+      title: "The Business First",
       description:
-        "Technology is a means, not the objective. We start by understanding the business, the people using the solution and the problem that needs to be solved.",
+        "Technology is a means, not the objective. We start by understanding the business, the people using it and the problem that actually needs solving.",
     },
     {
       id: "03",
-      title: "Built for the Long Term",
+      title: "Built to Be Maintained",
       description:
-        "We aim to create solutions that businesses can understand, maintain and build upon as their needs change.",
+        "Systems are documented and left in a state your team or your next IT provider can pick up. You are never locked into us to keep things running.",
     },
   ],
 }

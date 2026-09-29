@@ -3,19 +3,23 @@ import Wrapper from '../shared/wrapper'
 import { Marker } from '../markers/marker'
 import { ServiceDataProps, servicesData } from '@/lib/data/page.data'
 import { ServiceCard } from '../card/service-card'
+import { StaggerCards } from "@/components/animation/stagger-cards"
+import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const OurServices = () => {
     return (
         <Section>
             <Wrapper>
                 <div>
-                    <Marker title='02' description='Services' variant={'mix'} />
-                    <h4 className='pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4'>Our Services</h4>
+                    <MarkerReveal>
+                      <Marker title='02' description='Services' variant={'mix'} />
+                    </MarkerReveal>
+                    <h4 className='pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4'>What we do</h4>
                     <p>
-                        From your website to the technology around your business, Craftorus provides the services you need to build, operate and maintain it.
+                        Three service lines, one team. Most businesses need more than one of them eventually, and keeping all three with the same people is what stops problems getting passed between suppliers.
                     </p>
                 </div>
-                <div className='flex flex-col gap-10 md:gap-14 lg:gap-16 xl:gap-20 mt-6 md:mt-10 lg:mt-14 xl:mt-16'>
+                <StaggerCards className='flex flex-col gap-10 md:gap-14 lg:gap-16 xl:gap-20 mt-6 md:mt-10 lg:mt-14 xl:mt-16'>
                     {
                         servicesData.map((item: ServiceDataProps) => {
                             return (
@@ -24,7 +28,7 @@ const OurServices = () => {
                         })
 
                     }
-                </div>
+                </StaggerCards>
             </Wrapper>
         </Section>
     )

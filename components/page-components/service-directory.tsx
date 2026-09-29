@@ -5,23 +5,28 @@ import { Marker } from "../markers/marker"
 import { service } from "@/lib/data/nav.data"
 import { Card } from "../ui/card"
 import { ArrowRight } from "lucide-react"
+import { StaggerCards } from "@/components/animation/stagger-cards"
+import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 export const ServiceDirectory = () => {
   return (
     <Section className="bg-secondary/40">
       <Wrapper>
         <div>
-          <Marker title="02" description="Specialized Solutions" variant="mix" />
+          <MarkerReveal>
+            <Marker title="03" description="Service Lines" variant="mix" />
+          </MarkerReveal>
           <h3 className="pt-3 pb-2 md:pt-4 lg:pt-5 lg:pb-3 xl:pt-6 xl:pb-4">
-            Specialized Digital Services
+            Pick a service. See what it costs.
           </h3>
           <p className="max-w-2xl">
-            Explore our focused service capabilities, each tailored with dedicated
-            tooling, architecture, and engineering standards for maximum performance.
+            Each service has its own page covering what we build, how we work,
+            what it typically costs and answers to the questions people actually
+            ask before booking.
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:mt-12 lg:grid-cols-3 xl:gap-8">
+        <StaggerCards className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:mt-12 lg:grid-cols-3 xl:gap-8">
           {service.map((item) => {
             const Icon = item.icon
             return (
@@ -50,7 +55,7 @@ export const ServiceDirectory = () => {
               </Link>
             )
           })}
-        </div>
+        </StaggerCards>
       </Wrapper>
     </Section>
   )

@@ -3,15 +3,19 @@ import Wrapper from "../shared/wrapper"
 import { Marker } from "../markers/marker"
 import { ProjectDataProps, projectsData } from "@/lib/data/work.data"
 import CustomCard from "../card/card"
+import { StaggerCards } from "@/components/animation/stagger-cards"
+import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const FeatureCaseStudy = () => {
   return (
     <Section className="bg-secondary">
       <Wrapper>
         <div>
-          <Marker title="01" description="Feature case study" variant={"mix"} />
+          <MarkerReveal>
+            <Marker title="01" description="Feature case study" variant={"mix"} />
+          </MarkerReveal>
         </div>
-        <div className="mt-6 flex flex-col gap-6 md:gap-8 lg:mt-6 lg:gap-10 xl:mt-8 xl:gap-12">
+        <StaggerCards className="mt-6 flex flex-col gap-6 md:gap-8 lg:mt-6 lg:gap-10 xl:mt-8 xl:gap-12">
           {projectsData.map((item: ProjectDataProps, index) => {
             return (
               <CustomCard
@@ -33,7 +37,7 @@ const FeatureCaseStudy = () => {
               />
             )
           })}
-        </div>
+        </StaggerCards>
       </Wrapper>
     </Section>
   )

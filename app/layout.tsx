@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/layout/theme-provider"
+import { GsapProvider } from "@/components/animation/gsap-provider"
 import { cn } from "@/lib/utils"
 import Header from "@/components/layout/header"
 import { Toaster } from "@/components/ui/sonner"
@@ -70,9 +71,11 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <Header />
-          {children}
-          <Toaster />
+          <GsapProvider>
+            <Header />
+            {children}
+            <Toaster />
+          </GsapProvider>
         </ThemeProvider>
       </body>
     </html>

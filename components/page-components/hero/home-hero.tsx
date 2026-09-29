@@ -5,24 +5,25 @@ import Wrapper from "../../shared/wrapper"
 import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
-import { getWhatsAppUrl } from "@/lib/data/contact.data"
+import { getWhatsAppUrl, contactData } from "@/lib/data/contact.data"
+import { HeroEntrance } from "@/components/animation/hero-entrance"
 
 const Atf = () => {
   return (
     <Section>
       <Wrapper>
         <div className="grid-60by40">
-          <div className="max-w-2xl">
+          <HeroEntrance className="max-w-2xl">
             <Marker
               title="TECHNOLOGY SERVICES"
               variant={"primary"}
               className="mb-6"
             />
-            <h1>Technology that makes your business look the part</h1>
+            <h1>We build, install and maintain the technology your business runs on.</h1>
             <p className="mt-6 text-lg">
-              Craftorus provides professional web development, computer solutions,
-              and camera security services. We build, supply, install and
-              maintain the technology your business relies on.
+              Websites, computers, networks and camera security for growing
+              businesses in Mumbai. One team handles the whole setup — supplied,
+              installed, and maintained after we leave.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
@@ -36,7 +37,7 @@ const Atf = () => {
                   size="lg"
                   className={"w-full font-bold uppercase sm:w-auto"}
                 >
-                  Start a Project <ArrowRight />
+                  Get a Quote <ArrowRight />
                 </Button>
               </a>
               <Link href="/services" className="w-full sm:w-auto">
@@ -45,11 +46,15 @@ const Atf = () => {
                   size="lg"
                   className={"w-full font-bold uppercase sm:w-auto"}
                 >
-                  View Our Services <ChevronRight />
+                  See Our Services <ChevronRight />
                 </Button>
               </Link>
             </div>
-          </div>
+            <p className="mt-6 flex flex-col gap-1 text-sm font-medium text-muted-foreground sm:flex-row sm:gap-4">
+              <span>{contactData.siteVisit}</span>
+              <span>{contactData.responseTime}</span>
+            </p>
+          </HeroEntrance>
           <div className="hidden lg:block">
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image

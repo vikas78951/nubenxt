@@ -1,10 +1,10 @@
 import Section from '../shared/section'
 import Wrapper from '../shared/wrapper'
 import { Marker } from '../markers/marker'
-import { InsightsDataProps, insightsData } from '@/lib/data/page.data'
 import BenefitList from '../list/benefits-list'
 
 import type { BenefitsSection } from '@/lib/data/service.data'
+import { MarkerReveal } from "@/components/animation/marker-reveal"
 const Benefits = ({
     content
 }: {
@@ -14,7 +14,9 @@ const Benefits = ({
         <Section className='bg-secondary'>
             <Wrapper>
                 <div>
-                    <Marker title='03' description='What You Get' variant={'mix'} />
+                    <MarkerReveal>
+                      <Marker title='03' description='What You Get' variant={'mix'} />
+                    </MarkerReveal>
                 </div>
                 <div className='mt-4 lg:mt-6 xl:mt-8'>
                     {
