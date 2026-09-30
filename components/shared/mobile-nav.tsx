@@ -19,9 +19,9 @@ import {
     NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import MobileNavMenuItem from "@/components/shared/navigation/mobile-nav-menu-item"
-import { ArrowRight, Menu } from "lucide-react"
+import { ArrowRight, Menu, PhoneCall } from "lucide-react"
 import { Marker } from "../markers/marker"
-import { getWhatsAppUrl } from "@/lib/data/contact.data"
+import { contactData, getWhatsAppUrl } from "@/lib/data/contact.data"
 
 
 export function MobileNav() {
@@ -31,6 +31,10 @@ export function MobileNav() {
     function handleConfirm() {
         setOpen(false)
         window.open(getWhatsAppUrl(), "_blank")
+    }
+
+    function handleNavigate() {
+        setOpen(false)
     }
     const [open, setOpen] = React.useState(false)
     if (!isMobile) return <></>
@@ -48,8 +52,8 @@ export function MobileNav() {
                     <Marker className="py-4" title="NAVITATION MENU" />
                 </DrawerHeader>
                 <div className="flex-1 scroll-fade overflow-y-auto ">
-                    <NavigationMenu>
-                        <NavigationMenuList className={'flex-col gap-4 justify-start items-start'}>
+                    <NavigationMenu className={'w-full max-w-none'}>
+                        <NavigationMenuList className={'w-full flex-col gap-4 justify-start items-stretch'}>
                             {
                                 NAV_MOBILE_DATA.map((item: NavItem, index) => {
 
@@ -61,6 +65,7 @@ export function MobileNav() {
                                         isHyperlink={item?.isHyperlink}
                                         components={item?.components}
                                         active={pathname === item.href}
+                                        onNavigate={handleNavigate}
                                     />
                                 })
                             }
@@ -75,9 +80,19 @@ export function MobileNav() {
                             <p className="mb-2">Have a vision for your infrastructure?</p>
                             <h5>Let's construct something robust.</h5>
                         </div>
-                        <Button onClick={handleConfirm} className={'uppercase py-4 h-auto w-full font-semibold    '}>
-                            Start a Project <ArrowRight className="ml-3  size-4 " />
-                        </Button>
+                        <div className='grid grid-cols-2 gap-3'>
+                            <a
+                                href={`tel:${contactData.telNumber || contactData.number}`}
+                                className='w-full'
+                            >
+                                <Button variant={'outline'} className={'uppercase py-4 h-auto w-full font-semibold'}>
+                                    <PhoneCall className='size-4' /> Call Us
+                                </Button>
+                            </a>
+                            <Button onClick={handleConfirm} className={'uppercase py-4 h-auto w-full font-semibold'}>
+                                Start a Project <ArrowRight className='ml-2 size-4' />
+                            </Button>
+                        </div>
                     </div>
 
                 </DrawerFooter>

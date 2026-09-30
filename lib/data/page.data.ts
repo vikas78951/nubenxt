@@ -4,26 +4,31 @@
  * decide before they enquire.
  *
  * The technology stack that used to live here has been removed. It belongs on
- * the Website Development page only (see `stack` in service.data.ts).
+ * the Web & Mobile Apps page only (see `stack` in service.data.ts).
  */
 
 export const servicesData = [
   {
     id: "01",
-    title: "Web Development",
+    title: "Software Development",
     description:
-      "Business websites, online stores, landing pages, search visibility and email campaigns. Designed, built and maintained by one team — so nothing falls between vendors when something needs changing.",
+      "Websites, online stores and mobile apps, plus the search visibility that brings people to them. Designed, built and maintained by one team — so nothing falls between vendors when something needs changing.",
     tags: [
       "Business Websites",
+      "Mobile Apps",
       "Online Stores",
       "Landing Pages",
       "SEO & Local Search",
-      "HTML Emails",
       "Hosting & Care",
     ],
-    ctaText: "EXPLORE WEB SERVICES",
-    ctaLink: "/services/web-development",
-    img: "/image_v2/web-development.jpg",
+    ctaText: "EXPLORE SOFTWARE SERVICES",
+    ctaLink: "/services/software-development",
+    img: {
+      src: "/images/cards/web-development.webp",
+      alt: "A silver desktop computer switched on in a darkened room",
+      width: 800,
+      height: 480,
+    },
   },
   {
     id: "02",
@@ -40,7 +45,12 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE COMPUTER SERVICES",
     ctaLink: "/services/computers-it",
-    img: "/image_v2/computers-it.jpg",
+    img: {
+      src: "/images/cards/computers-it.webp",
+      alt: "A person working at a computer in a dimly lit room",
+      width: 800,
+      height: 480,
+    },
   },
   {
     id: "03",
@@ -57,7 +67,12 @@ export const servicesData = [
     ],
     ctaText: "EXPLORE CAMERA SERVICES",
     ctaLink: "/services/camera-security",
-    img: "/image_v2/camera-security.jpg",
+    img: {
+      src: "/images/cards/camera-security.webp",
+      alt: "A bullet-style CCTV camera mounted beneath the eaves of a building",
+      width: 800,
+      height: 480,
+    },
   },
 ]
 

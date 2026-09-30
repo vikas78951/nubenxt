@@ -59,6 +59,7 @@ const CustomCard = ({ content }: { content: CardContentProps }) => {
                 height={image.height}
                 width={image.width}
                 className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 38vw"
                 loading="lazy"
               />
             </div>

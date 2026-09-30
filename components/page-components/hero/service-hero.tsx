@@ -45,30 +45,32 @@ const Atf = ({
                     {content.photoUrl ? (
                         <div className='mt-12 w-full overflow-hidden rounded-2xl border border-border/40 shadow-xl'>
                             <Image
-                                src={content.photoUrl}
-                                alt={`${content.title} - Craftorus`}
-                                width={1400}
-                                height={788}
+                                src={content.photoUrl.src}
+                                alt={content.photoUrl.alt}
+                                width={content.photoUrl.width}
+                                height={content.photoUrl.height}
                                 className='block aspect-7/4 w-full rounded-2xl object-cover'
+                                sizes='(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1216px'
                                 priority
                             />
                         </div>
                     ) : (
                         <div className='mt-12 w-full overflow-hidden rounded-2xl border border-border/40 shadow-xl'>
                             <Image
-                                src={content.imageMobileUrl}
-                                alt={`${content.title} - Craftorus`}
-                                width={390}
-                                height={550}
+                                src={content.imageMobile.src}
+                                alt={content.imageMobile.alt}
+                                width={content.imageMobile.width}
+                                height={content.imageMobile.height}
                                 className='block w-full rounded-2xl sm:hidden'
                                 priority
                             />
                             <Image
-                                src={content.imageDesktopUrl}
-                                alt={`${content.title} - Craftorus`}
-                                width={1400}
-                                height={550}
+                                src={content.imageDesktop.src}
+                                alt={content.imageDesktop.alt}
+                                width={content.imageDesktop.width}
+                                height={content.imageDesktop.height}
                                 className='hidden w-full rounded-2xl sm:block'
+                                sizes='(max-width: 640px) 0px, (max-width: 1280px) 92vw, 1216px'
                                 priority
                             />
                         </div>

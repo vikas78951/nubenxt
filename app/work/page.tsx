@@ -4,7 +4,7 @@ import FeatureCaseStudy from "@/components/page-components/feature-case-study"
 import Atf from "@/components/page-components/hero/work-hero"
 
 export const metadata: Metadata = {
-  title: "Selected Work & Case Studies | Craftorus",
+  title: "Selected Work & Case Studies",
   description:
     "Explore selected digital experiences, web development projects, and technology infrastructure solutions delivered by Craftorus.",
 }

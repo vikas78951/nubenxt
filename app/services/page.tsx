@@ -8,7 +8,7 @@ import Amc from "@/components/page-components/amc"
 import Footer from "@/components/layout/footer"
 
 export const metadata: Metadata = {
-  title: "Services | Craftorus",
+  title: "Services",
   description:
     "Websites and online stores, computers and IT support, and camera security systems for businesses across Mumbai. Fixed quotes, on-site installation, ongoing maintenance.",
 }

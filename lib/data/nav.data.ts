@@ -13,7 +13,7 @@ import {
  
 export const service: NavComponent[] = [
   {
-    title: "Website Development",
+    title: "Web & Mobile Apps",
     href: `/services/${Service.WEB_DEVELOPMENT}`,
     description:
       "Business websites, landing pages, SEO and email campaigns — designed, built and maintained.",
@@ -27,7 +27,7 @@ export const service: NavComponent[] = [
     icon: ShoppingCart,
   },
   {
-    title: "Software & Mobile",
+    title: "Software Development",
     href: `/services/${Service.SOFTWARE_DEVELOPMENT}`,
     description:
       "Custom platforms, internal tools, mobile apps and practical AI automation.",

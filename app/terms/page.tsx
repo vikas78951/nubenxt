@@ -6,7 +6,7 @@ import Footer from "@/components/layout/footer"
 import { contactData } from "@/lib/data/contact.data"
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Craftorus",
+  title: "Terms & Conditions",
   description: "Terms and conditions governing the access and use of Craftorus services and website.",
 }
 

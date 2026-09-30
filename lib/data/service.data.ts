@@ -1,18 +1,19 @@
 import { Service } from "../types/shared.type"
+import type { ImageAsset } from "../types/shared.type"
 
 export type Hero = {
     tag: string
     title: string
     description: string
-    imageDesktopUrl: string
-    imageMobileUrl: string
+    imageDesktop: ImageAsset
+    imageMobile: ImageAsset
     /**
      * Optional single landscape photo. When set the service hero renders this
      * image instead of the paired desktop/mobile device mockups. Used by the
      * on-site service lines (Computers & IT, Cameras & Security) where a real
      * photograph is more honest than a UI mockup.
      */
-    photoUrl?: string
+    photoUrl?: ImageAsset
 }
 
 export type Solution = {
@@ -108,14 +109,24 @@ export type ServicePageDataProps = {
 export const servicePagesData: Record<Service, ServicePageDataProps> = {
     [Service.WEB_DEVELOPMENT]: {
         slug: Service.WEB_DEVELOPMENT,
-        title: "Website Development",
+        title: "Web & Mobile Apps",
         hero: {
             tag: "Websites & Online Presence",
             title: "A website that works as hard as you do.",
             description:
                 "Business websites, landing pages, search visibility and email campaigns — designed, built and looked after by one team, not passed between three vendors.",
-            imageDesktopUrl: "/images/services/web-development-desktop-2.png",
-            imageMobileUrl: "/images/services/web-development-mobile-5.png",
+            imageDesktop: {
+                src: "/images/services/web-development-desktop-2.png",
+                alt: "A Craftorus website design shown inside a desktop browser window",
+                width: 1400,
+                height: 550,
+            },
+            imageMobile: {
+                src: "/images/services/web-development-mobile-5.png",
+                alt: "The same Craftorus website shown in a mobile browser",
+                width: 390,
+                height: 550,
+            },
         },
         stack: [
             "React",
@@ -286,8 +297,18 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "An online store your customers can actually order from.",
             description:
                 "Storefronts, product pages, payments and checkout — built so the whole path from browsing to order works without friction.",
-            imageDesktopUrl: "/images/services/e-commerce-desktop.png",
-            imageMobileUrl: "/images/services/e-commerce-mobile.png",
+            imageDesktop: {
+                src: "/images/services/e-commerce-desktop.png",
+                alt: "A Craftorus online store shown inside a desktop browser window",
+                width: 1400,
+                height: 550,
+            },
+            imageMobile: {
+                src: "/images/services/e-commerce-mobile.png",
+                alt: "The same Craftorus online store shown in a mobile browser",
+                width: 390,
+                height: 550,
+            },
         },
         solutions: {
             tag: "What We Build",
@@ -438,14 +459,24 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
 
     [Service.SOFTWARE_DEVELOPMENT]: {
         slug: Service.SOFTWARE_DEVELOPMENT,
-        title: "Software & Mobile",
+        title: "Software Development",
         hero: {
             tag: "Custom Software",
             title: "Software built around how your business actually works.",
             description:
                 "Custom platforms, internal tools, mobile apps and practical AI automation — for businesses that have outgrown spreadsheets and disconnected software.",
-            imageDesktopUrl: "/images/services/software-development-desktop.png",
-            imageMobileUrl: "/images/services/software-development-mobile.png",
+            imageDesktop: {
+                src: "/images/services/software-development-desktop.png",
+                alt: "A Craftorus custom software dashboard shown in a desktop browser window",
+                width: 1400,
+                height: 550,
+            },
+            imageMobile: {
+                src: "/images/services/software-development-mobile.png",
+                alt: "The same Craftorus software shown in a mobile browser",
+                width: 390,
+                height: 550,
+            },
         },
         solutions: {
             tag: "What We Build",
@@ -601,9 +632,26 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "Computers set up properly the first time.",
             description:
                 "We supply, configure, network and maintain the computers and systems your office runs on — and we keep them running afterwards.",
-            photoUrl: "/image_v2/computers-it.jpg",
-            imageDesktopUrl: "/image_v2/computers-it.jpg",
-            imageMobileUrl: "/image_v2/computers-it.jpg",
+            photoUrl: {
+                src: "/images/services/computers-it-photo.webp",
+                alt: "Laptops and monitors being set up and configured on an office desk",
+                width: 1400,
+                height: 800,
+            },
+            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.
+            imageDesktop: {
+                src: "/images/services/computers-it-photo.webp",
+                alt: "Laptops and monitors being set up and configured on an office desk",
+                width: 1400,
+                height: 800,
+            },
+            imageMobile: {
+                src: "/images/services/computers-it-photo.webp",
+                alt: "Laptops and monitors being set up and configured on an office desk",
+                width: 1400,
+                height: 800,
+            },
         },
         solutions: {
             tag: "What We Do",
@@ -766,9 +814,26 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "Cameras installed where they actually help.",
             description:
                 "CCTV supply, installation, configuration and maintenance for shops, offices and warehouses — set up to cover the right areas, not just to tick a box.",
-            photoUrl: "/image_v2/camera-security.jpg",
-            imageDesktopUrl: "/image_v2/camera-security.jpg",
-            imageMobileUrl: "/image_v2/camera-security.jpg",
+            photoUrl: {
+                src: "/images/services/camera-security-photo.webp",
+                alt: "A security camera mounted on the exterior wall of a commercial building",
+                width: 1400,
+                height: 800,
+            },
+            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.
+            imageDesktop: {
+                src: "/images/services/camera-security-photo.webp",
+                alt: "A security camera mounted on the exterior wall of a commercial building",
+                width: 1400,
+                height: 800,
+            },
+            imageMobile: {
+                src: "/images/services/camera-security-photo.webp",
+                alt: "A security camera mounted on the exterior wall of a commercial building",
+                width: 1400,
+                height: 800,
+            },
         },
         solutions: {
             tag: "What We Do",

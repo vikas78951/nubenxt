@@ -6,6 +6,7 @@ import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
 import { getWhatsAppUrl } from "@/lib/data/contact.data"
+import { pageImages } from "@/lib/data/images.data"
 
 const Atf = () => {
   return (
@@ -51,12 +52,13 @@ const Atf = () => {
           <div className="hidden lg:block">
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image
-                src="/images/hero-right-media.png"
-                alt="Craftorus Team, Engineering Experience, and IT Infrastructure"
-                height={520}
-                width={560}
+                src={pageImages.aboutHero.src}
+                alt={pageImages.aboutHero.alt}
+                height={pageImages.aboutHero.height}
+                width={pageImages.aboutHero.width}
                 className="h-auto w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
                 loading="eager"
+                sizes="(max-width: 1024px) 0px, 40vw"
               />
             </div>
           </div>

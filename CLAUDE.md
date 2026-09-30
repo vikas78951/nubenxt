@@ -19,7 +19,7 @@ npm run format     # prettier --write "**/*.{ts,tsx}"
 
 There is **no test framework** in this project and no test script. Verify changes with `npm run typecheck` + `npm run lint` + `npm run build`.
 
-`npm run typecheck` is clean. `npm run lint` is **not** — it currently reports 3 errors and 20 warnings on untouched code (e.g. `react-hooks/set-state-in-effect` in `hooks/use-mobile.ts`, unused props in `components/shared/section.tsx`). Compare against a baseline rather than assuming you introduced them.
+`npm run typecheck` is clean. `npm run lint` is **not** — it currently reports 2 errors and 14 warnings on untouched code (e.g. `react-hooks/set-state-in-effect` in `hooks/use-mobile.ts`, unused props in `components/shared/section.tsx`). Compare against a baseline rather than assuming you introduced them.
 
 Requires Node 20.9+.
 
@@ -58,6 +58,29 @@ Each section renders `<Section><Wrapper>` (the layout primitives in `components/
 4. Optionally add an entry to the `service` array in `lib/data/nav.data.ts`.
 
 Nothing else is needed. `generateStaticParams`, `app/sitemap.ts`, the services directory, and the contact form's service `<Select>` all derive from the enum and `servicePagesData`.
+
+### Images
+
+Photography lives in `public/images/` as ordinary committed files. Nothing
+generates it — if you want a different photo, replace the file and keep the
+same path.
+
+Every image reference is an `ImageAsset` (`lib/types/shared.type.ts`) carrying
+`src`/`alt`/`width`/`height` next to it in `lib/data/*.data.ts`. `width`/`height`
+are the **source file's real pixel dimensions**, not the CSS display size;
+rendered size comes from `w-full h-auto` plus `sizes`. Getting them wrong does
+not break the build — it silently reserves the wrong box and shifts the layout
+when the file loads, so check them against the actual file after any swap.
+
+The four page heroes live in `lib/data/images.data.ts`. `/work` case-study
+imagery is deliberately generic — no faces, readable UI or identifiable
+premises — because those projects are labelled *Concept* / *Service Work*, and
+photography of a real-looking client build would imply client work that doesn't
+exist.
+
+Note that swapping bytes at an unchanged path does not invalidate Next's image
+optimizer cache in `.next/cache/images` — it is keyed by URL, not file contents.
+Delete that directory after replacing an image, or the old photo keeps serving.
 
 ### Styling
 

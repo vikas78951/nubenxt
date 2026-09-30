@@ -6,6 +6,7 @@ import Section from "../../shared/section"
 import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
 import { getWhatsAppUrl } from "@/lib/data/contact.data"
+import { pageImages } from "@/lib/data/images.data"
 
 const ServicesOverviewHero = () => {
   return (
@@ -54,12 +55,13 @@ const ServicesOverviewHero = () => {
           <div className="hidden lg:block">
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image
-                src="/image_v2/services-hero.jpg"
-                alt="Craftorus Technology Services and Digital Capabilities"
-                height={520}
-                width={560}
+                src={pageImages.servicesHero.src}
+                alt={pageImages.servicesHero.alt}
+                height={pageImages.servicesHero.height}
+                width={pageImages.servicesHero.width}
                 className="h-auto w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
                 loading="eager"
+                sizes="(max-width: 1024px) 0px, 40vw"
               />
             </div>
           </div>

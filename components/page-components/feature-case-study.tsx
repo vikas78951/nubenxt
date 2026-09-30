@@ -25,12 +25,7 @@ const FeatureCaseStudy = () => {
                   type: "horizontal",
                   title: item.title,
                   description: item.description,
-                  image: {
-                    src: item.imageUrl,
-                    alt: item.title,
-                    height: 400,
-                    width: 400,
-                  },
+                  image: item.image,
                   tags: item.services,
                 }}
                 key={`feature-case-${index}`}

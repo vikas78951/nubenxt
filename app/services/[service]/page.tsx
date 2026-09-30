@@ -32,10 +32,10 @@ export async function generateMetadata({
   if (!page) return {}
 
   return {
-    title: `${page.title} Services | Craftorus`,
+    title: `${page.title} Services`,
     description: page.hero.description,
     openGraph: {
-      title: `${page.title} Services | Craftorus`,
+      title: `${page.title} Services`,
       description: page.hero.description,
       url: `https://www.craftorus.com/services/${service}`,
     },

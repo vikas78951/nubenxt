@@ -3,7 +3,7 @@ import Footer from "@/components/page-components/footer"
 import { ContactUs } from "@/components/page-components/contact-us"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Craftorus",
+  title: "Contact Us",
   description:
     "Get in touch with Craftorus to discuss your next web development project, computer IT setup, or security system installation.",
 }

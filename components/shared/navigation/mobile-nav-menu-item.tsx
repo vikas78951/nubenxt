@@ -12,18 +12,20 @@ import { cn } from "cn"
 
 
 function MobileNavMenuItem({
-    name, href, active
-}: NavItem) {
+    name, href, active, onNavigate
+}: NavItem & { onNavigate?: () => void }) {
 
 
 
     return (
-        <NavigationMenuItem>
+        <NavigationMenuItem className={'w-full'}>
             <NavigationMenuLink
+                onClick={onNavigate}
+                className={'w-full'}
                 render={(
-                    <div>
+                    <div className={'relative w-full'}>
                         <Link className={cn(
-                            "relative font-heading text-2xl font-semibold  capitalize text-muted-foreground",
+                            "relative w-full font-heading text-2xl font-semibold  capitalize text-muted-foreground",
                             active && "text-primary font-medium"
                         )} href={href || '/'}>{name}</Link>
                         {active && (

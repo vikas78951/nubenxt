@@ -41,7 +41,12 @@ export const projectsData = [
     title: "Custom Business Software",
     description:
       "A custom software concept designed to bring business workflows, information and day-to-day operations into one focused digital platform.",
-    imageUrl: "/images/services/web-development-mobile-4.png",
+    image: {
+      src: "/images/work/software-concept.webp",
+      alt: "Abstract view of application code on a screen, with no readable client details",
+      width: 800,
+      height: 600,
+    },
     services: ["Web Sites", "Web Apps", "Mobile Apps"],
     technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
   },
@@ -52,7 +57,12 @@ export const projectsData = [
     title: "Business CCTV Installation",
     description:
       "A professionally planned CCTV setup designed around the layout of a business premises, with practical camera placement, recording and network configuration.",
-    imageUrl: "/images/camera-graphic.png",
+    image: {
+      src: "/images/work/cctv-installation.webp",
+      alt: "A ceiling-mounted security camera in a dim corridor, with no identifiable premises",
+      width: 800,
+      height: 600,
+    },
     services: ["CCTV Installation", "Camera Configuration", "Security Setup"],
     technologies: ["IP Cameras", "NVR", "Network Configuration"],
   },
@@ -64,7 +74,12 @@ export const projectsData = [
     title: "Business Computer Setup",
     description:
       "Computer and workstation setup for businesses that need reliable systems configured for everyday operations, software, networking and team workflows.",
-    imageUrl: "/images/hardware-graphic.png",
+    image: {
+      src: "/images/work/computer-setup.webp",
+      alt: "Computer hardware on a workbench during setup, with no identifiable client branding",
+      width: 800,
+      height: 600,
+    },
     services: [
       "Computer Setup",
       "System Configuration",

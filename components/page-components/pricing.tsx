@@ -1,9 +1,12 @@
-import { Check, Clock, Minus } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Check, ChevronRight, Clock, Minus } from "lucide-react"
 
 import Section from "../shared/section"
 import Wrapper from "../shared/wrapper"
 import { Marker } from "../markers/marker"
+import { Button } from "../ui/button"
 import type { Pricing } from "@/lib/data/service.data"
+import { contactData, getWhatsAppUrl } from "@/lib/data/contact.data"
 import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const PricingSection = ({ content }: { content: Pricing }) => {
@@ -109,6 +112,37 @@ const PricingSection = ({ content }: { content: Pricing }) => {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 md:mt-14 lg:mt-16 xl:mt-20">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button
+                variant={"default"}
+                size="lg"
+                className={"w-full font-bold uppercase sm:w-auto"}
+              >
+                Start a Project <ArrowRight />
+              </Button>
+            </a>
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button
+                variant={"outline"}
+                size="lg"
+                className={"w-full font-bold uppercase sm:w-auto"}
+              >
+                Send us the details <ChevronRight />
+              </Button>
+            </Link>
+          </div>
+          <p className="text-sm font-medium text-muted-foreground">
+            {contactData.siteVisit} · {contactData.responseTime}
+          </p>
         </div>
       </Wrapper>
     </Section>

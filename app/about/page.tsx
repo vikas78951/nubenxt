@@ -8,7 +8,7 @@ import Standard from "@/components/page-components/standard"
 import Phylosophy from "@/components/page-components/philosophy"
 
 export const metadata: Metadata = {
-  title: "About Us | Craftorus",
+  title: "About Us",
   description:
     "Learn about Craftorus, our 6+ years of engineering experience, and our mission to provide reliable web development, IT solutions, and security systems for businesses.",
 }

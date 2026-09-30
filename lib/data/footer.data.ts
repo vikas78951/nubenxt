@@ -1,14 +1,21 @@
 
 
 
+import { Service } from "../types/shared.type"
+
 export const footerLink = [
   {
     title: "SERVICES",
     links: [
-      { label: "Website", href: "/services/web-development" },
-      { label: "Computers", href: "/services" },
-      { label: "Cameras", href: "/services" }
-    ]
+      { label: "Web & Mobile", href: `/services/${Service.WEB_DEVELOPMENT}` },
+      { label: "Ecommerce", href: `/services/${Service.ECOMMERCE_WEBSITE}` },
+      {
+        label: "Software Development",
+        href: `/services/${Service.SOFTWARE_DEVELOPMENT}`,
+      },
+      { label: "Computers", href: `/services/${Service.COMPUTERS_IT}` },
+      { label: "Cameras", href: `/services/${Service.CAMERA_SECURITY}` },
+    ],
   },
   {
     title: "COMPANY",
