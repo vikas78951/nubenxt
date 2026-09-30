@@ -4,7 +4,6 @@ import { Marker } from '../markers/marker'
 import BenefitList from '../list/benefits-list'
 
 import type { BenefitsSection } from '@/lib/data/service.data'
-import { MarkerReveal } from "@/components/animation/marker-reveal"
 const Benefits = ({
     content
 }: {
@@ -14,9 +13,9 @@ const Benefits = ({
         <Section className='bg-secondary'>
             <Wrapper>
                 <div>
-                    <MarkerReveal>
+                    <div>
                       <Marker title='03' description='What You Get' variant={'mix'} />
-                    </MarkerReveal>
+                    </div>
                 </div>
                 <div className='mt-4 lg:mt-6 xl:mt-8'>
                     {

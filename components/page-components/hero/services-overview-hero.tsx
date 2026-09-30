@@ -7,13 +7,14 @@ import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
 import { getWhatsAppUrl } from "@/lib/data/contact.data"
 import { pageImages } from "@/lib/data/images.data"
+import { HeroEntrance } from "@/components/animation/hero-entrance"
 
 const ServicesOverviewHero = () => {
   return (
     <Section>
       <Wrapper>
         <div className="grid-60by40">
-          <div className="max-w-2xl">
+          <HeroEntrance className="max-w-2xl">
             <Marker
               title="OUR SERVICES & EXPERTISE"
               variant={"primary"}
@@ -51,7 +52,7 @@ const ServicesOverviewHero = () => {
                 </Button>
               </Link>
             </div>
-          </div>
+          </HeroEntrance>
           <div className="hidden lg:block">
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image

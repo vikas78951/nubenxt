@@ -7,7 +7,7 @@ import { Marker } from '../../markers/marker'
 import { Button } from '../../ui/button'
 import type { Hero } from '@/lib/data/service.data'
 import { getWhatsAppUrl } from '@/lib/data/contact.data'
-import { HeroEntrance } from "@/components/animation/hero-entrance"
+import { HeroEntrance } from '@/components/animation/hero-entrance'
 
 const Atf = ({
     content

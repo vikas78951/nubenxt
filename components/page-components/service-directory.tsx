@@ -5,17 +5,15 @@ import { Marker } from "../markers/marker"
 import { service } from "@/lib/data/nav.data"
 import { Card } from "../ui/card"
 import { ArrowRight } from "lucide-react"
-import { StaggerCards } from "@/components/animation/stagger-cards"
-import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 export const ServiceDirectory = () => {
   return (
     <Section className="bg-secondary/40">
       <Wrapper>
         <div>
-          <MarkerReveal>
+          <div>
             <Marker title="03" description="Service Lines" variant="mix" />
-          </MarkerReveal>
+          </div>
           <h3 className="pt-3 pb-2 md:pt-4 lg:pt-5 lg:pb-3 xl:pt-6 xl:pb-4">
             Pick a service. See what it costs.
           </h3>
@@ -26,7 +24,7 @@ export const ServiceDirectory = () => {
           </p>
         </div>
 
-        <StaggerCards className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:mt-12 lg:grid-cols-3 xl:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:mt-12 lg:grid-cols-3 xl:gap-8">
           {service.map((item) => {
             const Icon = item.icon
             return (
@@ -55,7 +53,7 @@ export const ServiceDirectory = () => {
               </Link>
             )
           })}
-        </StaggerCards>
+        </div>
       </Wrapper>
     </Section>
   )

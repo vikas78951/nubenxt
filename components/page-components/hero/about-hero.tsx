@@ -7,13 +7,14 @@ import { Marker } from "../../markers/marker"
 import { Button } from "../../ui/button"
 import { getWhatsAppUrl } from "@/lib/data/contact.data"
 import { pageImages } from "@/lib/data/images.data"
+import { HeroEntrance } from "@/components/animation/hero-entrance"
 
 const Atf = () => {
   return (
     <Section>
       <Wrapper>
         <div className="grid-60by40">
-          <div className="max-w-2xl">
+          <HeroEntrance className="max-w-2xl">
             <Marker title="ABOUT US" variant={"primary"} className="mb-6" />
             <h1>Technology is only useful when it makes something better.</h1>
             <p className="mt-6 text-lg">
@@ -48,7 +49,7 @@ const Atf = () => {
                 </Button>
               </Link>
             </div>
-          </div>
+          </HeroEntrance>
           <div className="hidden lg:block">
             <div className="overflow-hidden rounded-2xl border border-border/40 shadow-2xl">
               <Image

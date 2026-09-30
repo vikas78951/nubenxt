@@ -7,16 +7,15 @@ import { Marker } from "../markers/marker"
 import { Button } from "../ui/button"
 import type { Pricing } from "@/lib/data/service.data"
 import { contactData, getWhatsAppUrl } from "@/lib/data/contact.data"
-import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const PricingSection = ({ content }: { content: Pricing }) => {
   return (
     <Section>
       <Wrapper>
         <div>
-          <MarkerReveal>
+          <div>
             <Marker title="04" description={content.tag} variant={"mix"} />
-          </MarkerReveal>
+          </div>
           <h4 className="pt-3 md:pt-4 lg:pt-5 xl:pt-6 pb-2 lg:pb-3 xl:pb-4">
             {content.title}
           </h4>

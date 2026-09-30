@@ -1,5 +1,5 @@
 /**
- * Homepage content. Three service lines, four differentiators, a three-step
+ * Homepage content. Four service lines, four differentiators, a three-step
  * process and the maintenance offer — the things a services buyer needs to
  * decide before they enquire.
  *
@@ -70,6 +70,28 @@ export const servicesData = [
     img: {
       src: "/images/cards/camera-security.webp",
       alt: "A bullet-style CCTV camera mounted beneath the eaves of a building",
+      width: 800,
+      height: 480,
+    },
+  },
+  {
+    id: "04",
+    title: "Ecommerce",
+    description:
+      "Online stores where the whole path from browsing to delivery works. Payments, checkout, inventory and order handling set up properly, so orders arrive the way you expect them to.",
+    tags: [
+      "Storefronts",
+      "Payments",
+      "Checkout",
+      "Inventory",
+      "Order Management",
+      "Maintenance (AMC)",
+    ],
+    ctaText: "EXPLORE ECOMMERCE SERVICES",
+    ctaLink: "/services/ecommerce-website",
+    img: {
+      src: "/images/cards/ecommerce.webp",
+      alt: "A person lying on a couch holding a cellphone",
       width: 800,
       height: 480,
     },

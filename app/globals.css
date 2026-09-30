@@ -122,6 +122,15 @@
     @apply border-border;
   }
 
+  /* Smooth scrolling for same-page anchor jumps. Route changes are handled by
+     `data-scroll-behavior="smooth"` on <html>, which is the App Router hook for
+     it. Opt out for anyone whose OS has asked for reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply relative bg-background text-[16px] text-foreground;
   }

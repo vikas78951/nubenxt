@@ -3,16 +3,15 @@ import Wrapper from "../shared/wrapper"
 import { Marker } from "../markers/marker"
 import { NumberFeatureCard } from "../card/number-feature-card"
 import { philosophyData } from "@/lib/data/about.data"
-import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const Phylosophy = () => {
   return (
     <Section>
       <Wrapper>
         <div>
-          <MarkerReveal>
+          <div>
             <Marker title={"02"} variant="mix" description={philosophyData.tag} />
-          </MarkerReveal>
+          </div>
           <h4 className="pt-3 pb-2 md:pt-4 lg:pt-5 lg:pb-3 xl:pt-6 xl:pb-4">
             {philosophyData.title}
           </h4>

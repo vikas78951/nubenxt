@@ -7,7 +7,6 @@ import {
     Accordion,
 
 } from '@/components/ui/accordion'
-import { MarkerReveal } from "@/components/animation/marker-reveal"
 
 const Faq = ({
     content
@@ -19,13 +18,13 @@ const Faq = ({
         <Section>
             <Wrapper>
                 <div>
-                    <MarkerReveal>
+                    <div>
                       <Marker
                           title={'05'}
                           variant='mix'
                           description={content.tag}
                       />
-                    </MarkerReveal>
+                    </div>
 
                 </div>
                 <div className='mt-4 lg:mt-6 xl:mt-8'>

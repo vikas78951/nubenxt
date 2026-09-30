@@ -115,17 +115,25 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "A website that works as hard as you do.",
             description:
                 "Business websites, landing pages, search visibility and email campaigns — designed, built and looked after by one team, not passed between three vendors.",
-            imageDesktop: {
-                src: "/images/services/web-development-desktop-2.png",
-                alt: "A Craftorus website design shown inside a desktop browser window",
+            photoUrl: {
+                src: "/images/services/web-development-photo.webp",
+                alt: "A flat-screen computer monitor in a dark workspace",
                 width: 1400,
-                height: 550,
+                height: 800,
+            },
+            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.
+            imageDesktop: {
+                src: "/images/services/web-development-photo.webp",
+                alt: "A flat-screen computer monitor in a dark workspace",
+                width: 1400,
+                height: 800,
             },
             imageMobile: {
-                src: "/images/services/web-development-mobile-5.png",
-                alt: "The same Craftorus website shown in a mobile browser",
-                width: 390,
-                height: 550,
+                src: "/images/services/web-development-photo.webp",
+                alt: "A flat-screen computer monitor in a dark workspace",
+                width: 1400,
+                height: 800,
             },
         },
         stack: [
@@ -297,17 +305,26 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "An online store your customers can actually order from.",
             description:
                 "Storefronts, product pages, payments and checkout — built so the whole path from browsing to order works without friction.",
-            imageDesktop: {
-                src: "/images/services/e-commerce-desktop.png",
-                alt: "A Craftorus online store shown inside a desktop browser window",
+            photoUrl: {
+                src: "/images/services/ecommerce-photo.webp",
+                alt: "A person holding a smartphone, ready to shop",
                 width: 1400,
-                height: 550,
+                height: 800,
+            },
+            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.
+            imageDesktop: {
+                src: "/images/services/ecommerce-photo.webp",
+                alt: "A person holding a smartphone, ready to shop",
+                width: 1400,
+                height: 800,
             },
             imageMobile: {
-                src: "/images/services/e-commerce-mobile.png",
-                alt: "The same Craftorus online store shown in a mobile browser",
-                width: 390,
-                height: 550,
+                src: "/images/services/ecommerce-photo.webp",
+                alt: "A person holding a smartphone, ready to shop",
+                width: 1400,
+                height: 800,
             },
         },
         solutions: {
@@ -465,17 +482,25 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             title: "Software built around how your business actually works.",
             description:
                 "Custom platforms, internal tools, mobile apps and practical AI automation — for businesses that have outgrown spreadsheets and disconnected software.",
-            imageDesktop: {
-                src: "/images/services/software-development-desktop.png",
-                alt: "A Craftorus custom software dashboard shown in a desktop browser window",
+            photoUrl: {
+                src: "/images/services/software-development-photo.webp",
+                alt: "People working at computer monitors in a software team space",
                 width: 1400,
-                height: 550,
+                height: 800,
+            },
+            // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.
+            imageDesktop: {
+                src: "/images/services/software-development-photo.webp",
+                alt: "People working at computer monitors in a software team space",
+                width: 1400,
+                height: 800,
             },
             imageMobile: {
-                src: "/images/services/software-development-mobile.png",
-                alt: "The same Craftorus software shown in a mobile browser",
-                width: 390,
-                height: 550,
+                src: "/images/services/software-development-photo.webp",
+                alt: "People working at computer monitors in a software team space",
+                width: 1400,
+                height: 800,
             },
         },
         solutions: {
@@ -639,6 +664,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
                 height: 800,
             },
             // Never rendered: the photoUrl branch above short-circuits the hero.
+            // Kept as the same asset so the two paths stay consistent.            // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageDesktop: {
                 src: "/images/services/computers-it-photo.webp",
@@ -816,21 +842,21 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
                 "CCTV supply, installation, configuration and maintenance for shops, offices and warehouses — set up to cover the right areas, not just to tick a box.",
             photoUrl: {
                 src: "/images/services/camera-security-photo.webp",
-                alt: "A security camera mounted on the exterior wall of a commercial building",
+                alt: "Two CCTV cameras mounted as a matched pair",
+                width: 1400,
+                height: 800,
+            },
+            imageDesktop: {
+                src: "/images/services/camera-security-photo.webp",
+                alt: "Two CCTV cameras mounted as a matched pair",
                 width: 1400,
                 height: 800,
             },
             // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
-            imageDesktop: {
-                src: "/images/services/camera-security-photo.webp",
-                alt: "A security camera mounted on the exterior wall of a commercial building",
-                width: 1400,
-                height: 800,
-            },
             imageMobile: {
                 src: "/images/services/camera-security-photo.webp",
-                alt: "A security camera mounted on the exterior wall of a commercial building",
+                alt: "Two CCTV cameras mounted as a matched pair",
                 width: 1400,
                 height: 800,
             },
