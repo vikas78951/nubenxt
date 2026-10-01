@@ -116,7 +116,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             description:
                 "Business websites, landing pages, search visibility and email campaigns — designed, built and looked after by one team, not passed between three vendors.",
             photoUrl: {
-                src: "/images/services/web-development-photo.webp",
+                src: "/images/services/web-development-photo-v2.webp",
                 alt: "A flat-screen computer monitor in a dark workspace",
                 width: 1400,
                 height: 800,
@@ -124,13 +124,13 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageDesktop: {
-                src: "/images/services/web-development-photo.webp",
+                src: "/images/services/web-development-photo-v2.webp",
                 alt: "A flat-screen computer monitor in a dark workspace",
                 width: 1400,
                 height: 800,
             },
             imageMobile: {
-                src: "/images/services/web-development-photo.webp",
+                src: "/images/services/web-development-photo-v2.webp",
                 alt: "A flat-screen computer monitor in a dark workspace",
                 width: 1400,
                 height: 800,
@@ -306,7 +306,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             description:
                 "Storefronts, product pages, payments and checkout — built so the whole path from browsing to order works without friction.",
             photoUrl: {
-                src: "/images/services/ecommerce-photo.webp",
+                src: "/images/services/ecommerce-photo-v2.webp",
                 alt: "A person holding a smartphone, ready to shop",
                 width: 1400,
                 height: 800,
@@ -315,13 +315,13 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             // Kept as the same asset so the two paths stay consistent.            // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageDesktop: {
-                src: "/images/services/ecommerce-photo.webp",
+                src: "/images/services/ecommerce-photo-v2.webp",
                 alt: "A person holding a smartphone, ready to shop",
                 width: 1400,
                 height: 800,
             },
             imageMobile: {
-                src: "/images/services/ecommerce-photo.webp",
+                src: "/images/services/ecommerce-photo-v2.webp",
                 alt: "A person holding a smartphone, ready to shop",
                 width: 1400,
                 height: 800,
@@ -483,7 +483,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             description:
                 "Custom platforms, internal tools, mobile apps and practical AI automation — for businesses that have outgrown spreadsheets and disconnected software.",
             photoUrl: {
-                src: "/images/services/software-development-photo.webp",
+                src: "/images/services/software-development-photo-v2.webp",
                 alt: "People working at computer monitors in a software team space",
                 width: 1400,
                 height: 800,
@@ -491,13 +491,13 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageDesktop: {
-                src: "/images/services/software-development-photo.webp",
+                src: "/images/services/software-development-photo-v2.webp",
                 alt: "People working at computer monitors in a software team space",
                 width: 1400,
                 height: 800,
             },
             imageMobile: {
-                src: "/images/services/software-development-photo.webp",
+                src: "/images/services/software-development-photo-v2.webp",
                 alt: "People working at computer monitors in a software team space",
                 width: 1400,
                 height: 800,
@@ -658,7 +658,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             description:
                 "We supply, configure, network and maintain the computers and systems your office runs on — and we keep them running afterwards.",
             photoUrl: {
-                src: "/images/services/computers-it-photo.webp",
+                src: "/images/services/computers-it-photo-v2.webp",
                 alt: "Laptops and monitors being set up and configured on an office desk",
                 width: 1400,
                 height: 800,
@@ -667,13 +667,13 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             // Kept as the same asset so the two paths stay consistent.            // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageDesktop: {
-                src: "/images/services/computers-it-photo.webp",
+                src: "/images/services/computers-it-photo-v2.webp",
                 alt: "Laptops and monitors being set up and configured on an office desk",
                 width: 1400,
                 height: 800,
             },
             imageMobile: {
-                src: "/images/services/computers-it-photo.webp",
+                src: "/images/services/computers-it-photo-v2.webp",
                 alt: "Laptops and monitors being set up and configured on an office desk",
                 width: 1400,
                 height: 800,
@@ -841,13 +841,13 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             description:
                 "CCTV supply, installation, configuration and maintenance for shops, offices and warehouses — set up to cover the right areas, not just to tick a box.",
             photoUrl: {
-                src: "/images/services/camera-security-photo.webp",
+                src: "/images/services/camera-security-photo-v2.webp",
                 alt: "Two CCTV cameras mounted as a matched pair",
                 width: 1400,
                 height: 800,
             },
             imageDesktop: {
-                src: "/images/services/camera-security-photo.webp",
+                src: "/images/services/camera-security-photo-v2.webp",
                 alt: "Two CCTV cameras mounted as a matched pair",
                 width: 1400,
                 height: 800,
@@ -855,7 +855,7 @@ export const servicePagesData: Record<Service, ServicePageDataProps> = {
             // Never rendered: the photoUrl branch above short-circuits the hero.
             // Kept as the same asset so the two paths stay consistent.
             imageMobile: {
-                src: "/images/services/camera-security-photo.webp",
+                src: "/images/services/camera-security-photo-v2.webp",
                 alt: "Two CCTV cameras mounted as a matched pair",
                 width: 1400,
                 height: 800,

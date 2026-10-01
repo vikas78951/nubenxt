@@ -24,7 +24,7 @@ export const servicesData = [
     ctaText: "EXPLORE SOFTWARE SERVICES",
     ctaLink: "/services/software-development",
     img: {
-      src: "/images/cards/web-development.webp",
+      src: "/images/cards/web-development-v2.webp",
       alt: "A silver desktop computer switched on in a darkened room",
       width: 800,
       height: 480,
@@ -46,7 +46,7 @@ export const servicesData = [
     ctaText: "EXPLORE COMPUTER SERVICES",
     ctaLink: "/services/computers-it",
     img: {
-      src: "/images/cards/computers-it.webp",
+      src: "/images/cards/computers-it-v2.webp",
       alt: "A person working at a computer in a dimly lit room",
       width: 800,
       height: 480,
@@ -68,7 +68,7 @@ export const servicesData = [
     ctaText: "EXPLORE CAMERA SERVICES",
     ctaLink: "/services/camera-security",
     img: {
-      src: "/images/cards/camera-security.webp",
+      src: "/images/cards/camera-security-v2.webp",
       alt: "A bullet-style CCTV camera mounted beneath the eaves of a building",
       width: 800,
       height: 480,
@@ -90,7 +90,7 @@ export const servicesData = [
     ctaText: "EXPLORE ECOMMERCE SERVICES",
     ctaLink: "/services/ecommerce-website",
     img: {
-      src: "/images/cards/ecommerce.webp",
+      src: "/images/cards/ecommerce-v2.webp",
       alt: "A person lying on a couch holding a cellphone",
       width: 800,
       height: 480,

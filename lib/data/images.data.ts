@@ -19,25 +19,25 @@ import type { ImageAsset } from "../types/shared.type"
 
 export const pageImages: Record<string, ImageAsset> = {
   homeHero: {
-    src: "/images/hero/home.webp",
+    src: "/images/hero/home-v2.webp",
     alt: "A desktop computer with a keyboard and mouse on a dark desk",
     width: 1120,
     height: 1040,
   },
   servicesHero: {
-    src: "/images/hero/services.webp",
+    src: "/images/hero/services-v2.webp",
     alt: "A person holding a ceramic mug at a table",
     width: 1120,
     height: 1040,
   },
   aboutHero: {
-    src: "/images/hero/about.webp",
+    src: "/images/hero/about-v2.webp",
     alt: "Two engineers working together at a desk in a low-lit office",
     width: 1120,
     height: 1040,
   },
   workHero: {
-    src: "/images/hero/work.webp",
+    src: "/images/hero/work-v2.webp",
     alt: "A dark desk with a keyboard and a screen glowing in low light",
     width: 1120,
     height: 1040,

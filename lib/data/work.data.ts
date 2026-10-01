@@ -42,7 +42,7 @@ export const projectsData = [
     description:
       "A custom software concept designed to bring business workflows, information and day-to-day operations into one focused digital platform.",
     image: {
-      src: "/images/work/software-concept.webp",
+      src: "/images/work/software-concept-v2.webp",
       alt: "Abstract view of application code on a screen, with no readable client details",
       width: 800,
       height: 600,
@@ -58,7 +58,7 @@ export const projectsData = [
     description:
       "A professionally planned CCTV setup designed around the layout of a business premises, with practical camera placement, recording and network configuration.",
     image: {
-      src: "/images/work/cctv-installation.webp",
+      src: "/images/work/cctv-installation-v2.webp",
       alt: "A ceiling-mounted security camera in a dim corridor, with no identifiable premises",
       width: 800,
       height: 600,
@@ -75,7 +75,7 @@ export const projectsData = [
     description:
       "Computer and workstation setup for businesses that need reliable systems configured for everyday operations, software, networking and team workflows.",
     image: {
-      src: "/images/work/computer-setup.webp",
+      src: "/images/work/computer-setup-v2.webp",
       alt: "Computer hardware on a workbench during setup, with no identifiable client branding",
       width: 800,
       height: 600,
